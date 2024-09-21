@@ -1,0 +1,40 @@
+[user]
+	name = Ronald Suwandi
+	email = ronald@ronaldsuwandi.com
+ 
+[core]
+	excludesfile = /Users/ronald/.gitignore_global
+	editor = subl -n -w
+	autocrlf = input
+
+[diff]
+    tool = default-difftool
+
+[difftool]
+  prompt = false
+
+[difftool "default-difftool"]
+    cmd = subl -w -d $LOCAL $REMOTE 
+
+[color]
+	ui = true
+
+[alias]
+	co = checkout
+	st = status
+	tree = log --graph --decorate=short --branches --date=relative --abbrev-commit --shortstat --remotes=origin --source
+	tr = log --graph --decorate=short --branches --date=relative --abbrev-commit --shortstat --remotes=origin --source
+	trst = log --graph --decorate=short --branches --date=relative --abbrev-commit --stat --remotes=origin --source
+	dt = difftool
+	mt = mergetool
+	
+[push]
+	# push the current branch to a branch of the same name
+	default = current
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
