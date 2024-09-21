@@ -1,1 +1,13 @@
 README.md
+
+{{- if eq .chezmoi.os "darwin" }}
+.glzr
+
+{{- else if eq .chezmoi.os "linux" }}
+.glzr
+.aerospace.toml
+
+{{- else if eq .chezmoi.os "windows" }}
+.aerospace.toml
+
+{{- end }}
