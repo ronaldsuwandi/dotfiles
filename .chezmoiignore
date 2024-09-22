@@ -9,5 +9,6 @@ README.md
 
 {{- else if eq .chezmoi.os "windows" }}
 .aerospace.toml
+.tmux.conf
 
 {{- end }}
