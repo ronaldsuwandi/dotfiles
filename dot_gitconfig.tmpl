@@ -3,8 +3,12 @@
 	email = {{ .email | quote }}
  
 [core]
-	excludesfile = /Users/ronald/.gitignore_global
+	excludesfile = ~/.gitignore_global
+{{- if eq .chezmoi.hostname "SGSGPOLPM00E8MY" }}
 	editor = subl -n -w
+{{- else }}
+	editor = code -w
+{{- end }}
 	autocrlf = input
 
 [diff]

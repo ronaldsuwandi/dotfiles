@@ -2,3 +2,12 @@
 
 [data]
     email = {{ $email | quote }}
+
+[edit]
+{{- if eq .chezmoi.hostname "SGSGPOLPM00E8MY" }}
+    command = "code"
+    args = ["-w"]
+{{- else }}
+    command = "subl"
+    args = ["-n", "-w"]
+{{- end }}
