@@ -2,8 +2,14 @@ after-login-command = []
 after-startup-command = [
     # JankyBorders has a built-in detection of already running process,
     # so it won't be run twice on AeroSpace restart
-    'exec-and-forget borders active_color=0xffff4641 width=5.0'
+    'exec-and-forget borders active_color=0xffff4641 width=5.0',
+    'exec-and-forget sketchybar'
 ]
+
+exec-on-workspace-change = ['/bin/bash', '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+]
+
 
 start-at-login = true
 enable-normalization-flatten-containers = true
@@ -22,14 +28,11 @@ default-root-container-orientation = 'auto'
 # Possible values: (qwerty|dvorak)
 key-mapping.preset = 'qwerty'
 
- # Mouse lazily follows any focus (window or workspace)
-on-focus-changed = ['move-mouse window-lazy-center']
-
 [gaps]
 inner.horizontal = 4
 inner.vertical =   4
 outer.left =       3
-outer.bottom =     3
+outer.bottom =     32
 outer.top =        3
 outer.right =      3
 
