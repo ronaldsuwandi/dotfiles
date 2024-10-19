@@ -40,6 +40,6 @@ if [ ! -z "${FOCUSED_WORKSPACE}" ]; then
     else
         sketchybar --set $NAME \
             label.color="$COMMENT" \
-            label.background.color="$BAR_COLOR" \
+            label.background.color="$BAR_COLOR"
     fi
 fi
