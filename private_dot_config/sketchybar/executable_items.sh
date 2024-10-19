@@ -44,7 +44,9 @@ sketchybar --add item front_app center \
 	--set front_app "${front_app_setting[@]}" \
 	--subscribe front_app front_app_switched
 
-sketchybar --set "space.$(aerospace list-workspaces --focused)" label.background.color=$RED
+sketchybar --set "space.$(aerospace list-workspaces --focused)" \
+    label.background.color=$RED \
+    label.color="$BLACK"
 
 # window_count=(
 #     label.padding_left=20

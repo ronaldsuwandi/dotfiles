@@ -4,7 +4,9 @@ source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 
 if [ ! -z "${FOCUSED_WORKSPACE}" ]; then
     if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
-        sketchybar --set $NAME label.background.color="$RED" \
+        sketchybar --set $NAME \
+            label.background.color="$RED" \
+            label.color="$BLACK"
             # --set window_count label="⊞ $(aerospace list-windows --workspace focused --count)"
             # --remove /window.*/
 
@@ -38,6 +40,6 @@ if [ ! -z "${FOCUSED_WORKSPACE}" ]; then
     else
         sketchybar --set $NAME \
             label.color="$COMMENT" \
-            label.background.color="$BAR_COLOR"
+            label.background.color="$BAR_COLOR" \
     fi
 fi
