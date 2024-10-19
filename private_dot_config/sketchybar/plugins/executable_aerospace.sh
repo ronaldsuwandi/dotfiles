@@ -39,6 +39,5 @@ if [ ! -z "${FOCUSED_WORKSPACE}" ]; then
         sketchybar --set $NAME \
             label.color="$COMMENT" \
             label.background.color="$BAR_COLOR"
-        echo "not focused"
     fi
 fi
