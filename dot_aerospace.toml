@@ -129,3 +129,12 @@ run="layout floating"
 [[on-window-detected]]
 if.app-id='com.1password.1password'
 run="layout floating"
+
+# karabiner
+[[on-window-detected]]
+if.app-id='org.pqrs.Karabiner-EventViewer'
+run="layout floating"
+
+[[on-window-detected]]
+if.app-id='org.pqrs.Karabiner-Elements.Settings'
+run="layout floating"
