@@ -72,7 +72,7 @@ alt-shift-i = 'resize height -350'
 alt-shift-o = 'resize height +350'
 alt-shift-p = 'resize width +350'
 
-alt-b = 'balance-sizes'
+# alt-b = 'balance-sizes'
 
 # workspaces
 alt-1 = 'workspace 1'
