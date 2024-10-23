@@ -1,0 +1,9 @@
+name: goks
+windows:
+  - name: api
+    root: ~/Workspace/goks
+    layout: tiled
+    panes:
+      - commands:
+          - cd examples
+      - git fetch
