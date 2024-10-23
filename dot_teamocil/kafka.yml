@@ -1,0 +1,17 @@
+name: Kafka
+windows:
+  - name: kafka
+    root: ~/kafka
+    layout: tiled
+    panes:
+      - bin/zookeeper-server-start.sh ./config/zookeeper.properties
+      - bin/kafka-server-start.sh ./config/server.properties
+      - pwd
+  - name: clients
+    root: ~/Workspace/kafka-playground
+    layout: tiled
+    panes:
+      - pwd
+      - pwd
+      - pwd
+      - pwd
