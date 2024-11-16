@@ -130,7 +130,6 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/graalvm-community-openjdk-21/
 export PATH=$HOME/.docker/bin:$JAVA_HOME/bin:./node_modules/bin:$GOPATH/bin:$PATH
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
-source <(temporal completion zsh)
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/ronald/.rd/bin:$PATH"
