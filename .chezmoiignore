@@ -6,9 +6,21 @@ README.md
 {{- else if eq .chezmoi.os "linux" }}
 .glzr
 .aerospace.toml
+.yabairc
+.teamocil
+.Library
+.config/borders
+.config/karabiner
+.config/sketchybar
 
 {{- else if eq .chezmoi.os "windows" }}
 .aerospace.toml
 .tmux.conf
+.yabairc
+.teamocil
+.Library
+.config/borders
+.config/karabiner
+.config/sketchybar
 
 {{- end }}
