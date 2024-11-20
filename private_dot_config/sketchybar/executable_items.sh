@@ -4,29 +4,49 @@ source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 
 sketchybar --add event aerospace_workspace_change
 
-# aerospace workspace
-for sid in $(aerospace list-workspaces --all); do
-    sketchybar --add item space.$sid left \
-        --subscribe space.$sid aerospace_workspace_change \
-        --set space.$sid \
-        label.padding_left=20 \
-		label.padding_right=20 \
-		icon.padding_left=0 \
-		icon.padding_right=0 \
-		background.padding_left=0 \
-		background.padding_right=0 \
-		background.color=$BAR_COLOR \
-        label="$sid" \
-        click_script="aerospace workspace $sid" \
-        script="$CONFIG_DIR/plugins/aerospace.sh $sid"
+# Mission Control specifics using yabai
+SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+KEY_CODES=("18" "19" "20" "21" "23" "22" "26" "28" "25" "29")
+for i in "${!SPACE_ICONS[@]}"; do
+  sid="$(($i+1))"
+  space=(
+    space="$sid"
+    icon="${SPACE_ICONS[i]}"
+    icon.padding_left=10
+    icon.padding_right=10
+    background.color=0x40ffffff
+    background.corner_radius=5
+    background.height=25
+    label.drawing=off
+    script="$PLUGIN_DIR/space.sh"
+    click_script="osascript -e \"tell application \\\"System Events\\\" to key code ${KEY_CODES[i]} using control down\""
+  )
+  sketchybar --add space space."$sid" left --set space."$sid" "${space[@]}"
 done
+
+# aerospace workspace
+# for sid in $(aerospace list-workspaces --all); do
+#     sketchybar --add item space.$sid left \
+#         --subscribe space.$sid aerospace_workspace_change \
+#         --set space.$sid \
+#         label.padding_left=20 \
+# 		label.padding_right=20 \
+# 		icon.padding_left=0 \
+# 		icon.padding_right=0 \
+# 		background.padding_left=0 \
+# 		background.padding_right=0 \
+# 		background.color=$BAR_COLOR \
+#         label="$sid" \
+#         click_script="aerospace workspace $sid" \
+#         script="$CONFIG_DIR/plugins/aerospace.sh $sid"
+# done
 
 # frontapp
 COLOR="$WHITE"
 front_app_setting=(
-    script="$PLUGIN_DIR/front_app.sh"
+  script="$PLUGIN_DIR/front_app.sh"
 	icon.drawing=off
-	background.height=26
+	background.height=25
 	background.padding_left=10
 	background.padding_right=10
 	background.border_width="$BORDER_WIDTH"
@@ -44,9 +64,13 @@ sketchybar --add item front_app center \
 	--set front_app "${front_app_setting[@]}" \
 	--subscribe front_app front_app_switched
 
-sketchybar --set "space.$(aerospace list-workspaces --focused)" \
-    label.background.color=$RED \
-    label.color="$BLACK"
+
+source "$HOME/.config/sketchybar/plugins/list_apps.sh"
+
+
+# sketchybar --set "space.$(aerospace list-workspaces --focused)" \
+#     label.background.color=$RED \
+#     label.color="$BLACK"
 
 # window_count=(
 #     label.padding_left=20
