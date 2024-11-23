@@ -31,6 +31,8 @@ bar=(
 	blur_radius=20
 	notch_width=200
 	font_smoothing=on
+	topmost=true
+	sticky=true
 )
 
 sketchybar --default "${default[@]}" --bar "${bar[@]}"
