@@ -16,7 +16,7 @@ for i in "${!SPACE_ICONS[@]}"; do
     icon.padding_right=10
     background.color=0x40ffffff
     background.corner_radius=5
-    background.height=25
+    background.height=20
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
     click_script="osascript -e \"tell application \\\"System Events\\\" to key code ${KEY_CODES[i]} using control down\""
@@ -46,7 +46,7 @@ COLOR="$WHITE"
 front_app_setting=(
   script="$PLUGIN_DIR/front_app.sh"
 	icon.drawing=off
-	background.height=25
+	background.height=20
 	background.padding_left=10
 	background.padding_right=10
 	background.border_width="$BORDER_WIDTH"
