@@ -64,6 +64,10 @@ sketchybar --add item front_app center \
 	--set front_app "${front_app_setting[@]}" \
 	--subscribe front_app front_app_switched
 
+# right spacer
+sketchybar --add item right_spacer right \
+  --set right_spacer background.padding_right=40
+
 
 source "$HOME/.config/sketchybar/plugins/list_apps.sh"
 
