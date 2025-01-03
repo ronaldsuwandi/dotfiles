@@ -91,6 +91,7 @@ cask "zoom"
 # App Store apps
 ## Others
 mas "AutoMounter", id: 1160435653
+mas "ChatGPT", id: 6448311069
 mas "Day One", id: 1055511498
 mas "GeoTag", id: 1465180184
 mas "Goodnotes", id: 1444383602
