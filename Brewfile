@@ -87,8 +87,6 @@ cask "wireshark"
 cask "zed"
 cask "zoom"
 
-
-
 # App Store apps
 ## Others
 mas "AutoMounter", id: 1160435653
