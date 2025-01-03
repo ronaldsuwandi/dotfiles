@@ -37,6 +37,7 @@ cask "1password"
 cask "adguard"
 # chiaki-ng to play PS5
 cask "chiaki-ng"
+cask "coconutbattery"
 cask "commandq"
 cask "contexts"
 # detectx-swift to find and clean up malware: https://sqwarq.wordpress.com/detectx/
