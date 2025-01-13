@@ -15,4 +15,4 @@ ctrl + shift - 0 : yabai -m window --space 10
 ctrl + shift - f : open ~
 
 # Safari
-ctrl + shift - s : osascript -e 'tell application "Safari" to make new document'
+ctrl + shift - s : osascript -e 'tell application "Safari" to make new document' -e 'tell application "Safari" to activate'
