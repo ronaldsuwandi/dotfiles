@@ -35,7 +35,8 @@ brew "yt-dlp"
 # Casks
 cask "1password"
 cask "adguard"
-cask "chatgpt"
+# Postman alternative
+cask "bruno"
 # chiaki-ng to play PS5
 cask "chiaki-ng"
 cask "coconutbattery"
