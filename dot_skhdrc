@@ -18,4 +18,4 @@ ctrl + shift - f : open ~
 ctrl + shift - s : osascript -e 'tell application "Safari" to make new document' -e 'tell application "Safari" to activate'
 
 # Kitty
-ctrl + shift - t : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d
+ctrl + shift - t : /Applications/kitty.app/Contents/MacOS/kitty --single-instance --instance-group=kitty -d ~
