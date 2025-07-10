@@ -119,7 +119,7 @@ function command_not_found_handler() {
 # execute new zsh instance and using fc -p to make it in memory
 function pzsh() {
     echo "Starting new private zsh session..."
-    zsh -c "fc -p; zsh"
+    ZSH_PRIVATE_MODE=1 zsh -c "fc -p; zsh"
 }
 
 alias ls="ls -lFG"
