@@ -59,6 +59,8 @@ cask "kitty"
 cask "knockknock"
 # licecap for screen capture
 cask "licecap"
+# logi-options+ is for logitech keyboard
+cask "logi-options+"
 # lunar is for managing multiple displays
 # cask "lunar"
 cask "menumeters"
