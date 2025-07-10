@@ -19,3 +19,6 @@ ctrl + shift - s : osascript -e 'tell application "Safari" to make new document'
 
 # Kitty
 ctrl + shift - t : /Applications/kitty.app/Contents/MacOS/kitty --single-instance --instance-group=kitty -d ~
+
+# Nimble Commander
+ctrl + shift - n : open -a "Nimble Commander.app"
