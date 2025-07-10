@@ -116,6 +116,11 @@ function command_not_found_handler() {
 	figlet -froman "lol - $*" 
 }
 
+# execute new zsh instance and using fc -p to make it in memory
+function pzsh() {
+    echo "Starting new private zsh session..."
+    zsh -c "fc -p; zsh"
+}
 
 alias ls="ls -lFG"
 alias ll="ls -lFGh"
