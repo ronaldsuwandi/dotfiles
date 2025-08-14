@@ -22,3 +22,19 @@ ctrl + shift - t : /Applications/kitty.app/Contents/MacOS/kitty --single-instanc
 
 # Nimble Commander
 ctrl + shift - n : open -a "Nimble Commander.app"
+
+# Disable mail shortcut in Safari
+cmd - i [
+	"safari"       : passthrough
+]
+cmd + shift - i [
+	"safari"       : passthrough
+]
+
+# Disable print shortcut in Finder
+cmd + shift - p [
+	"finder"       : passthrough
+]
+cmd - p [
+	"finder"       : passthrough
+]
