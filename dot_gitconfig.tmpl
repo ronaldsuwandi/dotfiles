@@ -1,7 +1,8 @@
 [user]
 	name = Ronald Suwandi
 	email = {{ .email | quote }}
- 
+ 	signingkey = {{ .signingKey | quote }}
+
 [core]
 	excludesfile = ~/.gitignore_global
 {{- if eq .chezmoi.hostname "SGSGPOLPM00E8MY" }}
@@ -36,13 +37,18 @@
 [push]
 	# push the current branch to a branch of the same name
 	default = current
+
 [init]
 	defaultBranch = main
+
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+
+[gpg]
+	format = ssh
 
 {{- if eq .chezmoi.os "windows" }}
 [http]
