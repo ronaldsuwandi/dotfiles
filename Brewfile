@@ -37,8 +37,6 @@ cask "1password"
 cask "adguard"
 # Postman alternative
 cask "bruno"
-# chiaki-ng to play PS5
-cask "chiaki-ng"
 cask "coconutbattery"
 cask "commandq"
 cask "contexts"
@@ -47,7 +45,9 @@ cask "detectx-swift"
 cask "devutils"
 cask "graalvm/tap/graalvm-community-jdk21"
 # ice (bartender alternative)
-cask "jordanbaird-ice"
+# cask "jordanbaird-ice"
+# hiddenbar (bartender/ice alternative)
+cash "hiddenbar"
 cask "iina"
 cask "iterm2"
 cask "jetbrains-toolbox"
@@ -80,6 +80,7 @@ cask "rancher"
 # rectangle for window management, keep until multitouch support gap settings
 cask "rectangle"
 cask "spotify"
+# chiaki-ng to play PS5
 cask "streetpea/streetpea/chiaki-ng"
 cask "sublime-text"
 cask "tailscale"
