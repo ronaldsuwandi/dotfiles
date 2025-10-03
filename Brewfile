@@ -49,7 +49,7 @@ cask "graalvm/tap/graalvm-community-jdk21"
 # hiddenbar (bartender/ice alternative)
 cash "hiddenbar"
 cask "iina"
-cask "iterm2"
+# cask "iterm2"
 cask "jetbrains-toolbox"
 cask "karabiner-elements"
 cask "keepingyouawake"
