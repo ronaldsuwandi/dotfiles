@@ -69,7 +69,10 @@ sketchybar --add item right_spacer right \
   --set right_spacer background.padding_right=40
 
 
-source "$HOME/.config/sketchybar/plugins/list_apps.sh"
+# list apps
+sketchybar --add item running_apps_updater right \
+  --set running_apps_updater script="plugins/list_apps.sh" \
+  --subscribe running_apps_updater space_change
 
 
 # sketchybar --set "space.$(aerospace list-workspaces --focused)" \
