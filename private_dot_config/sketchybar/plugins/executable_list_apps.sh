@@ -3,11 +3,11 @@
 source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 
 # Query windows in the current space
-WINDOWS=$(yabai -m query --windows --space)
+WINDOWS=$(yabai -m query --windows --space | jq -c 'unique_by(.pid) | map(select(.["is-visible"] == true)) | sort_by(.app|ascii_downcase)')
+WINDOWS_COUNT=$(echo $WINDOWS | jq -c 'length')
+ACTIVE_PID=$(echo "$WINDOWS" | jq -c 'map(select(.["has-focus"] == true)) | .[].pid ');
 
-# Clear existing app items from the bar
-sketchybar --remove '/runningapp.*/'
-
+COLOR="$WHITE"
 app=(
   background.height=20
   background.border_width=2
@@ -19,15 +19,27 @@ app=(
   background.padding_left=7
   background.padding_right=7
   label.background.height=30
+  label.color=$COLOR
+  drawing=on
 )
-echo "$WINDOWS" | jq -c 'unique_by(.pid) | .[] | select(.["is-visible"] == true) | {pid: .pid, app: .app}' | while read -r window; do
+
+apps=""
+while read -r window; do
   pid=$(echo "$window" | jq -r '.pid')
   app_name=$(echo "$window" | jq -r '.app')
-  # Add app to sketchybar
-  sketchybar --add item runningapp.$pid right \
-             --set runningapp.$pid label="$app_name" \
-             script="osascript -e \"tell application \\\"System Events\\\" to set frontmost of the first process whose unix id is $pid to true\"" \
-             "${app[@]}" \
-             --subscribe runningapp.$pid mouse.clicked
-done
+  if [[ -z "$apps" ]]; then
+    apps="$app_name"
+  else
+    apps+=" | $app_name"
+  fi
+done <<< "$(echo "$WINDOWS" | jq -c 'map({pid: .pid, app: .app}) | .[]')"
 
+# Remove trailing pipe symbol
+apps="${apps%|}"
+
+# Clear if no visible apps
+if [[ -z "$apps" ]]; then
+  sketchybar --set running_apps_updater background.border_width=0 label=""
+else
+  sketchybar --set running_apps_updater "${app[@]}" label="$apps"
+fi
