@@ -1,5 +1,0 @@
-yabai -m signal --add event=space_changed action="~/.config/sketchybar/plugins/list_apps.sh"
-yabai -m signal --add event=window_destroyed action="~/.config/sketchybar/plugins/list_apps.sh"
-yabai -m signal --add event=window_created action="~/.config/sketchybar/plugins/list_apps.sh"
-yabai -m signal --add event=application_launched action="~/.config/sketchybar/plugins/list_apps.sh"
-yabai -m signal --add event=application_hidden action="~/.config/sketchybar/plugins/list_apps.sh"
