@@ -1,0 +1,46 @@
+macos-option-as-alt = true
+keybind = ctrl+enter=text:\r
+keybind = shift+enter=text:\n
+
+font-family = DejaVu Sans Mono
+
+foreground = #c7c7c7
+background = #000000
+
+selection-foreground = #000000
+selection-background = #c6dcfb
+
+cursor-color = #c7c7c7
+cursor-text = #fefefe
+
+# black
+palette = 0=#000000
+palette = 8=#676767
+
+# red
+palette = 1=#ea4024
+palette = 9=#ed766d
+
+# green
+palette = 2=#57bf37
+palette = 10=#8cf67a
+
+# yellow
+palette = 3=#c6c43f
+palette = 11=#fefb7e
+
+# blue
+palette = 4=#4294f7
+palette = 12=#8dd3fa
+
+# magenta
+palette = 5=#b93ec1
+palette = 13=#ed7ef8
+
+# cyan
+palette = 6=#58c2c5
+palette = 14=#8ef9fd
+
+# white
+palette = 7=#c7c7c7
+palette = 15=#fefefe
