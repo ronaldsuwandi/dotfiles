@@ -2,6 +2,12 @@ macos-option-as-alt = true
 keybind = ctrl+enter=text:\r
 keybind = shift+enter=text:\n
 
+keybind = shift+arrow_down=unbind
+keybind = shift+arrow_left=unbind
+keybind = shift+arrow_up=unbind
+keybind = shift+arrow_right=unbind
+
+# UI/theme
 font-family = DejaVu Sans Mono
 
 foreground = #c7c7c7
