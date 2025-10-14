@@ -31,6 +31,8 @@ brew "sloth"
 brew "koekeishiya/formulae/yabai"
 # yt-dlp to download youtube or videos (youtube-dl no longer maintained)
 brew "yt-dlp"
+# zellij is alternative to tmux
+brew "zellij"
 
 # Casks
 cask "1password"
@@ -43,6 +45,8 @@ cask "contexts"
 # detectx-swift to find and clean up malware: https://sqwarq.wordpress.com/detectx/
 cask "detectx-swift"
 cask "devutils"
+# ghostty is alternative to iterm2
+cask "ghostty"
 cask "graalvm/tap/graalvm-community-jdk21"
 # ice (bartender alternative)
 # cask "jordanbaird-ice"
@@ -53,8 +57,6 @@ cask "iina"
 cask "jetbrains-toolbox"
 cask "karabiner-elements"
 cask "keepingyouawake"
-# kitty is alternative to iterm2
-cask "kitty"
 # knockknock to see persistent files installed: https://objective-see.org/products/knockknock.html
 cask "knockknock"
 # licecap for screen capture
