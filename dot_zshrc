@@ -131,6 +131,11 @@ unset VCS_STATUS_TAG
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# [Option-RightArrow] - move forward one word
+bindkey '^[[1;3C' forward-word
+# [Option-LeftArrow] - move backward one word
+bindkey '^[[1;3D' backward-word
+
 export GOPATH=~/Go
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/graalvm-community-openjdk-21/Contents/Home
 export PATH=$HOME/.docker/bin:$JAVA_HOME/bin:./node_modules/bin:$GOPATH/bin:$PATH
