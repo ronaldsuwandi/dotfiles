@@ -45,13 +45,9 @@ cask "contexts"
 # detectx-swift to find and clean up malware: https://sqwarq.wordpress.com/detectx/
 cask "detectx-swift"
 cask "devutils"
-# ghostty is alternative to iterm2
-cask "ghostty"
 cask "graalvm/tap/graalvm-community-jdk21"
 # ice (bartender alternative)
-# cask "jordanbaird-ice"
-# hiddenbar (bartender/ice alternative)
-cash "hiddenbar"
+cask "jordanbaird-ice"
 cask "iina"
 # cask "iterm2"
 cask "jetbrains-toolbox"
@@ -92,6 +88,8 @@ cask "transmission"
 cask "visual-studio-code"
 cask "visualvm"
 cask "wireshark"
+# yaak is postman/bruno alternative
+cask "yaak"
 cask "zed"
 cask "zoom"
 
