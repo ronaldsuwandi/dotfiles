@@ -63,8 +63,6 @@ cask "logi-options+"
 # cask "lunar"
 cask "menumeters"
 # Multitouch overlaps with Rectangle, paid and better version
-# Disable shortcut for window management - only use this for track/mouse
-# No gap settings yet
 cask "multitouch"
 cask "nimble-commander"
 cask "obsidian"
@@ -75,8 +73,8 @@ cask "pearcleaner"
 cask "postman"
 # rancher is docker desktop ui alternative
 cask "rancher"
-# rectangle for window management, keep until multitouch support gap settings
-cask "rectangle"
+# rectangle for window management. Free version of Multitouch
+# cask "rectangle"
 cask "spotify"
 # chiaki-ng to play PS5
 cask "streetpea/streetpea/chiaki-ng"
