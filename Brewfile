@@ -25,6 +25,8 @@ brew "rustup"
 # shkd to launch app using shortcut keys
 brew "koekeishiya/formulae/skhd"
 brew "tmux"
+# trivy is for vulnerability scanner
+brew "trivy"
 # sloth to show list of opened/locked files
 brew "sloth"
 # yabai only used to help listing window within space
@@ -47,7 +49,7 @@ cask "detectx-swift"
 cask "devutils"
 cask "graalvm/tap/graalvm-community-jdk21"
 # ice (bartender alternative)
-cask "jordanbaird-ice"
+# cask "jordanbaird-ice"
 cask "iina"
 # cask "iterm2"
 cask "jetbrains-toolbox"
@@ -81,11 +83,13 @@ cask "streetpea/streetpea/chiaki-ng"
 cask "sublime-text"
 cask "tailscale"
 cask "temurin"
+# thaw is bartender/ice alternative (fork of ice)
+cask "thaw"
 # transmission for torrent client
 cask "transmission"
 cask "visual-studio-code"
 cask "visualvm"
-cask "wireshark"
+cask "wireshark-app"
 # yaak is postman/bruno alternative
 cask "yaak"
 cask "zed"
@@ -96,7 +100,7 @@ cask "zoom"
 mas "AutoMounter", id: 1160435653
 mas "Day One", id: 1055511498
 mas "GeoTag", id: 1465180184
-mas "Goodnotes", id: 1444383602
+# mas "Goodnotes", id: 1444383602
 mas "Micro Snitch", id: 972028355
 mas "MindNode", id: 1289197285
 mas "MoneyWiz", id: 1511185140
