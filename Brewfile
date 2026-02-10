@@ -81,7 +81,7 @@ cask "spotify"
 # chiaki-ng to play PS5
 cask "streetpea/streetpea/chiaki-ng"
 cask "sublime-text"
-cask "tailscale"
+cask "tailscale-app"
 cask "temurin"
 # thaw is bartender/ice alternative (fork of ice)
 cask "thaw"
