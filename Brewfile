@@ -29,6 +29,7 @@ brew "tmux"
 brew "trivy"
 # sloth to show list of opened/locked files
 brew "sloth"
+brew "uv" # pip alternative for python written in rust
 # yabai only used to help listing window within space
 brew "koekeishiya/formulae/yabai"
 # yt-dlp to download youtube or videos (youtube-dl no longer maintained)
@@ -41,6 +42,8 @@ cask "1password"
 cask "adguard"
 # Postman alternative
 cask "bruno"
+cask "claude"
+cask "claude-code"
 cask "coconutbattery"
 cask "commandq"
 cask "contexts"
