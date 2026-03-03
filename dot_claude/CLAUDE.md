@@ -1,0 +1,3 @@
+- Default to read-only. Run find, grep, ls, cat, head, tail, wc, git log, git diff, git status, git show, git blame freely without asking
+- Do not create, modify, or delete files unless I explicitly say to proceed
+- When suggesting changes, show diffs or code snippets first and wait for approval
