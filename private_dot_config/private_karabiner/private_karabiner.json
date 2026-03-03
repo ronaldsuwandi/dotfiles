@@ -1,4 +1,5 @@
 {
+    "machine_specific": { "krbn-196e2f44-64fe-450e-b998-74409e288f3e": { "enable_multitouch_extension": true } },
     "profiles": [
         {
             "complex_modifications": {
