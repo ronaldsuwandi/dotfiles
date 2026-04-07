@@ -7,7 +7,7 @@ tap "koekeishiya/formulae"
 tap "streetpea/streetpea"
 
 # Brew apps
-brew "borders"
+brew "FelixKratz/formulae/borders"
 brew "chezmoi"
 brew "docker"
 brew "figlet"
@@ -34,8 +34,7 @@ brew "uv" # pip alternative for python written in rust
 brew "koekeishiya/formulae/yabai"
 # yt-dlp to download youtube or videos (youtube-dl no longer maintained)
 brew "yt-dlp"
-# zellij is alternative to tmux
-brew "zellij"
+
 
 # Casks
 cask "1password"
@@ -75,7 +74,7 @@ cask "obsidian"
 cask "omnidisksweeper"
 # pearcleaner for cleanup post-app installation
 cask "pearcleaner"
-cask "postman"
+# cask "postman"
 # rancher is docker desktop ui alternative
 cask "rancher"
 # rectangle for window management. Free version of Multitouch
@@ -101,6 +100,7 @@ cask "zoom"
 # App Store apps
 ## Others
 mas "AutoMounter", id: 1160435653
+mas "Chess Studio", id: 1147096268
 mas "Day One", id: 1055511498
 mas "GeoTag", id: 1465180184
 # mas "Goodnotes", id: 1444383602
@@ -114,7 +114,7 @@ mas "WiFi Explorer", id: 494803304
 mas "Xcode", id: 497799835
 
 ## Messaging
-mas "Slack", id: 803453959
+#mas "Slack", id: 803453959
 mas "Telegram", id: 747648890
 mas "WhatsApp", id: 310633997
 
