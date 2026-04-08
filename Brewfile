@@ -1,13 +1,14 @@
 # Taps
 ## for borders
-tap "FelixKratz/formulae"
+tap "felixkratz/formulae"
 tap "eddieantonio/eddieantonio"
 tap "graalvm/tap"
 tap "koekeishiya/formulae"
 tap "streetpea/streetpea"
 
 # Brew apps
-brew "FelixKratz/formulae/borders"
+brew "felixkratz/formulae/borders"
+brew "felixkratz/formulae/sketchybar"
 brew "chezmoi"
 brew "docker"
 brew "figlet"
