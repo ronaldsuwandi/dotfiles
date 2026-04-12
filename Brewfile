@@ -110,6 +110,7 @@ mas "Micro Snitch", id: 972028355
 mas "MindNode", id: 1289197285
 mas "MoneyWiz", id: 1511185140
 mas "Overlap", id: 1516950324
+mas "QuickShade", id: 931571202
 mas "Simple Comic", id: 1497435571
 mas "The Unarchiver", id: 425424353
 mas "WiFi Explorer", id: 494803304
