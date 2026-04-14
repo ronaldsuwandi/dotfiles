@@ -26,6 +26,9 @@ ctrl + shift - t : /Applications/kitty.app/Contents/MacOS/kitty --single-instanc
 # Nimble Commander
 ctrl + shift - n : open -a "Nimble Commander.app"
 
+# Google Chrome
+ctrl + shift - c : open -na "Google Chrome" --args --new-window 
+
 # Disable mail shortcut in Safari
 cmd - i [
 	"safari"       : passthrough
