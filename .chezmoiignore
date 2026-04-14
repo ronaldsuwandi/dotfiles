@@ -1,4 +1,5 @@
 README.md
+.zshrc_local
 
 {{- if eq .chezmoi.os "darwin" }}
 .glzr
