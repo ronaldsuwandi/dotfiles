@@ -150,6 +150,11 @@ export PATH="$PATH:/Users/ronald/.local/bin"
 # For any custom local only (api credentials) use a separate .zshrc_local file
 [[ -f ~/.zshrc_local ]] && source ~/.zshrc_local
 
+export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
+export DOCKER_HOST=unix:///Users/ronald/.colima/docker.sock
+export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
+
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
