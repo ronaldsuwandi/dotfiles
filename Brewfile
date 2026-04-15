@@ -10,8 +10,11 @@ tap "streetpea/streetpea"
 brew "felixkratz/formulae/borders"
 brew "felixkratz/formulae/sketchybar"
 brew "chezmoi"
-# rancher comes with docker cli
-# brew "docker"
+# colima is the underlying vm for docker (alternative to rancher or docker desktop)
+brew "colima"
+brew "docker"
+brew "docker-compose"
+brew "docker-completion"
 brew "figlet"
 brew "git"
 brew "git-lfs"
@@ -75,8 +78,6 @@ cask "omnidisksweeper"
 # pearcleaner for cleanup post-app installation
 cask "pearcleaner"
 # cask "postman"
-# rancher is docker desktop ui alternative
-cask "rancher"
 # rectangle for window management. Free version of Multitouch
 # cask "rectangle"
 cask "spotify"
