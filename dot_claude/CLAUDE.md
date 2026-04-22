@@ -1,3 +1,4 @@
-- Default to read-only. Run find, grep, ls, cat, head, tail, wc, git log, git diff, git status, git show, git blame, env, printenv, ps, which, type freely without asking
+- Default to read-only. 
+- The following commands can be run freely without asking: find, grep, ls, cat, head, tail, wc, git log, git diff, git status, git show, git blame, git reflog, git ls-tree, git fetch, git rev-parse, env, printenv, ps, which, type
 - Do not create, modify, or delete files unless I explicitly say to proceed
 - When suggesting changes, show diffs or code snippets first and wait for approval
