@@ -18,12 +18,11 @@ brew "docker-completion"
 brew "figlet"
 brew "git"
 brew "git-lfs"
-brew "go"
 # imgcat
 brew "eddieantonio/eddieantonio/imgcat"
 brew "kcat"
+brew "mise"
 brew "mosh"
-brew "node"
 # pipx to run python app in isolated env
 brew "pipx"
 brew "rustup"
@@ -54,7 +53,6 @@ cask "contexts"
 # detectx-swift to find and clean up malware: https://sqwarq.wordpress.com/detectx/
 cask "detectx-swift"
 cask "devutils"
-cask "graalvm/tap/graalvm-community-jdk21"
 # ice (bartender alternative)
 # cask "jordanbaird-ice"
 cask "iina"
