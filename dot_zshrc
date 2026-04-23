@@ -154,6 +154,8 @@ export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
 export DOCKER_HOST=unix:///Users/ronald/.colima/docker.sock
 export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 
+eval "$(mise activate zsh)"
+
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
