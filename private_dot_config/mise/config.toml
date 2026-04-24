@@ -1,4 +1,4 @@
 [tools]
 go = "latest"
-java = "graalvm-community"
+java = "temurin"
 node = "latest"
