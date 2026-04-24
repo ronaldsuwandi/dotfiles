@@ -60,6 +60,7 @@ cask "iina"
 cask "jetbrains-toolbox"
 cask "karabiner-elements"
 cask "keepingyouawake"
+cask "kitty"
 # knockknock to see persistent files installed: https://objective-see.org/products/knockknock.html
 cask "knockknock"
 # licecap for screen capture
@@ -83,7 +84,6 @@ cask "spotify"
 cask "streetpea/streetpea/chiaki-ng"
 cask "sublime-text"
 cask "tailscale-app"
-cask "temurin"
 # thaw is bartender/ice alternative (fork of ice)
 cask "thaw"
 # transmission for torrent client
