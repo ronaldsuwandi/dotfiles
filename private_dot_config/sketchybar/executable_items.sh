@@ -1,6 +1,20 @@
 #!/usr/bin/env bash
 source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 
+windows=(
+    icon=󰖲
+    icon.padding_left=5
+    icon.padding_right=5
+    padding_right=20
+    click_script="open -a Mission Control"
+)
+
+# window count
+sketchybar --add item windows left \
+  --set windows label=0 \
+  --add item window_icon left \
+  --set window_icon ${windows[@]}
+
 # Mission Control specifics using yabai
 SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
 KEY_CODES=("18" "19" "20" "21" "23" "22" "26" "28" "25" "29")
