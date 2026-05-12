@@ -18,7 +18,7 @@ for i in "${!SPACE_ICONS[@]}"; do
     script="$PLUGIN_DIR/space.sh"
     #old using system event to push ctrl+number
     #click_script="osascript -e \"tell application \\\"System Events\\\" to key code ${KEY_CODES[i]} using control down\""
-    click_script="sketchybar --set /space\../ background.drawing=off; sketchybar --set space.${SPACE_ICONS[i]} background.drawing=on; yabai -m space --focus ${SPACE_ICONS[i]}"
+    click_script="sketchybar --set /space\../ background.drawing=off --set space.${SPACE_ICONS[i]} background.drawing=on; yabai -m space --focus ${SPACE_ICONS[i]}"
   )
   sketchybar --add space space."$sid" left --set space."$sid" "${space[@]}"
 done
