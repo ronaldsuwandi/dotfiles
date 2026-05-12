@@ -43,3 +43,5 @@ if [[ -z "$apps" ]]; then
 else
   sketchybar --set running_apps_updater "${app[@]}" label="$apps"
 fi
+
+sketchybar --set windows label=${WINDOWS_COUNT}
