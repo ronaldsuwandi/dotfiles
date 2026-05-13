@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+LOCKFILE="/tmp/sketchybar_list_apps.lock"
+[ -f "$LOCKFILE" ] && exit 0
+touch "$LOCKFILE"
+trap 'rm -f "$LOCKFILE"' EXIT
+sleep 0.1
+
 source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 
 # Query windows in the current space
@@ -25,23 +31,23 @@ app=(
 
 apps=""
 while read -r window; do
-  pid=$(echo "$window" | jq -r '.pid')
+  id=$(echo "$window" | jq -r '.id')
   app_name=$(echo "$window" | jq -r '.app')
   if [[ -z "$apps" ]]; then
     apps="$app_name"
   else
     apps+=" | $app_name"
   fi
-done <<< "$(echo "$WINDOWS" | jq -c 'map({pid: .pid, app: .app}) | .[]')"
+done <<< "$(echo "$WINDOWS" | jq -c 'map({id: .id, app: .app}) | .[]')"
 
 # Remove trailing pipe symbol
 apps="${apps%|}"
 
 # Clear if no visible apps
 if [[ -z "$apps" ]]; then
-  sketchybar --set running_apps_updater background.border_width=0 label=""
+  sketchybar --set running_apps_updater background.border_width=0 label="" label.drawing=off background.drawing=off
 else
-  sketchybar --set running_apps_updater "${app[@]}" label="$apps"
+  sketchybar --set running_apps_updater "${app[@]}" label="$apps" label.drawing=on background.drawing=on
 fi
 
-sketchybar --set windows label=${WINDOWS_COUNT}
+sketchybar --set windows label="${WINDOWS_COUNT} 󰖲"
