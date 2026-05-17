@@ -37,6 +37,9 @@ bar=(
 
 sketchybar --default "${default[@]}" --bar "${bar[@]}"
 
+sketchybar --add event yabai_layout_change
+sketchybar --add event yabai_zoom_change
+
 source "items.sh"
 
 

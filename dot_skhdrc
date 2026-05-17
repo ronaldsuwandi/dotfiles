@@ -17,11 +17,11 @@ cmd + alt + ctrl - down : yabai -m window --resize bottom:0:30
 
 cmd + alt - r : yabai -m space --rotate 90
 cmd + alt - s : yabai -m window --toggle split
-cmd + alt - z : yabai -m window --toggle zoom-fullscreen
+cmd + alt - z : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger yabai_zoom_change
 
-cmd + alt - b : yabai -m space --layout bsp
-cmd + alt - x : yabai -m space --layout stack
-cmd + alt - f : yabai -m space --layout float
+cmd + alt - b : yabai -m space --layout bsp; sketchybar --trigger yabai_layout_change
+cmd + alt - x : yabai -m space --layout stack; sketchybar --trigger yabai_layout_change
+cmd + alt - f : yabai -m space --layout float; sketchybar --trigger yabai_layout_change
 
 # move windows to space
 ctrl - 1 : sketchybar --set /space\../ background.drawing=off --set space.1 background.drawing=on; yabai -m space --focus 1
