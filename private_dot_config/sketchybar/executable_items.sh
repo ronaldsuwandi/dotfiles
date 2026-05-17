@@ -33,12 +33,15 @@ for i in "${!SPACE_ICONS[@]}"; do
     --set space."$sid" "${space[@]}"
 done
 
+space_layout=(
+  label=""
+  label.padding_left=8
+  label.padding_right=8
+  label.font.size=22
+  script="$PLUGIN_DIR/space_layout.sh"
+)
 sketchybar --add item space_layout left \
-  --set space_layout \
-    label="" \
-    label.padding_left=6 \
-    label.padding_right=6 \
-    script="$PLUGIN_DIR/space_layout.sh" \
+  --set space_layout "${space_layout[@]}"\
   --subscribe space_layout space_change \
   --subscribe space_layout yabai_layout_change
 
@@ -68,6 +71,18 @@ sketchybar --add item front_app center \
 	--set front_app "${front_app_setting[@]}" \
 	--subscribe front_app front_app_switched \
 	--subscribe front_app yabai_zoom_change
+
+window_zoom=(
+  label="󰊓"
+  label.font.size=22
+  label.color=$ORANGE
+  label.padding_left=12
+  label.padding_right=6
+  drawing=off
+  click_script="yabai -m window --toggle zoom-fullscreen; sketchybar --trigger yabai_zoom_change"
+)
+sketchybar --add item window_zoom center \
+  --set window_zoom "${window_zoom[@]}"
 # sketchybar --set running_apps_updater script="plugins/front_app.sh"
 # 	--subscribe running_apps_updater front_app_switched
 
