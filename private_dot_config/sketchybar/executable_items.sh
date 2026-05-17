@@ -29,8 +29,18 @@ for i in "${!SPACE_ICONS[@]}"; do
     #click_script="osascript -e \"tell application \\\"System Events\\\" to key code ${KEY_CODES[i]} using control down\""
     click_script="sketchybar --set /space\../ background.drawing=off --set space.${SPACE_ICONS[i]} background.drawing=on; yabai -m space --focus ${SPACE_ICONS[i]}"
   )
-  sketchybar --add space space."$sid" left --set space."$sid" "${space[@]}"
+  sketchybar --add space space."$sid" left \
+    --set space."$sid" "${space[@]}"
 done
+
+sketchybar --add item space_layout left \
+  --set space_layout \
+    label="" \
+    label.padding_left=6 \
+    label.padding_right=6 \
+    script="$PLUGIN_DIR/space_layout.sh" \
+  --subscribe space_layout space_change \
+  --subscribe space_layout yabai_layout_change
 
 
 # frontapp
@@ -56,7 +66,8 @@ sketchybar --add item running_apps_updater right \
 # front app
 sketchybar --add item front_app center \
 	--set front_app "${front_app_setting[@]}" \
-	--subscribe front_app front_app_switched
+	--subscribe front_app front_app_switched \
+	--subscribe front_app yabai_zoom_change
 # sketchybar --set running_apps_updater script="plugins/front_app.sh"
 # 	--subscribe running_apps_updater front_app_switched
 
