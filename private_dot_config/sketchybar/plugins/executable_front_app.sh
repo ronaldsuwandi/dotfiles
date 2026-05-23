@@ -19,6 +19,7 @@ app=(
 FOCUSED=$(yabai -m query --windows --space 2>/dev/null \
   | jq -c 'map(select(.["has-focus"] == true)) | .[0]' 2>/dev/null)
 ZOOMED=$(echo "$FOCUSED" | jq -r '.["has-fullscreen-zoom"]')
+FLOATED=$(echo "$FOCUSED" | jq -r '.["is-floating"]')
 
 if [[ "$SENDER" = "front_app_switched" ]]; then
   front_app="$INFO"
@@ -27,4 +28,10 @@ else
 fi
 
 sketchybar --set "$NAME" background.image="app.${front_app}" label="$front_app"
-sketchybar --set window_zoom drawing=$([ "$ZOOMED" = "true" ] && echo on || echo off)
+if [ "$ZOOMED" = "true" ]; then
+  sketchybar --set window_zoom_float drawing=on label="󰊓"
+elif [ "$FLOATED" = "true" ]; then
+  sketchybar --set window_zoom_float drawing=on label="󰅟"
+else
+  sketchybar --set window_zoom_float drawing=off
+fi

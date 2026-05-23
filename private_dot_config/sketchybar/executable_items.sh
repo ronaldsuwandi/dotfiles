@@ -39,6 +39,7 @@ space_layout=(
   label.padding_right=8
   label.font.size=22
   script="$PLUGIN_DIR/space_layout.sh"
+  click_script="$PLUGIN_DIR/space_layout_toggle.sh"
 )
 sketchybar --add item space_layout left \
   --set space_layout "${space_layout[@]}"\
@@ -79,10 +80,10 @@ window_zoom=(
   label.padding_left=12
   label.padding_right=6
   drawing=off
-  click_script="yabai -m window --toggle zoom-fullscreen; sketchybar --trigger yabai_zoom_change"
+  click_script="$PLUGIN_DIR/window_zoom_float_click.sh"
 )
-sketchybar --add item window_zoom center \
-  --set window_zoom "${window_zoom[@]}"
+sketchybar --add item window_zoom_float center \
+  --set window_zoom_float "${window_zoom[@]}"
 # sketchybar --set running_apps_updater script="plugins/front_app.sh"
 # 	--subscribe running_apps_updater front_app_switched
 

@@ -1,3 +1,4 @@
+# window navigation
 cmd + alt - left : yabai -m window --focus west --wrap
 cmd + alt - up : yabai -m window --focus north --wrap
 cmd + alt - down : yabai -m window --focus south --wrap
@@ -15,20 +16,23 @@ cmd + ctrl + shift - up : yabai -m window --swap north
 cmd + ctrl + shift - down : yabai -m window --swap south
 cmd + ctrl + shift - right : yabai -m window --swap east
 
+# window resize
 cmd + alt + ctrl - left : yabai -m window --ratio rel:-0.05
 cmd + alt + ctrl - right : yabai -m window --ratio rel:0.05
 cmd + alt + ctrl - up : yabai -m window --ratio rel:-0.1
 cmd + alt + ctrl - down : yabai -m window --ratio rel:0.1
 
-
+# window operations
 cmd + alt + shift - space : yabai -m space --rotate 90
 cmd + alt - space : yabai -m window --toggle split
 cmd + alt - return : yabai -m window --toggle zoom-fullscreen && sketchybar --trigger yabai_zoom_change
+cmd + alt - f : yabai -m window --toggle float; yabai -m window --grid 8:8:1:1:6:6; sketchybar --trigger yabai_zoom_change
 
-cmd + alt - t : yabai -m space --layout bsp; sketchybar --trigger yabai_layout_change
-cmd + alt - x : yabai -m space --layout stack; sketchybar --trigger yabai_layout_change
-cmd + alt - f : yabai -m window --toggle float; yabai -m window --grid 4:4:1:1:2:2
+# space layouts
+cmd + alt - t : ~/.config/skhd/space_layout_toggle.sh
 cmd + alt - d : yabai -m space --layout float; sketchybar --trigger yabai_layout_change
+# 0x18 => equal sign
+cmd + alt + ctrl - 0x18 : yabai -m space --balance
 
 # move windows to space
 ctrl - 1 : sketchybar --set /space\../ background.drawing=off --set space.1 background.drawing=on; yabai -m space --focus 1
