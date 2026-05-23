@@ -3,11 +3,17 @@ cmd + alt - up : yabai -m window --focus north --wrap
 cmd + alt - down : yabai -m window --focus south --wrap
 cmd + alt - right : yabai -m window --focus east --wrap
 
-cmd + alt + shift - left : yabai -m window --swap west
-cmd + alt + shift - up : yabai -m window --swap north
-cmd + alt + shift - down : yabai -m window --swap south
-cmd + alt + shift - right : yabai -m window --swap east
+# move window
+cmd + alt + shift - left : yabai -m window --warp west
+cmd + alt + shift - up : yabai -m window --warp north
+cmd + alt + shift - down : yabai -m window --warp south
+cmd + alt + shift - right : yabai -m window --warp east
 
+# swap window
+cmd + ctrl + shift - left : yabai -m window --swap west
+cmd + ctrl + shift - up : yabai -m window --swap north
+cmd + ctrl + shift - down : yabai -m window --swap south
+cmd + ctrl + shift - right : yabai -m window --swap east
 
 cmd + alt + ctrl - left : yabai -m window --resize left:-30:0
 cmd + alt + ctrl - right : yabai -m window --resize right:30:0
