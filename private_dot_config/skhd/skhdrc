@@ -34,7 +34,7 @@ cmd + alt - d : yabai -m space --layout float; sketchybar --trigger yabai_layout
 # 0x18 => equal sign
 cmd + alt + ctrl - 0x18 : yabai -m space --balance
 
-# move windows to space
+# switch space
 ctrl - 1 : sketchybar --set /space\../ background.drawing=off --set space.1 background.drawing=on; yabai -m space --focus 1
 ctrl - 2 : sketchybar --set /space\../ background.drawing=off --set space.2 background.drawing=on; yabai -m space --focus 2
 ctrl - 3 : sketchybar --set /space\../ background.drawing=off --set space.3 background.drawing=on; yabai -m space --focus 3
@@ -91,4 +91,9 @@ cmd + shift - p [
 ]
 cmd - p [
 	"finder"       : passthrough
+]
+
+# Disable skhd on total war
+.blacklist [
+	"Total War: PHARAOH DYNASTIES"
 ]
