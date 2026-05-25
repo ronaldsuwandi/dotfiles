@@ -16,8 +16,7 @@ app=(
   label.color=$COLOR
 )
 
-FOCUSED=$(yabai -m query --windows --space 2>/dev/null \
-  | jq -c 'map(select(.["has-focus"] == true)) | .[0]' 2>/dev/null)
+FOCUSED=$(yabai -m query --windows --window 2>/dev/null)
 ZOOMED=$(echo "$FOCUSED" | jq -r '.["has-fullscreen-zoom"]')
 FLOATED=$(echo "$FOCUSED" | jq -r '.["is-floating"]')
 

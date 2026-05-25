@@ -62,9 +62,9 @@ front_app_setting=(
 
 # apps
 sketchybar --add item running_apps_updater right \
-  --set running_apps_updater script="plugins/list_apps.sh" \
+  --set running_apps_updater script="$PLUGIN_DIR/list_apps.sh" \
   --subscribe running_apps_updater space_change \
-  --subscribe running_apps_updater space_windows_change \
+  --subscribe running_apps_updater space_windows_change
 
 
 # front app
