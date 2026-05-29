@@ -1,0 +1,15 @@
+{{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $signingKey := promptStringOnce . "signingKey" "Public signing key path" -}}
+
+[data]
+    email = {{ $email | quote }}
+    signingKey = {{ $signingKey | quote }}
+
+[edit]
+{{- if eq .chezmoi.os "windows" }}
+    command = "code"
+    args = ["-w"]
+{{- else }}
+    command = "subl"
+    args = ["-n", "-w"]
+{{- end }}
