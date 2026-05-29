@@ -6,6 +6,7 @@
                 "rules": [
                     {
                         "description": "Use capslock to enter mouse keys mode for Mouse Keys Mode v4",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -67,6 +68,7 @@
                     },
                     {
                         "description": "Optional keys (arrow, shift, ctrl, option) as alternative for Mouse Keys Mode v4",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -326,6 +328,7 @@
                     },
                     {
                         "description": "Mouse Keys Mode v4 (tweaked from @tekezo rev 3)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
