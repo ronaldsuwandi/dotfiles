@@ -1,0 +1,4 @@
+[tools]
+go = "latest"
+java = "temurin"
+node = "latest"
