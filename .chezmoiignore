@@ -1,6 +1,7 @@
 README.md
 .zshrc_local
 .claude/plugins
+render_macos_output.sh
 
 {{- if eq .chezmoi.os "darwin" }}
 .glzr
