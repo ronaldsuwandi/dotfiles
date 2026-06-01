@@ -1,7 +1,7 @@
 {
   "statusLine": {
     "type": "command",
-    "command": "sh /Users/ronald/.claude/statusline-command.sh"
+    "command": "sh $HOME/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
     "jdtls-lsp@claude-plugins-official": true,

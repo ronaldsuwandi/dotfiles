@@ -141,17 +141,17 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/graalvm-community-openjdk-21/
 export PATH=$HOME/.docker/bin:$JAVA_HOME/bin:./node_modules/bin:$GOPATH/bin:$PATH
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/ronald/.rd/bin:$PATH"
+export PATH="$HOME/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 # Created by `pipx` on 2024-05-24 02:33:00
-export PATH="$PATH:/Users/ronald/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # For any custom local only (api credentials) use a separate .zshrc_local file
 [[ -f ~/.zshrc_local ]] && source ~/.zshrc_local
 
 export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
-export DOCKER_HOST=unix:///Users/ronald/.colima/docker.sock
+export DOCKER_HOST=unix://$HOME/.colima/docker.sock
 export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 
 eval "$(mise activate zsh)"

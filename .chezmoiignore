@@ -1,5 +1,6 @@
 README.md
 .zshrc_local
+.claude/plugins
 
 {{- if eq .chezmoi.os "darwin" }}
 .glzr
