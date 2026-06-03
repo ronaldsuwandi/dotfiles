@@ -20,7 +20,7 @@ trap cleanup EXIT
 # Only run on main
 CURRENT_BRANCH="$(git -C "$REPO_DIR" rev-parse --abbrev-ref HEAD)"
 if [ "$CURRENT_BRANCH" != "main" ]; then
-    echo "Not on main branch, skipping render."
+    echo ">>> Not on main branch, skipping render."
     exit 0
 fi
 
@@ -32,7 +32,7 @@ cat > "$DUMMY_CONFIG" << 'EOF'
     signingKey = "example-signing-key"
 EOF
 
-echo "Rendering dotfiles from main@${SOURCE_SHA}..."
+echo ">>> Rendering dotfiles from main@${SOURCE_SHA}..."
 chezmoi apply \
     --source "$REPO_DIR" \
     --destination "$TEMP_DIR" \
@@ -64,11 +64,11 @@ rsync -a "$TEMP_DIR/" "$REPO_DIR/"
 
 git -C "$REPO_DIR" add -A
 if git -C "$REPO_DIR" diff --staged --quiet; then
-    echo "No changes in rendered output, nothing to push."
+    echo ">>> No changes in rendered output, nothing to push."
 else
     git -C "$REPO_DIR" commit -m "Rendered from main@${SOURCE_SHA}"
     git -C "$REPO_DIR" push origin "$RENDERED_BRANCH"
-    echo "Pushed rendered output to ${RENDERED_BRANCH}."
+    echo ">>> Pushed rendered output to ${RENDERED_BRANCH}."
 fi
 
 git -C "$REPO_DIR" checkout main
@@ -77,4 +77,4 @@ if [ "$STASHED" = true ]; then
     git -C "$REPO_DIR" stash pop >/dev/null
 fi
 
-echo "Done."
+echo ">>> Done."

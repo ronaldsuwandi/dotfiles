@@ -4,6 +4,6 @@
 unset GIT_DIR
 unset GIT_INDEX_FILE
 if ! "$(git rev-parse --show-toplevel)/render_macos_output.sh"; then
-    echo "Warning: render to 'rendered' branch failed. Run render_macos_output.sh manually."
+    echo ">>> Warning: render to 'rendered' branch failed. Run render_macos_output.sh manually."
 fi
 exit 0
