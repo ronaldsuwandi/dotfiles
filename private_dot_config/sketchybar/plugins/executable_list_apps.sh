@@ -9,7 +9,7 @@ sleep 0.1
 source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 
 # Query windows in the current space
-WINDOWS=$(yabai -m query --windows --space | jq -c 'map(select(.["is-visible"] == true)) | sort_by(.app|ascii_downcase)')
+WINDOWS=$(yabai -m query --windows --space | jq -c 'map(select(.["is-visible"] == true and .subrole == "AXStandardWindow")) | sort_by(.app|ascii_downcase)')
 WINDOWS_COUNT=$(echo "$WINDOWS" | jq -c 'length')
 
 COLOR="$WHITE"
