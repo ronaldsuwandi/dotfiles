@@ -46,6 +46,10 @@ sketchybar --add item space_layout left \
   --subscribe space_layout space_change \
   --subscribe space_layout yabai_layout_change
 
+# to focus on first window if no window is focused
+sketchybar --add item space_focus left \
+  --set space_focus script="$PLUGIN_DIR/focus_window.sh" \
+  --subscribe space_focus space_change
 
 # frontapp
 front_app_setting=(
