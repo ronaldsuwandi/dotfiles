@@ -10,7 +10,6 @@ source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 
 # Query windows in the current space
 WINDOWS=$(yabai -m query --windows --space | jq -c 'map(select(.["is-visible"] == true and .subrole == "AXStandardWindow")) | sort_by(.app|ascii_downcase)')
-WINDOWS_COUNT=$(echo "$WINDOWS" | jq -c 'length')
 
 COLOR="$WHITE"
 app=(
@@ -28,19 +27,7 @@ app=(
   drawing=on
 )
 
-apps=""
-while read -r window; do
-  id=$(echo "$window" | jq -r '.id')
-  app_name=$(echo "$window" | jq -r '.app')
-  if [[ -z "$apps" ]]; then
-    apps="$app_name"
-  else
-    apps+=" | $app_name"
-  fi
-done <<< "$(echo "$WINDOWS" | jq -c 'unique_by(.pid) | map({id: .id, app: .app}) | .[]')"
-
-# Remove trailing pipe symbol
-apps="${apps%|}"
+apps=$(echo "$WINDOWS" | jq -r '[unique_by(.pid) | .[].app] | join(" | ")')
 
 # Clear if no visible apps
 if [[ -z "$apps" ]]; then
@@ -49,4 +36,4 @@ else
   sketchybar --set running_apps_updater "${app[@]}" label="$apps" label.drawing=on background.drawing=on
 fi
 
-sketchybar --set windows label="${WINDOWS_COUNT} 󰖲"
+sketchybar --set windows label="$(echo "$WINDOWS" | jq 'length') 󰖲"

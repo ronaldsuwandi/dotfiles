@@ -48,7 +48,6 @@ sketchybar --add item space_layout left \
 
 
 # frontapp
-COLOR="$WHITE"
 front_app_setting=(
   script="$PLUGIN_DIR/front_app.sh"
 	icon.drawing=off
@@ -71,7 +70,8 @@ sketchybar --add item running_apps_updater right \
 sketchybar --add item front_app center \
 	--set front_app "${front_app_setting[@]}" \
 	--subscribe front_app front_app_switched \
-	--subscribe front_app yabai_zoom_change
+	--subscribe front_app yabai_zoom_change \
+	--subscribe front_app space_change
 
 window_zoom=(
   label="󰊓"
