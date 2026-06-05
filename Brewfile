@@ -3,7 +3,7 @@
 tap "felixkratz/formulae"
 tap "eddieantonio/eddieantonio"
 tap "graalvm/tap"
-tap "koekeishiya/formulae"
+tap "asmvik/formulae"
 tap "streetpea/streetpea"
 
 # Brew apps
@@ -26,7 +26,7 @@ brew "mosh"
 brew "pipx"
 brew "rustup"
 # shkd to launch app using shortcut keys
-brew "koekeishiya/formulae/skhd"
+brew "asmvik/formulae/skhd"
 brew "tmux"
 # trivy is for vulnerability scanner
 brew "trivy"
@@ -34,7 +34,7 @@ brew "trivy"
 brew "sloth"
 brew "uv" # pip alternative for python written in rust
 # yabai only used to help listing window within space
-brew "koekeishiya/formulae/yabai"
+brew "asmvik/formulae/yabai"
 # yt-dlp to download youtube or videos (youtube-dl no longer maintained)
 brew "yt-dlp"
 
