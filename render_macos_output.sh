@@ -67,7 +67,7 @@ if git -C "$REPO_DIR" diff --staged --quiet; then
     echo ">>> No changes in rendered output, nothing to push."
 else
     git -C "$REPO_DIR" commit -m "Rendered from main@${SOURCE_SHA}"
-    git -C "$REPO_DIR" push origin "$RENDERED_BRANCH"
+    git -C "$REPO_DIR" push --force origin "$RENDERED_BRANCH"
     echo ">>> Pushed rendered output to ${RENDERED_BRANCH}."
 fi
 
