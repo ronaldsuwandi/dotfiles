@@ -30,8 +30,6 @@ brew "asmvik/formulae/skhd"
 brew "tmux"
 # trivy is for vulnerability scanner
 brew "trivy"
-# sloth to show list of opened/locked files
-brew "sloth"
 brew "uv" # pip alternative for python written in rust
 # yabai only used to help listing window within space
 brew "asmvik/formulae/yabai"
@@ -80,6 +78,8 @@ cask "pearcleaner"
 # cask "postman"
 # rectangle for window management. Free version of Multitouch
 # cask "rectangle"
+# sloth to show list of opened/locked files
+cask "sloth"
 cask "spotify"
 # chiaki-ng to play PS5
 cask "streetpea/streetpea/chiaki-ng"
