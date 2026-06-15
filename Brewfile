@@ -2,7 +2,6 @@
 ## for borders
 tap "felixkratz/formulae", trusted: true
 tap "eddieantonio/eddieantonio", trusted: true
-tap "graalvm/tap", trusted: true
 tap "asmvik/formulae", trusted: true
 tap "streetpea/streetpea", trusted: true
 
