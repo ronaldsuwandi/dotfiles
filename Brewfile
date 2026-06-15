@@ -1,10 +1,10 @@
 # Taps
 ## for borders
-tap "felixkratz/formulae"
-tap "eddieantonio/eddieantonio"
-tap "graalvm/tap"
-tap "asmvik/formulae"
-tap "streetpea/streetpea"
+tap "felixkratz/formulae", trusted: true
+tap "eddieantonio/eddieantonio", trusted: true
+tap "graalvm/tap", trusted: true
+tap "asmvik/formulae", trusted: true
+tap "streetpea/streetpea", trusted: true
 
 # Brew apps
 brew "felixkratz/formulae/borders"
@@ -52,6 +52,8 @@ cask "contexts"
 # detectx-swift to find and clean up malware: https://sqwarq.wordpress.com/detectx/
 cask "detectx-swift"
 cask "devutils"
+# gram is hard fork of Zed (no AI, local only)
+cask "gram"
 # ice (bartender alternative)
 # cask "jordanbaird-ice"
 cask "iina"
@@ -92,7 +94,7 @@ cask "visualvm"
 cask "wireshark-app"
 # yaak is postman/bruno alternative
 cask "yaak"
-cask "zed"
+# cask "zed"
 cask "zoom"
 
 # App Store apps
