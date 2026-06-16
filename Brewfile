@@ -1,10 +1,9 @@
 # Taps
 ## for borders
-tap "felixkratz/formulae"
-tap "eddieantonio/eddieantonio"
-tap "graalvm/tap"
-tap "asmvik/formulae"
-tap "streetpea/streetpea"
+tap "felixkratz/formulae", trusted: true
+tap "eddieantonio/eddieantonio", trusted: true
+tap "asmvik/formulae", trusted: true
+tap "streetpea/streetpea", trusted: true
 
 # Brew apps
 brew "felixkratz/formulae/borders"
@@ -30,8 +29,6 @@ brew "asmvik/formulae/skhd"
 brew "tmux"
 # trivy is for vulnerability scanner
 brew "trivy"
-# sloth to show list of opened/locked files
-brew "sloth"
 brew "uv" # pip alternative for python written in rust
 # yabai only used to help listing window within space
 brew "asmvik/formulae/yabai"
@@ -52,6 +49,8 @@ cask "contexts"
 # detectx-swift to find and clean up malware: https://sqwarq.wordpress.com/detectx/
 cask "detectx-swift"
 cask "devutils"
+# gram is hard fork of Zed (no AI, local only)
+cask "gram"
 # ice (bartender alternative)
 # cask "jordanbaird-ice"
 cask "iina"
@@ -78,6 +77,8 @@ cask "pearcleaner"
 # cask "postman"
 # rectangle for window management. Free version of Multitouch
 # cask "rectangle"
+# sloth to show list of opened/locked files
+cask "sloth"
 cask "spotify"
 # chiaki-ng to play PS5
 cask "streetpea/streetpea/chiaki-ng"
@@ -92,7 +93,7 @@ cask "visualvm"
 cask "wireshark-app"
 # yaak is postman/bruno alternative
 cask "yaak"
-cask "zed"
+# cask "zed"
 cask "zoom"
 
 # App Store apps
