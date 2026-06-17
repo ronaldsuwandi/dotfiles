@@ -1,0 +1,19 @@
+// Gram keymap
+//
+// For information on binding keys, see the Gram
+// documentation: gram://docs/key-bindings
+//
+// To see the default key bindings run `gram: open default keymap`
+// from the command palette.
+[
+  {
+    "bindings": {
+      "ctrl-tab": "pane::ActivateNextItem",
+    },
+  },
+  {
+    "bindings": {
+      "ctrl-shift-tab": "pane::ActivatePreviousItem",
+    },
+  },
+]
