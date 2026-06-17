@@ -4,6 +4,45 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Sleep escape key fix",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.loginwindow$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to_after_key_up": [
+                                    {
+                                        "key_code": "escape",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Use capslock to enter mouse keys mode for Mouse Keys Mode v4",
                         "enabled": false,
                         "manipulators": [
