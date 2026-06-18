@@ -1,7 +1,7 @@
 # Taps
 ## for borders
 tap "felixkratz/formulae", trusted: true
-tap "eddieantonio/eddieantonio", trusted: true
+tap "danielgatis/imgcat", trusted: true
 tap "asmvik/formulae", trusted: true
 tap "streetpea/streetpea", trusted: true
 
@@ -17,7 +17,7 @@ brew "figlet"
 brew "git"
 brew "git-lfs"
 # imgcat
-brew "eddieantonio/eddieantonio/imgcat"
+brew "danielgatis/imgcat/imgcat"
 brew "kcat"
 brew "mise"
 brew "mosh"
