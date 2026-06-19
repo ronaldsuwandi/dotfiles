@@ -22,11 +22,17 @@ cmd + alt + ctrl - right : yabai -m window --ratio rel:0.05
 cmd + alt + ctrl - up : yabai -m window --ratio rel:-0.1
 cmd + alt + ctrl - down : yabai -m window --ratio rel:0.1
 
+# float snap (1/3 width, float-height)
+# 0x21 => [
+# 0x1E => ]
+cmd + alt + shift - 0x21 : ~/.config/skhd/float_snap.sh left
+cmd + alt + shift - 0x1E : ~/.config/skhd/float_snap.sh right
+
 # window operations
 cmd + alt + shift - space : yabai -m space --rotate 90
 cmd + alt - space : yabai -m window --toggle split
 cmd + alt - return : yabai -m window --toggle zoom-fullscreen && sketchybar --trigger yabai_zoom_change
-cmd + alt - f : yabai -m window --toggle float; yabai -m window --grid 8:8:1:1:6:6; sketchybar --trigger yabai_zoom_change
+cmd + alt - f : yabai -m window --toggle float; yabai -m window --grid 8:8:1:1:6:6 2>/dev/null; sketchybar --trigger yabai_zoom_change
 
 # space layouts
 cmd + alt - t : ~/.config/skhd/space_layout_toggle.sh
@@ -75,7 +81,7 @@ ctrl + shift - t : /Applications/kitty.app/Contents/MacOS/kitty --single-instanc
 ctrl + shift - n : open -a "Nimble Commander.app"
 
 # Google Chrome
-ctrl + shift - c : open -na "Google Chrome" --args --new-window 
+ctrl + shift - c : open -na "Google Chrome" --args --new-window
 
 # Disable mail shortcut in Safari
 cmd - i [
