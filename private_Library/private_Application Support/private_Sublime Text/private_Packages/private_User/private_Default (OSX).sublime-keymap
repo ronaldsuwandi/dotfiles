@@ -1,0 +1,165 @@
+[
+    // Eclipse
+    // { "keys": ["super+d"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
+    // General
+    {
+        "keys": [
+            "ctrl+tab"
+        ],
+        "command": "next_view"
+    },
+    {
+        "keys": [
+            "ctrl+shift+tab"
+        ],
+        "command": "prev_view"
+    },
+    {
+        "keys": [
+            "ctrl+pagedown"
+        ],
+        "command": "next_view"
+    },
+    {
+        "keys": [
+            "ctrl+pageup"
+        ],
+        "command": "prev_view"
+    },
+    {
+        "keys": [
+            "ctrl+super+e"
+        ],
+        "command": "sublimelinter_goto_error",
+        "args": {
+            "direction": "next"
+        }
+    },
+    {
+        "keys": [
+            "ctrl+alt+up"
+        ],
+        "command": "select_lines",
+        "args": {
+            "forward": false
+        }
+    },
+    {
+        "keys": [
+            "ctrl+alt+down"
+        ],
+        "command": "select_lines",
+        "args": {
+            "forward": true
+        }
+    },
+    // Paredit
+    {
+        "keys": [
+            "super+shift+k"
+        ],
+        "command": "paredit_forward_slurp_sexp",
+        "context": [
+            {
+                "key": "should_paredit"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "super+shift+j"
+        ],
+        "command": "paredit_forward_barf_sexp",
+        "context": [
+            {
+                "key": "should_paredit"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+j"
+        ],
+        "command": "paredit_backward_slurp_sexp",
+        "context": [
+            {
+                "key": "should_paredit"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+k"
+        ],
+        "command": "paredit_backward_barf_sexp",
+        "context": [
+            {
+                "key": "should_paredit"
+            }
+        ]
+    },
+    // LSP
+    // Format File (match IntelliJ)
+    {
+        "command": "lsp_format_document",
+        "keys": [
+            "primary+alt+l"
+        ],
+        "context": [
+            {
+                "key": "lsp.session_with_capability",
+                "operator": "equal",
+                "operand": "documentFormattingProvider | documentRangeFormattingProvider"
+            }
+        ]
+    },
+    // Rename (match IntelliJ)
+    {
+        "command": "lsp_symbol_rename",
+        "keys": [
+            "shift+f6"
+        ],
+        "context": [
+            {
+                "key": "lsp.session_with_capability",
+                "operator": "equal",
+                "operand": "renameProvider"
+            }
+        ]
+    },
+    // Document Symbols (a replacement for ST's "Goto Symbol")
+    {
+        "command": "lsp_document_symbols",
+        "keys": [
+            "primary+r"
+        ],
+        "context": [
+            {
+                "key": "lsp.session_with_capability",
+                "operator": "equal",
+                "operand": "documentSymbolProvider"
+            }
+        ]
+    },
+    // Workspace Symbols (a replacement for ST's "Goto Symbol In Project")
+    {
+        "command": "lsp_workspace_symbols",
+        "keys": [
+            "primary+shift+r"
+        ],
+        "context": [
+            {
+                "key": "lsp.session_with_capability",
+                "operator": "equal",
+                "operand": "workspaceSymbolProvider"
+            }
+        ]
+    },
+
+    // Focus/layout/group
+    { "keys": ["ctrl+shift+left"], "command": "focus_neighboring_group", "args": {"forward": false} },
+    { "keys": ["ctrl+shift+right"], "command": "focus_neighboring_group" },
+    { "keys": ["ctrl+alt+shift+left"], "command": "move_to_neighboring_group", "args": {"forward": false} },
+    { "keys": ["ctrl+alt+shift+right"], "command": "move_to_neighboring_group" },
+
+]

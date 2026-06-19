@@ -1,0 +1,17 @@
+// Settings in here override those in "LSP/LSP.sublime-settings"
+{
+    "show_references_in_quick_panel": true,
+    "clients": {
+        "gopls": {
+            "enabled": true,
+            "command": [
+                "gopls"
+            ],
+            "selector": "source.go",
+            "settings": {},
+            "initializationOptions": {
+                "experimentalWorkspaceModule": false
+            },
+        }
+    }
+}

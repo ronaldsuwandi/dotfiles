@@ -1,0 +1,67 @@
+{
+	"always_show_minimap_viewport": true,
+	"binary_file_patterns":
+	[
+		"*.dds",
+		"*.eot",
+		"*.gif",
+		"*.ico",
+		"*.jar",
+		"*.jpeg",
+		"*.jpg",
+		"*.pdf",
+		"*.png",
+		"*.swf",
+		"*.tga",
+		"*.ttf",
+		"*.zip",
+		"target/**"
+	],
+	"bold_folder_labels": true,
+	"caret_style": "phase",
+	"close_sidebar_if_opened": false,
+	"color_scheme": "Rosé Pine.sublime-color-scheme",
+	"detect_slow_plugins": true,
+	"dictionary": "Packages/Language - English/en_GB.dic",
+	"draw_minimap_border": true,
+	"ensure_newline_at_eof_on_save": true,
+	"fade_fold_buttons": false,
+	"font_face": "DejaVu Sans Mono",
+	"translate_tabs_to_spaces": false,
+	"font_options":
+	[
+		"gray_antialias",
+		"subpixel_antialias"
+	],
+	"font_size": 16,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"index_exclude_patterns":
+	[
+		"*.log",
+		"build/*",
+		"CHANGES"
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"rulers":
+	[
+		120
+	],
+	"shift_tab_unindent": true,
+	"spell_check": false,
+	"theme": "Rosé Pine.sublime-theme",
+	"word_wrap": false,
+	"update_check": false,
+	"index_files": false,
+	"preview_on_click": "true",
+}
