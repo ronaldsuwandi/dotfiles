@@ -1,6 +1,6 @@
 # dotfiles (macOS)
 
-Rendered dotfiles for macOS, auto-generated from the [`main`](../../tree/main) branch which uses [chezmoi](https://chezmoi.io) for templating and management.
+Rendered dotfiles for macOS, auto-generated from the [`main`](https://github.com/ronaldsuwandi/dotfiles) branch which uses [chezmoi](https://chezmoi.io) for templating and management. Browse the [rendered files](https://github.com/ronaldsuwandi/dotfiles/tree/rendered).
 
 > Do not edit this branch directly — changes belong on `main`.
 
