@@ -56,9 +56,10 @@ fi
 
 git -C "$REPO_DIR" checkout "$RENDERED_BRANCH"
 
-# Clear all tracked files, then restore README.md
+# Clear all tracked files, then restore files that live only on this branch
 git -C "$REPO_DIR" rm -rf --ignore-unmatch . >/dev/null
 git -C "$REPO_DIR" checkout HEAD -- README.md
+git -C "$REPO_DIR" checkout HEAD -- _config.yml
 
 rsync -a "$TEMP_DIR/" "$REPO_DIR/"
 
