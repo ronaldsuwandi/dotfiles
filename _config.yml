@@ -1,3 +1,4 @@
+remote_theme: pages-themes/minimal@v0.2.0
 theme: jekyll-theme-minimal
 title: dotfiles
 description: Rendered dotfiles for macOS. Source managed with chezmoi on the main branch.
