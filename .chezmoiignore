@@ -3,6 +3,7 @@
 .zshrc_local
 Library/Application Support/Sublime Text/Packages/User/*.cache
 README.md
+_config.yml
 render_macos_output.sh
 
 {{- if eq .chezmoi.os "darwin" }}
