@@ -1,4 +1,25 @@
 // SublimeLinter Settings - User
 {
-	// "debug": true,
+	"linters": {
+	    "annotations": {
+	        "infos": ["FYI"],
+	        "warnings": ["TODO", "HACK"],
+	        "errors": ["FIXME", "XXX"],
+		    "styles": [
+		        {
+		            "scope": "region.greenish",
+		            "mark_style": "stippled_underline",
+		            "types": ["info"],
+		        },
+		        {
+		            "mark_style": "solid_underline",
+		            "types": ["warning"]
+		        },
+		        {
+		        	"mark_style": "squiggly_underline",
+		        	"types": ["error"]
+		        }
+		    ],	
+	    }
+	}
 }

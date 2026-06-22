@@ -2,5 +2,22 @@
 	RainbowBrackets user settings in here override the default
 */
 {
-	"coloring": true
+    "default_config": {
+		"coloring": true,
+		"enabled": true,
+        "ignored_scopes": [
+            "comment",
+            "string",
+            "constant"
+        ],
+        "color.error": "red",
+        "color.cycle": [
+            "redish",
+            "yellowish",
+            "greenish",
+            "bluish",
+            "purplish",
+            "cyanish",
+        ],
+	}	
 }
