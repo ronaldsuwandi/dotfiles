@@ -1,5 +1,4 @@
 {
-	"bootstrapped": true,
 	"installed_packages":
 	[
 		"A File Icon",
@@ -20,7 +19,6 @@
 		"LSP-tailwindcss",
 		"LSP-terraform",
 		"LSP-yaml",
-		"MarkdownLivePreview",
 		"Package Control",
 		"PGN Support",
 		"Protobuf Syntax Hightlighting",
