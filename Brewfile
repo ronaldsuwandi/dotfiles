@@ -20,7 +20,6 @@ brew "git-lfs"
 brew "danielgatis/imgcat/imgcat"
 brew "kcat"
 brew "mise"
-brew "mosh"
 # pipx to run python app in isolated env
 brew "pipx"
 brew "rustup"
@@ -66,8 +65,8 @@ cask "licecap"
 # lunar is for managing multiple displays
 # cask "lunar"
 cask "menumeters"
-# Multitouch overlaps with Rectangle, paid and better version
-cask "multitouch"
+# Multitouch overlaps with Rectangle, paid and better version - redundant with yabai
+# cask "multitouch"
 cask "nimble-commander"
 cask "obsidian"
 # omnidisksweeper for cleaning up storage
