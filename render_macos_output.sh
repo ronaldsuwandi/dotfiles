@@ -55,6 +55,8 @@ if ! git -C "$REPO_DIR" diff --quiet || \
 fi
 
 git -C "$REPO_DIR" checkout "$RENDERED_BRANCH"
+git -C "$REPO_DIR" fetch origin "$RENDERED_BRANCH" && \
+    git -C "$REPO_DIR" reset --hard "origin/$RENDERED_BRANCH" || true
 
 # Clear all tracked files, then restore files that live only on this branch
 git -C "$REPO_DIR" rm -rf --ignore-unmatch . >/dev/null

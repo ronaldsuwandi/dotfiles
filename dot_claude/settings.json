@@ -17,5 +17,6 @@
         "repo": "DietrichGebert/ponytail"
       }
     }
-  }
+  },
+  "tui": "fullscreen"
 }
