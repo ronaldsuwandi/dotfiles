@@ -8,13 +8,20 @@
     "typescript-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
-    "ponytail@ponytail": true
+    "ponytail@ponytail": true,
+    "duckdb-skills@duckdb-skills": true
   },
   "extraKnownMarketplaces": {
     "ponytail": {
       "source": {
         "source": "github",
         "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "duckdb-skills": {
+      "source": {
+        "source": "github",
+        "repo": "duckdb/duckdb-skills"
       }
     }
   },
