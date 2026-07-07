@@ -28,3 +28,4 @@ yabai -m rule --add app="Google Chrome" title="Filtering log" manage=off grid=8:
 yabai -m rule --add app="Google Chrome" title="DevTools - *" manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="AdGuard" manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="Safari" title="Web Inspector — *" manage=off grid=8:8:1:1:6:6
+yabai -m rule --add app="iPhone Mirroring" manage=off
