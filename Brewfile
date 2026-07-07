@@ -121,6 +121,7 @@ mas "Telegram", id: 747648890
 mas "WhatsApp", id: 310633997
 
 ## Safari extensions
+mas "AdGuard: Ad Blocker for Safari", id: 1440147259
 mas "1Password for Safari", id: 1569813296
 mas "JSONPeep", id: 1458969831
 mas "OneTab", id: 1540160809
