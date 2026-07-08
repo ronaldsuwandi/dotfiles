@@ -1,44 +1,74 @@
+#    # window navigation
+#    cmd + alt - left : yabai -m window --focus west --wrap
+#    cmd + alt - up : yabai -m window --focus north --wrap
+#    cmd + alt - down : yabai -m window --focus south --wrap
+#    cmd + alt - right : yabai -m window --focus east --wrap
+#    
+#    # move window
+#    cmd + alt + shift - left : yabai -m window --warp west
+#    cmd + alt + shift - up : yabai -m window --warp north
+#    cmd + alt + shift - down : yabai -m window --warp south
+#    cmd + alt + shift - right : yabai -m window --warp east
+#    
+#    # swap window
+#    cmd + ctrl + shift - left : yabai -m window --swap west
+#    cmd + ctrl + shift - up : yabai -m window --swap north
+#    cmd + ctrl + shift - down : yabai -m window --swap south
+#    cmd + ctrl + shift - right : yabai -m window --swap east
+#    
+#    # window resize
+#    cmd + alt + ctrl - left : yabai -m window --ratio rel:-0.05
+#    cmd + alt + ctrl - right : yabai -m window --ratio rel:0.05
+#    cmd + alt + ctrl - up : yabai -m window --ratio rel:-0.1
+#    cmd + alt + ctrl - down : yabai -m window --ratio rel:0.1
+#    
+#    # float snap (1/3 width, float-height)
+#    # 0x21 => [
+#    # 0x1E => ]
+#    cmd + alt + shift - 0x21 : ~/.config/skhd/float_snap.sh left
+#    cmd + alt + shift - 0x1E : ~/.config/skhd/float_snap.sh right
+#    
+#    # window operations
+#    cmd + alt + shift - space : yabai -m space --rotate 90
+#    cmd + alt - space : yabai -m window --toggle split
+#    cmd + alt - return : yabai -m window --toggle zoom-fullscreen && sketchybar --trigger yabai_zoom_change
+#    cmd + alt - f : yabai -m window --toggle float; yabai -m window --grid 8:8:1:1:6:6 2>/dev/null; sketchybar --trigger yabai_zoom_change
+#    
+#    # space layouts
+#    cmd + alt - t : ~/.config/skhd/space_layout_toggle.sh
+#    cmd + alt - d : yabai -m space --layout float; sketchybar --trigger yabai_layout_change
+#    # 0x18 => equal sign
+#    cmd + alt + ctrl - 0x18 : yabai -m space --balance
+
 # window navigation
-cmd + alt - left : yabai -m window --focus west --wrap
-cmd + alt - up : yabai -m window --focus north --wrap
-cmd + alt - down : yabai -m window --focus south --wrap
-cmd + alt - right : yabai -m window --focus east --wrap
+cmd + alt - left : paneru send-cmd window focus west
+cmd + alt - up : paneru send-cmd window focus north
+cmd + alt - down : paneru send-cmd window focus south
+cmd + alt - right : paneru send-cmd window focus east
 
 # move window
-cmd + alt + shift - left : yabai -m window --warp west
-cmd + alt + shift - up : yabai -m window --warp north
-cmd + alt + shift - down : yabai -m window --warp south
-cmd + alt + shift - right : yabai -m window --warp east
+cmd + alt + shift - left : paneru send-cmd window swap west
+cmd + alt + shift - up : paneru send-cmd window swap north
+cmd + alt + shift - down : paneru send-cmd window swap south
+cmd + alt + shift - right : paneru send-cmd window swap east
 
-# swap window
-cmd + ctrl + shift - left : yabai -m window --swap west
-cmd + ctrl + shift - up : yabai -m window --swap north
-cmd + ctrl + shift - down : yabai -m window --swap south
-cmd + ctrl + shift - right : yabai -m window --swap east
+# move window to start/end of strip (was: yabai swap)
+cmd + ctrl + shift - left : paneru send-cmd window swap first
+cmd + ctrl + shift - right : paneru send-cmd window swap last
 
-# window resize
-cmd + alt + ctrl - left : yabai -m window --ratio rel:-0.05
-cmd + alt + ctrl - right : yabai -m window --ratio rel:0.05
-cmd + alt + ctrl - up : yabai -m window --ratio rel:-0.1
-cmd + alt + ctrl - down : yabai -m window --ratio rel:0.1
-
-# float snap (1/3 width, float-height)
-# 0x21 => [
-# 0x1E => ]
-cmd + alt + shift - 0x21 : ~/.config/skhd/float_snap.sh left
-cmd + alt + shift - 0x1E : ~/.config/skhd/float_snap.sh right
+# window resize (cycles preset_column_widths; no vertical resize in paneru)
+cmd + alt + ctrl - left : paneru send-cmd window shrink
+cmd + alt + ctrl - right : paneru send-cmd window grow
 
 # window operations
-cmd + alt + shift - space : yabai -m space --rotate 90
-cmd + alt - space : yabai -m window --toggle split
-cmd + alt - return : yabai -m window --toggle zoom-fullscreen && sketchybar --trigger yabai_zoom_change
-cmd + alt - f : yabai -m window --toggle float; yabai -m window --grid 8:8:1:1:6:6 2>/dev/null; sketchybar --trigger yabai_zoom_change
+cmd + alt + shift - space : paneru send-cmd window unstack
+cmd + alt - space : paneru send-cmd window stack
+cmd + alt - return : paneru send-cmd window fullwidth
+cmd + alt - f : paneru send-cmd window manage
+cmd + alt - c : paneru send-cmd window center
 
-# space layouts
-cmd + alt - t : ~/.config/skhd/space_layout_toggle.sh
-cmd + alt - d : yabai -m space --layout float; sketchybar --trigger yabai_layout_change
 # 0x18 => equal sign
-cmd + alt + ctrl - 0x18 : yabai -m space --balance
+cmd + alt + ctrl - 0x18 : paneru send-cmd window equalize
 
 # switch space
 ctrl - 1 : sketchybar --set /space\../ background.drawing=off --set space.1 background.drawing=on; yabai -m space --focus 1
@@ -53,16 +83,16 @@ ctrl - 9 : sketchybar --set /space\../ background.drawing=off --set space.9 back
 ctrl - 0 : sketchybar --set /space\../ background.drawing=off --set space.10 background.drawing=on; yabai -m space --focus 10
 
 # move windows to space
-ctrl + shift - 1 : sketchybar --set /space\../ background.drawing=off --set space.1 background.drawing=on; yabai -m window --space 1
-ctrl + shift - 2 : sketchybar --set /space\../ background.drawing=off --set space.2 background.drawing=on; yabai -m window --space 2
-ctrl + shift - 3 : sketchybar --set /space\../ background.drawing=off --set space.3 background.drawing=on; yabai -m window --space 3
-ctrl + shift - 4 : sketchybar --set /space\../ background.drawing=off --set space.4 background.drawing=on; yabai -m window --space 4
-ctrl + shift - 5 : sketchybar --set /space\../ background.drawing=off --set space.5 background.drawing=on; yabai -m window --space 5
-ctrl + shift - 6 : sketchybar --set /space\../ background.drawing=off --set space.6 background.drawing=on; yabai -m window --space 6
-ctrl + shift - 7 : sketchybar --set /space\../ background.drawing=off --set space.7 background.drawing=on; yabai -m window --space 7
-ctrl + shift - 8 : sketchybar --set /space\../ background.drawing=off --set space.8 background.drawing=on; yabai -m window --space 8
-ctrl + shift - 9 : sketchybar --set /space\../ background.drawing=off --set space.9 background.drawing=on; yabai -m window --space 9
-ctrl + shift - 0 : sketchybar --set /space\../ background.drawing=off --set space.10 background.drawing=on; yabai -m window --space 10
+ctrl + shift - 1 : yabai -m window --space 1
+ctrl + shift - 2 : yabai -m window --space 2
+ctrl + shift - 3 : yabai -m window --space 3
+ctrl + shift - 4 : yabai -m window --space 4
+ctrl + shift - 5 : yabai -m window --space 5
+ctrl + shift - 6 : yabai -m window --space 6
+ctrl + shift - 7 : yabai -m window --space 7
+ctrl + shift - 8 : yabai -m window --space 8
+ctrl + shift - 9 : yabai -m window --space 9
+ctrl + shift - 0 : yabai -m window --space 10
 
 # app shortcuts
 # Finder

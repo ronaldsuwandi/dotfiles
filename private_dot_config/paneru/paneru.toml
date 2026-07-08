@@ -1,0 +1,151 @@
+[options]
+focus_follows_mouse = false
+mouse_follows_focus = false
+window_resize_cycle = false
+preset_column_widths = [0.25, 0.33, 0.5, 0.66, 0.75, 1.00]
+
+[swipe.gesture]
+vertical = false
+
+[bindings]
+# key bindings live in skhdrc via `paneru send-cmd` — single place to blacklist for games
+# only what send-cmd can't reach stays here:
+window_focus_unmanaged = "cmd + alt - u"           # focus a floating window
+window_focus_managed   = "cmd + alt + shift - u"   # focus back to tiled
+
+[decorations]
+workspace_menu_status = false
+workspace_popup_status = false
+
+# yabai: padding 4 + external_bar bottom 26 (sketchybar is position=bottom)
+[padding]
+top = 4
+bottom = 30
+left = 4
+right = 4
+
+# yabai window_gap 6
+[windows.all]
+title = ".*"
+horizontal_padding = 4
+vertical_padding = 0
+
+# ---- float rules (from yabairc) ----
+[windows.system_settings]
+title = ".*"
+bundle_id = "com.apple.systempreferences"
+floating = true
+grid = "8:8:2:1:4:6"
+
+[windows.finder_info]
+title = ".* Info$"
+bundle_id = "com.apple.finder"
+floating = true
+
+[windows.iina]
+title = ".*"
+bundle_id = "com.colliderli.iina"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.onepassword]
+title = ".*"
+bundle_id = "com.1password.1password"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.activity_monitor]
+title = ".*"
+bundle_id = "com.apple.ActivityMonitor"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.devutils]
+title = ".*"
+bundle_id = "tonyapp.devutils"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.thaw]
+title = ".*"
+bundle_id = "com.stonerl.Thaw"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.zoom]
+title = ".*"
+bundle_id = "us.zoom.xos"
+floating = true
+
+[windows.reminders]
+title = ".*"
+bundle_id = "com.apple.reminders"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.omnidisksweeper]
+title = ".*"
+bundle_id = "com.omnigroup.OmniDiskSweeper"
+floating = true
+
+[windows.karabiner]
+title = "Karabiner.*"
+floating = true
+
+[windows.sloth]
+title = ".*"
+bundle_id = "org.sveinbjorn.Sloth"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.tailscale]
+title = ".*"
+bundle_id = "io.tailscale.ipn.macsys"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.dictionary]
+title = ".*"
+bundle_id = "com.apple.Dictionary"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.licecap]
+title = ".*"
+bundle_id = "com.cockos.LICEcap"
+floating = true
+
+[windows.floaty]
+title = ".*"
+bundle_id = "com.floatytool.floaty"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.chrome_filtering_log]
+title = "Filtering log"
+bundle_id = "com.google.Chrome"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.chrome_devtools]
+title = "DevTools - .*"
+bundle_id = "com.google.Chrome"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.adguard]
+title = ".*"
+bundle_id = "com.adguard.mac.adguard"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.safari_web_inspector]
+title = "Web Inspector — .*"
+bundle_id = "com.apple.Safari"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.iphone_mirroring]
+title = ".*"
+bundle_id = "com.apple.ScreenContinuity"
+floating = true
