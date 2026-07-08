@@ -20,6 +20,8 @@ brew "git-lfs"
 brew "danielgatis/imgcat/imgcat"
 brew "kcat"
 brew "mise"
+# sliding window management
+brew "paneru"
 # pipx to run python app in isolated env
 brew "pipx"
 brew "rustup"
