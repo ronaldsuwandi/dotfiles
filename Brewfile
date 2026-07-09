@@ -20,6 +20,8 @@ brew "git-lfs"
 brew "danielgatis/imgcat/imgcat"
 brew "kcat"
 brew "mise"
+# sliding window management
+brew "paneru"
 # shkd to launch app using shortcut keys
 brew "asmvik/formulae/skhd"
 brew "tmux"
