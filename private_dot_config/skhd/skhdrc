@@ -45,20 +45,20 @@ cmd + alt - left : paneru send-cmd window focus west
 cmd + alt - up : paneru send-cmd window focus north
 cmd + alt - down : paneru send-cmd window focus south
 cmd + alt - right : paneru send-cmd window focus east
+cmd + alt + ctrl - left : paneru send-cmd window focus first
+cmd + alt + ctrl - right : paneru send-cmd window focus last
 
 # move window
 cmd + alt + shift - left : paneru send-cmd window swap west
 cmd + alt + shift - up : paneru send-cmd window swap north
 cmd + alt + shift - down : paneru send-cmd window swap south
 cmd + alt + shift - right : paneru send-cmd window swap east
-
-# move window to start/end of strip (was: yabai swap)
 cmd + ctrl + shift - left : paneru send-cmd window swap first
 cmd + ctrl + shift - right : paneru send-cmd window swap last
 
 # window resize (cycles preset_column_widths; no vertical resize in paneru)
-cmd + alt + ctrl - left : paneru send-cmd window shrink
-cmd + alt + ctrl - right : paneru send-cmd window grow
+cmd + alt + ctrl - down : paneru send-cmd window shrink
+cmd + alt + ctrl - up : paneru send-cmd window grow
 
 # window operations
 cmd + alt + shift - space : paneru send-cmd window unstack
