@@ -22,15 +22,11 @@ brew "kcat"
 brew "mise"
 # sliding window management
 brew "paneru"
-# pipx to run python app in isolated env
-brew "pipx"
-brew "rustup"
 # shkd to launch app using shortcut keys
 brew "asmvik/formulae/skhd"
 brew "tmux"
 # trivy is for vulnerability scanner
 brew "trivy"
-brew "uv" # pip alternative for python written in rust
 # yabai only used to help listing window within space
 brew "asmvik/formulae/yabai"
 # yt-dlp to download youtube or videos (youtube-dl no longer maintained)
