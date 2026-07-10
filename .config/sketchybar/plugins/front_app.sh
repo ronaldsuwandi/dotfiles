@@ -3,6 +3,7 @@ source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 
 ACTIVE=$(paneru query active 2>/dev/null)
 FOCUSED_APP=$(echo "$ACTIVE" | jq -r '.focused_app_name')
+FOCUSED_ID=$(echo "$ACTIVE" | jq -r '.focused_window_id')
 FLOATING=false
 
 if [[ "$FOCUSED_APP" == "null" || -z "$FOCUSED_APP" ]]; then
@@ -24,9 +25,18 @@ else
   front_app="$FOCUSED_APP"
 fi
 
-sketchybar --set "$NAME" background.image="app.${front_app}" label="$front_app"
+# app strip: paneru's tiled window order for this workspace, with the focused
+# one wrapped in ‹ ›. If a floating window is focused (not tracked by paneru,
+# so it won't match anything above), append it marked at the end instead of
+# losing it.
+TILED=$(paneru query state | jq -c '.virtual_workspaces[] | select(.active == true) | .windows')
+strip=$(echo "$TILED" | jq -r --arg focused_id "$FOCUSED_ID" \
+  'map(if (.window_id|tostring) == $focused_id then "‹ " + .app_name + " ›" else .app_name end) | join("  ")')
+
 if [ "$FLOATING" = "true" ]; then
-  sketchybar --set window_zoom_float drawing=on label="󰅟"
-else
-  sketchybar --set window_zoom_float drawing=off
+  strip="${strip:+$strip  }‹ 󰅟 $front_app 󰅟 ›"
 fi
+
+# icon hidden for now (background.drawing=false in items.sh)
+sketchybar --set "$NAME" label="${strip:-$front_app}"
+
