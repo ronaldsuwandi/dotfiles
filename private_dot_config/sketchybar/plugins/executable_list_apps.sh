@@ -8,8 +8,16 @@ sleep 0.1
 
 source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 
-# Query windows in the current space
-WINDOWS=$(yabai -m query --windows --space | jq -c 'map(select(.["is-visible"] == true and .subrole == "AXStandardWindow")) | sort_by(.app|ascii_downcase)')
+# tiled windows, in paneru's on-screen order, for the active workspace
+TILED=$(paneru query state | jq -c '.virtual_workspaces[] | select(.active == true) | .windows')
+TILED_APPS=$(echo "$TILED" | jq -c '[.[].app_name] | unique')
+
+# paneru doesn't track floating windows at all, and yabai's own is-floating flag isn't
+# reliable now that yabai no longer manages tiling. So: anything yabai sees on this space
+# that paneru doesn't already account for must be floating. paneru takes priority on
+# conflict (edge case: same app with one managed + one floating window shows as tiled-only for now)
+FLOATING=$(yabai -m query --windows --space | jq -c --argjson tiled "$TILED_APPS" \
+  'map(select(.["is-visible"] == true and .subrole == "AXStandardWindow" and (.app as $a | $tiled | index($a)) == null))')
 
 COLOR="$WHITE"
 app=(
@@ -27,7 +35,12 @@ app=(
   drawing=on
 )
 
-apps=$(echo "$WINDOWS" | jq -r '[unique_by(.pid) | .[].app] | join(" | ")')
+# ponytail: O(n^2) dedup via jq object-merge (keeps first-seen order); fine, a space only ever has a handful of windows
+tiled=$(echo "$TILED" | jq -r 'reduce .[] as $w ({}; . + {($w.bundle_id): $w.app_name}) | to_entries | map(.value) | join(" | ")')
+floating=$(echo "$FLOATING" | jq -r 'reduce .[] as $w ({}; . + {($w.pid|tostring): $w.app}) | to_entries | map(.value + " 󰅟") | join(" | ")')
+
+apps="$tiled"
+[[ -n "$floating" ]] && apps="${apps:+$apps | }$floating"
 
 # Clear if no visible apps
 if [[ -z "$apps" ]]; then
@@ -36,4 +49,5 @@ else
   sketchybar --set running_apps_updater "${app[@]}" label="$apps" label.drawing=on background.drawing=on
 fi
 
-sketchybar --set windows label="$(echo "$WINDOWS" | jq 'length') 󰖲"
+count=$(( $(echo "$TILED" | jq 'length') + $(echo "$FLOATING" | jq 'length') ))
+sketchybar --set windows label="$count 󰖲"
