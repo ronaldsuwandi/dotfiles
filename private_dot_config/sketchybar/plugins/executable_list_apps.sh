@@ -26,27 +26,26 @@ app=(
   background.corner_radius=5
   background.border_color=0xffcdd6f4
   background.color=0xff1a1b26
-  label.padding_left=10
+  label.padding_left=6
   label.padding_right=10
   background.padding_left=7
   background.padding_right=7
   label.background.height=30
+  label.height=30
   label.color=$COLOR
   drawing=on
+  icon.padding_left=10
+  icon.font.size=20
 )
 
 # ponytail: O(n^2) dedup via jq object-merge (keeps first-seen order); fine, a space only ever has a handful of windows
-tiled=$(echo "$TILED" | jq -r 'reduce .[] as $w ({}; . + {($w.bundle_id): $w.app_name}) | to_entries | map(.value) | join(" | ")')
-floating=$(echo "$FLOATING" | jq -r 'reduce .[] as $w ({}; . + {($w.pid|tostring): $w.app}) | to_entries | map(.value + " 󰅟") | join(" | ")')
-
-apps="$tiled"
-[[ -n "$floating" ]] && apps="${apps:+$apps | }$floating"
+apps=$(echo "$FLOATING" | jq -r 'reduce .[] as $w ({}; . + {($w.pid|tostring): $w.app}) | to_entries | map(.value) | join(" | ")')
 
 # Clear if no visible apps
 if [[ -z "$apps" ]]; then
-  sketchybar --set running_apps_updater background.border_width=0 label="" label.drawing=off background.drawing=off
+  sketchybar --set running_apps_updater background.border_width=0 label="" label.drawing=off background.drawing=off icon.drawing=off
 else
-  sketchybar --set running_apps_updater "${app[@]}" label="$apps" label.drawing=on background.drawing=on
+  sketchybar --set running_apps_updater "${app[@]}" label="› $apps" label.drawing=on background.drawing=on icon="󰅟" icon.color=$ORANGE icon.drawing=on
 fi
 
 count=$(( $(echo "$TILED" | jq 'length') + $(echo "$FLOATING" | jq 'length') ))

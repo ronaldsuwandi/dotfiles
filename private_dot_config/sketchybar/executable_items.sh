@@ -53,7 +53,7 @@ sketchybar --add item space_focus left \
 front_app_setting=(
   script="$PLUGIN_DIR/front_app.sh"
 	icon.drawing=off
-	background.drawing=true
+	background.drawing=false # icon hidden for paneru; revert: set to true if restoring front_app.yabai.sh (it relies on background.image)
 	background.height=20
 	background.image.scale=0.8
 	associated_display=active
