@@ -1,10 +1,10 @@
 # window navigation
-cmd + alt - left : paneru send-cmd window focus west
-cmd + alt - up : paneru send-cmd window focus north
-cmd + alt - down : paneru send-cmd window focus south
-cmd + alt - right : paneru send-cmd window focus east
-cmd + alt + ctrl - left : paneru send-cmd window focus first
-cmd + alt + ctrl - right : paneru send-cmd window focus last
+cmd + alt - left : paneru send-cmd window focus west && sketchybar --trigger paneru_window_focus
+cmd + alt - up : paneru send-cmd window focus north && sketchybar --trigger paneru_window_focus
+cmd + alt - down : paneru send-cmd window focus south && sketchybar --trigger paneru_window_focus
+cmd + alt - right : paneru send-cmd window focus east && sketchybar --trigger paneru_window_focus
+cmd + alt + ctrl - left : paneru send-cmd window focus first && sketchybar --trigger paneru_window_focus
+cmd + alt + ctrl - right : paneru send-cmd window focus last && sketchybar --trigger paneru_window_focus
 
 # move window
 cmd + alt + shift - left : paneru send-cmd window swap west

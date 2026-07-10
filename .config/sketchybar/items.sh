@@ -75,6 +75,7 @@ sketchybar --add item front_app center \
 	--subscribe front_app front_app_switched \
 	--subscribe front_app yabai_zoom_change \
   --subscribe front_app paneru_manage_change \
+  --subscribe front_app paneru_window_focus \
 	--subscribe front_app space_change
 
 window_zoom=(

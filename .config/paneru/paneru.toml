@@ -7,7 +7,7 @@ sliver_width = 1
 animation_speed = 50
 
 [swipe.gesture]
-fingers_count = 3
+fingers_count = 0
 vertical = false
 
 [bindings]
