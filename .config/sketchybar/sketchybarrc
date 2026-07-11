@@ -35,8 +35,6 @@ bar=(
 
 sketchybar --default "${default[@]}" --bar "${bar[@]}"
 
-sketchybar --add event yabai_layout_change
-sketchybar --add event yabai_zoom_change
 sketchybar --add event paneru_manage_change
 
 source "items.sh"

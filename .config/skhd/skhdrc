@@ -1,6 +1,5 @@
-# window bindings: switch which file is active to flip between paneru and yabai
+# window management bindings (paneru)
 .load "./skhdrc_paneru"
-# .load "./skhdrc_yabai"
 
 # switch space
 ctrl - 1 : sketchybar --set /space\../ background.drawing=off --set space.1 background.drawing=on; yabai -m space --focus 1
