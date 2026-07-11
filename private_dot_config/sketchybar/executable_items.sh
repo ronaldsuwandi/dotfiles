@@ -53,11 +53,11 @@ sketchybar --add item space_focus left \
 front_app_setting=(
   script="$PLUGIN_DIR/front_app.sh"
 	icon.drawing=off
-	background.drawing=false # icon hidden for paneru; revert: set to true if restoring front_app.yabai.sh (it relies on background.image)
+	background.drawing=on
 	background.height=20
-	background.image.scale=0.8
+	background.image.scale=0.6
 	associated_display=active
-	label.padding_left=30
+	label.padding_left=24
 )
 
 
@@ -66,16 +66,15 @@ sketchybar --add item running_apps_updater right \
   --set running_apps_updater script="$PLUGIN_DIR/list_apps.sh" \
   --subscribe running_apps_updater space_change \
   --subscribe running_apps_updater space_windows_change \
-  --subscribe running_apps_updater paneru_manage_change
+  --subscribe running_apps_updater paneru_manage_change \
+  --subscribe running_apps_updater front_app_switched
 
 
 # front app
 sketchybar --add item front_app center \
 	--set front_app "${front_app_setting[@]}" \
 	--subscribe front_app front_app_switched \
-	--subscribe front_app yabai_zoom_change \
-  --subscribe front_app paneru_manage_change \
-  --subscribe front_app paneru_window_focus \
+	--subscribe front_app paneru_manage_change \
 	--subscribe front_app space_change
 
 window_zoom=(
