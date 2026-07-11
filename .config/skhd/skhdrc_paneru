@@ -1,18 +1,18 @@
 # window navigation
-cmd + alt - left : paneru send-cmd window focus west && sketchybar --trigger paneru_window_focus
-cmd + alt - up : paneru send-cmd window focus north && sketchybar --trigger paneru_window_focus
-cmd + alt - down : paneru send-cmd window focus south && sketchybar --trigger paneru_window_focus
-cmd + alt - right : paneru send-cmd window focus east && sketchybar --trigger paneru_window_focus
-cmd + alt + ctrl - left : paneru send-cmd window focus first && sketchybar --trigger paneru_window_focus
-cmd + alt + ctrl - right : paneru send-cmd window focus last && sketchybar --trigger paneru_window_focus
+cmd + alt - left : paneru send-cmd window focus west && sketchybar --trigger paneru_manage_change
+cmd + alt - up : paneru send-cmd window focus north && sketchybar --trigger paneru_manage_change
+cmd + alt - down : paneru send-cmd window focus south && sketchybar --trigger paneru_manage_change
+cmd + alt - right : paneru send-cmd window focus east && sketchybar --trigger paneru_manage_change
+cmd + alt + ctrl - left : paneru send-cmd window focus first && sketchybar --trigger paneru_manage_change
+cmd + alt + ctrl - right : paneru send-cmd window focus last && sketchybar --trigger paneru_manage_change
 
 # move window
-cmd + alt + shift - left : paneru send-cmd window swap west
-cmd + alt + shift - up : paneru send-cmd window swap north
-cmd + alt + shift - down : paneru send-cmd window swap south
-cmd + alt + shift - right : paneru send-cmd window swap east
-cmd + ctrl + shift - left : paneru send-cmd window swap first
-cmd + ctrl + shift - right : paneru send-cmd window swap last
+cmd + alt + shift - left : paneru send-cmd window swap west && sketchybar --trigger paneru_manage_change
+cmd + alt + shift - up : paneru send-cmd window swap north && sketchybar --trigger paneru_manage_change
+cmd + alt + shift - down : paneru send-cmd window swap south && sketchybar --trigger paneru_manage_change
+cmd + alt + shift - right : paneru send-cmd window swap east && sketchybar --trigger paneru_manage_change
+cmd + ctrl + shift - left : paneru send-cmd window swap first && sketchybar --trigger paneru_manage_change
+cmd + ctrl + shift - right : paneru send-cmd window swap last && sketchybar --trigger paneru_manage_change
 
 # window resize (cycles preset_column_widths; no vertical resize in paneru)
 cmd + alt + ctrl - down : paneru send-cmd window shrink
