@@ -29,65 +29,18 @@ for i in "${!SPACE_ICONS[@]}"; do
     --set space."${SPACE_ICONS[i]}" "${space[@]}"
 done
 
-# space_layout: retired under paneru (no space-wide bsp/stack layout concept there)
-# revert: restore plugins/space_layout.sh + space_layout_toggle.sh from their .yabai.sh backups, then uncomment below
-# space_layout=(
-#   label=""
-#   label.padding_left=8
-#   label.padding_right=8
-#   label.font.size=22
-#   script="$PLUGIN_DIR/space_layout.sh"
-#   click_script="$PLUGIN_DIR/space_layout_toggle.sh"
-# )
-# sketchybar --add item space_layout left \
-#   --set space_layout "${space_layout[@]}"\
-#   --subscribe space_layout space_change \
-#   --subscribe space_layout yabai_layout_change
-
 # to focus on first window if no window is focused
 sketchybar --add item space_focus left \
   --set space_focus script="$PLUGIN_DIR/focus_window.sh" \
   --subscribe space_focus space_change
 
-# frontapp
-front_app_setting=(
-  script="$PLUGIN_DIR/front_app.sh"
-	icon.drawing=off
-	background.drawing=on
-	background.height=20
-	background.image.scale=0.6
-	associated_display=active
-	label.padding_left=24
-)
-
-
 # apps
-sketchybar --add item running_apps_updater right \
+sketchybar --add item running_apps_updater center \
   --set running_apps_updater script="$PLUGIN_DIR/list_apps.sh" \
   --subscribe running_apps_updater space_change \
   --subscribe running_apps_updater space_windows_change \
   --subscribe running_apps_updater paneru_manage_change \
   --subscribe running_apps_updater front_app_switched
-
-
-# front app
-sketchybar --add item front_app center \
-	--set front_app "${front_app_setting[@]}" \
-	--subscribe front_app front_app_switched \
-	--subscribe front_app paneru_manage_change \
-	--subscribe front_app space_change
-
-window_zoom=(
-  label="󰊓"
-  label.font.size=22
-  label.color=$ORANGE
-  label.padding_left=12
-  label.padding_right=6
-  drawing=off
-  click_script="$PLUGIN_DIR/window_zoom_float_click.sh"
-)
-sketchybar --add item window_zoom_float center \
-  --set window_zoom_float "${window_zoom[@]}"
 
 # right spacer
 sketchybar --add item right_spacer right \
