@@ -1,0 +1,43 @@
+# sketchybar: old yabai-era plugins, replaced by focus_window.sh / list_apps.sh / space.sh
+.config/sketchybar/plugins/aerospace.sh
+.config/sketchybar/plugins/front_app.sh
+.config/sketchybar/plugins/front_app.yabai.sh
+.config/sketchybar/plugins/list_apps.yabai.sh
+.config/sketchybar/plugins/space_layout.sh
+.config/sketchybar/plugins/space_layout.yabai.sh
+.config/sketchybar/plugins/space_layout_toggle.sh
+.config/sketchybar/plugins/space_layout_toggle.yabai.sh
+.config/sketchybar/plugins/window_zoom_float_click.sh
+.config/sketchybar/plugins/window_zoom_float_click.yabai.sh
+
+# skhd: yabai-era config, replaced by skhdrc_paneru
+.config/skhd/float_snap.sh
+.config/skhd/space_layout_toggle.sh
+.config/skhd/skhdrc_yabai
+
+# ghostty: config removed
+.config/ghostty/config
+
+# yabai: fully removed
+.yabairc
+
+# zebar: config.yaml replaced by settings.json
+.glzr/zebar/config.yaml
+
+# sublime RainbowBrackets: pruned themes, only "Rosé Pine.sublime-color-scheme" kept
+"Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/1Pastel.sublime-color-scheme"
+"Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/Breakers.sublime-color-scheme"
+"Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/Cake.sublime-color-scheme"
+"Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/Celeste.sublime-color-scheme"
+"Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/Cobalt.sublime-color-scheme"
+"Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/Code-Lover.sublime-color-scheme"
+"Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/Colonoscopy.sublime-color-scheme"
+"Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/DarkMosquito.sublime-color-scheme"
+"Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/Mariana.sublime-color-scheme"
+"Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/Monokai.sublime-color-scheme"
+"Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/One Dark.sublime-color-scheme"
+"Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/Rosé Pine Moon.sublime-color-scheme"
+"Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/Sixteen.sublime-color-scheme"
+"Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/Widget - One Dark.sublime-color-scheme"
+"Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/auto"
+"Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/halcyon.sublime-color-scheme"

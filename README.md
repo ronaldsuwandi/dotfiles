@@ -12,10 +12,22 @@ To render manually:
 ./render_macos_output.sh
 ```
 
-## Git hook setup (one-time)
+## Removing files
 
-To have the rendered branch update automatically on every push:
+chezmoi doesn't delete a file on the target machine just because it was removed from the source. Deletions have to be listed explicitly in [`.chezmoiremove`](.chezmoiremove), or the file just lingers on every machine that already applied it.
+
+Before trusting it, preview what it would actually remove:
+
+```sh
+chezmoi apply --dry-run --verbose
+```
+
+## Git hook setup (one-time)
 
 ```sh
 git config core.hooksPath .githooks
 ```
+
+This enables:
+- **pre-push**: renders dotfiles to the `rendered` branch (see above).
+- **pre-commit**: reminds you (non-blocking) to update `.chezmoiremove` whenever a commit deletes a file, so removals don't get missed on the next `chezmoi apply` elsewhere.

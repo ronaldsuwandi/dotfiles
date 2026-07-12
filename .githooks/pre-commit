@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Reminds you to update .chezmoiremove when files are deleted from the source state.
+# Non-blocking: never fails the commit, just prints a warning.
+# One-time setup: git config core.hooksPath .githooks
+
+DELETED=$(git diff --cached --diff-filter=D -M --name-only -- . ':!.chezmoiremove')
+
+if [ -n "$DELETED" ]; then
+    echo ""
+    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    echo "!! REMINDER: files deleted in this commit -- update .chezmoiremove !!"
+    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    echo "$DELETED" | sed 's/^/  - /'
+    echo ""
+fi
+
+exit 0
