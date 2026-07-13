@@ -2,7 +2,7 @@
 focus_follows_mouse = false
 mouse_follows_focus = false
 window_resize_cycle = false
-preset_column_widths = [0.25, 0.33, 0.5, 0.66, 0.75, 1.00]
+preset_column_widths = [0.33, 0.5, 0.66, 1.00]
 sliver_width = 1
 #animation_speed = 0  # comment/delete animation_speed for instant look up
 

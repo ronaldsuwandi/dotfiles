@@ -24,9 +24,14 @@ TILED=$(paneru query state | jq -c '.virtual_workspaces[] | select(.active == tr
 # that paneru doesn't already list must be floating. paneru's window_id and yabai's id
 # are the same underlying value, so this excludes exactly the tiled windows, not whole
 # apps — a second window of an already-tiled app still shows up here as floating.
-FLOATING=$(yabai -m query --windows --space | jq -c --argjson tiled "$TILED" '
+YABAI_WINDOWS=$(yabai -m query --windows --space)
+FLOATING=$(echo "$YABAI_WINDOWS" | jq -c --argjson tiled "$TILED" '
   ([$tiled[].window_id]) as $tiled_ids
   | map(select(.["is-visible"] == true and .subrole == "AXStandardWindow" and (.id as $i | $tiled_ids | index($i)) == null))')
+
+# desktop/floating focus: paneru keeps the last tiled window marked focused,
+# so trust yabai's has-focus instead; no match -> no center, all left
+FOCUSED_ID=$(echo "$YABAI_WINDOWS" | jq '[.[] | select(.["has-focus"] == true) | .id] | first // 0')
 
 COLOR="$WHITE"
 app=(
@@ -43,8 +48,8 @@ app=(
 # split tiled windows around the focused one (paneru's on-screen order), floating windows
 # (deduped by pid, ponytail: O(n^2) object-merge, fine for a handful of windows) get their own bucket;
 # ponytail: no focused tiled window (empty space / floating frontmost) -> no split point, everything goes left
-SPLIT=$(jq -n -c --argjson tiled "$TILED" --argjson floating "$FLOATING" '
-  ($tiled | [.[] | .focused] | index(true)) as $idx
+SPLIT=$(jq -n -c --argjson tiled "$TILED" --argjson floating "$FLOATING" --argjson fid "$FOCUSED_ID" '
+  ($tiled | map(.window_id == $fid) | index(true)) as $idx
   | ($tiled | if $idx == null then . else .[0:$idx] end) as $left
   | ($tiled | if $idx == null then null else .[$idx] end) as $center
   | ($tiled | if $idx == null then [] else .[($idx+1):] end) as $right_tiled
