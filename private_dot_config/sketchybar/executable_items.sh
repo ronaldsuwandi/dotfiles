@@ -35,12 +35,15 @@ sketchybar --add item space_focus left \
   --subscribe space_focus space_change
 
 # apps
+sketchybar --add item running_apps_left center
 sketchybar --add item running_apps_updater center \
   --set running_apps_updater script="$PLUGIN_DIR/list_apps.sh" \
   --subscribe running_apps_updater space_change \
   --subscribe running_apps_updater space_windows_change \
   --subscribe running_apps_updater paneru_manage_change \
   --subscribe running_apps_updater front_app_switched
+sketchybar --add item running_apps_right center
+sketchybar --add item running_apps_float right
 
 # right spacer
 sketchybar --add item right_spacer right \
