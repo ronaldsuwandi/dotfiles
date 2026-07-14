@@ -30,7 +30,7 @@ right = 4
 # yabai window_gap 6
 [windows.all]
 title = ".*"
-horizontal_padding = 4
+horizontal_padding = 3
 vertical_padding = 0
 
 # ---- float rules (from yabairc) ----
