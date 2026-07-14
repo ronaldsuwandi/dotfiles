@@ -100,9 +100,9 @@ cask "zoom"
 ## Others
 mas "AutoMounter", id: 1160435653
 mas "Chess Studio", id: 1147096268
+mas "Corner Time", id: 6746757189
 mas "Day One", id: 1055511498
 mas "GeoTag", id: 1465180184
-# mas "Goodnotes", id: 1444383602
 mas "Micro Snitch", id: 972028355
 mas "MindNode", id: 1289197285
 mas "MoneyWiz", id: 1511185140
@@ -122,5 +122,4 @@ mas "WhatsApp", id: 310633997
 mas "AdGuard: Ad Blocker for Safari", id: 1440147259
 mas "1Password for Safari", id: 1569813296
 mas "JSONPeep", id: 1458969831
-mas "OneTab", id: 1540160809
 mas "PiPifier", id: 1160374471
