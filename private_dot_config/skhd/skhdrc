@@ -12,6 +12,8 @@ ctrl - 7 : sketchybar --set /space\../ background.drawing=off --set space.7 back
 ctrl - 8 : sketchybar --set /space\../ background.drawing=off --set space.8 background.drawing=on && yabai -m space --focus 8
 ctrl - 9 : sketchybar --set /space\../ background.drawing=off --set space.9 background.drawing=on && yabai -m space --focus 9
 ctrl - 0 : sketchybar --set /space\../ background.drawing=off --set space.10 background.drawing=on && yabai -m space --focus 10
+ctrl - left : yabai -m space --focus prev
+ctrl - right : yabai -m space --focus next
 
 # move windows to space
 ctrl + shift - 1 : yabai -m window --space 1 && yabai -m space --focus 1
