@@ -55,7 +55,7 @@ SPLIT=$(jq -n -c --argjson tiled "$TILED" --argjson floating "$FLOATING" --argjs
   | ($tiled | if $idx == null then [] else .[($idx+1):] end) as $right_tiled
   | ($floating | reduce .[] as $w ({}; . + {($w.pid|tostring): $w.app}) | [.[]]) as $floating_names
   | { left: ($left | map(.app_name) | join("  ")),
-      center: (("‹" + $center.app_name + "›") // ""),
+      center: (if $center.app_name then "‹" + $center.app_name + "›" else "" end),
       right: ($right_tiled | map(.app_name) | join("  ")),
       float: ($floating_names | join(" | ")),
       count: (($tiled | length) + ($floating | length)) }')
