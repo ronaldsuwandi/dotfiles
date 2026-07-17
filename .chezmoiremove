@@ -14,6 +14,7 @@
 .config/skhd/float_snap.sh
 .config/skhd/space_layout_toggle.sh
 .config/skhd/skhdrc_yabai
+.config/skhd/yaba_center.sh
 
 # ghostty: config removed
 .config/ghostty/config
@@ -41,3 +42,7 @@
 "Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/Widget - One Dark.sublime-color-scheme"
 "Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/auto"
 "Library/Application Support/Sublime Text/Packages/User/Color Schemes/RainbowBrackets/halcyon.sublime-color-scheme"
+
+# aerospace
+.aerospace.toml
+

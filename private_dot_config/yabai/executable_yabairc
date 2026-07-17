@@ -1,10 +1,10 @@
-yabai -m config top_padding 4
-yabai -m config bottom_padding 4
-yabai -m config left_padding 4
-yabai -m config right_padding 4
-yabai -m config external_bar all:0:26 
-yabai -m config window_gap 6
-yabai -m config window_placement second_child
+#yabai -m config top_padding 4
+#yabai -m config bottom_padding 4
+#yabai -m config left_padding 4
+#yabai -m config right_padding 4
+#yabai -m config external_bar all:0:26 
+#yabai -m config window_gap 6
+#yabai -m config window_placement second_child
 # yabai -m config layout stack
 
 # float rules (now handled by paneru.toml [windows.*] — revert by uncommenting)
