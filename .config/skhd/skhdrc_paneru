@@ -28,17 +28,19 @@ cmd + alt - c : paneru send-cmd window center
 # 0x18 => equal sign
 cmd + alt + ctrl - 0x18 : paneru send-cmd window equalize
 
-# yabai-only
-# quarter corners + center (floating windows only 1/3 width, 1/2 height) 
+# yabai-only (Zoom windows are invisible to yabai/paneru, so yabai_grid.sh
+# detects Zoom and moves it via the Accessibility API instead, using its own
+# padding calc; every other app gets the same grid cell via yabai --move/--resize)
+# quarter corners + center (floating windows only 1/3 width, 1/2 height)
 # (top left, top right, bottom right, bottom left)
-cmd + ctrl + alt + shift - left  : yabai -m window --grid 2:3:0:0:1:1
-cmd + ctrl + alt + shift - up    : yabai -m window --grid 2:3:2:0:1:1
-cmd + ctrl + alt + shift - right : yabai -m window --grid 2:3:2:1:1:1
-cmd + ctrl + alt + shift - down  : yabai -m window --grid 2:3:0:1:1:1
+cmd + ctrl + alt + shift - left  : ~/.config/skhd/yabai_grid.sh topleft
+cmd + ctrl + alt + shift - up    : ~/.config/skhd/yabai_grid.sh topright
+cmd + ctrl + alt + shift - right : ~/.config/skhd/yabai_grid.sh bottomright
+cmd + ctrl + alt + shift - down  : ~/.config/skhd/yabai_grid.sh bottomleft
 
-# center horizontally using yabai for floating/unmanaged window
+# center horizontally (Zoom via yabai_grid.sh's own calc, else plain yabai centering)
 # 0x1B => minus/dash sign
-cmd + ctrl + alt + shift - 0x1B  : ~/.config/skhd/yabai_center.sh h
-# center vertically using yabai for floating/unmanaged window
+cmd + ctrl + alt + shift - 0x1B  : ~/.config/skhd/yabai_grid.sh centerh
+# center vertically (Zoom via yabai_grid.sh's own calc, else plain yabai centering)
 # 0x2A => backslash/pipe (|)
-cmd + ctrl + alt + shift - 0x2A  : ~/.config/skhd/yabai_center.sh v
+cmd + ctrl + alt + shift - 0x2A  : ~/.config/skhd/yabai_grid.sh centerv
