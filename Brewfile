@@ -4,6 +4,7 @@ tap "felixkratz/formulae", trusted: true
 tap "danielgatis/imgcat", trusted: true
 tap "asmvik/formulae", trusted: true
 tap "streetpea/streetpea", trusted: true
+tap "msitarzewski/brew-browser", trusted: true
 
 # Brew apps
 brew "felixkratz/formulae/borders"
@@ -36,6 +37,7 @@ brew "yt-dlp"
 # Casks
 cask "1password"
 cask "adguard"
+cask "msitarzewski/brew-browser"
 # Postman alternative
 cask "bruno"
 #cask "claude"
