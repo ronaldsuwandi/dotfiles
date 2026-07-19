@@ -157,3 +157,8 @@ floating = true
 title = ".*"
 bundle_id = "com.apple.calculator"
 floating = true
+
+[windows.ib_gateway]
+title = ".*"
+bundle_id = "com.install4j.5556-0173-2910-4500.22"
+floating = true
