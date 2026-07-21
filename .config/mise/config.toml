@@ -5,3 +5,29 @@ node = "latest"
 python = "latest"
 bun = "latest"
 rust = "latest"
+
+# bootstrap sections
+[bootstrap.macos.dock]
+autohide = false
+orientation = "left"
+tilesize = 32
+magnification = true
+largesize = 46
+show_recents = false
+mru_spaces = false
+
+
+[bootstrap.macos.finder]
+show_all_files = true
+show_pathbar = true
+show_status_bar = true
+preferred_view_style = "list"
+
+[bootstrap.macos.trackpad]
+tap_to_click = true
+
+[bootstrap.macos.defaults]
+"com.apple.finder" = { AppleShowAllFiles = true }
+"com.apple.AppleMultitouchTrackpad" = {
+
+}
