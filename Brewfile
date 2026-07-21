@@ -37,7 +37,7 @@ brew "yt-dlp"
 # Casks
 cask "1password"
 cask "adguard"
-cask "msitarzewski/brew-browser"
+cask "msitarzewski/brew-browser/brew-browser"
 # Postman alternative
 cask "bruno"
 #cask "claude"
@@ -104,6 +104,7 @@ mas "AutoMounter", id: 1160435653
 mas "Chess Studio", id: 1147096268
 mas "Corner Time", id: 6746757189
 mas "Day One", id: 1055511498
+mas "Ethernet Menu", id: 1549412235
 mas "GeoTag", id: 1465180184
 mas "Micro Snitch", id: 972028355
 mas "MindNode", id: 1289197285
