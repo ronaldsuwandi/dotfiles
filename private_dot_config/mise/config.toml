@@ -18,7 +18,6 @@ mru_spaces = false
 
 
 [bootstrap.macos.finder]
-show_all_files = true
 show_pathbar = true
 show_status_bar = true
 preferred_view_style = "list"
@@ -27,7 +26,22 @@ preferred_view_style = "list"
 tap_to_click = true
 
 [bootstrap.macos.defaults]
-"com.apple.finder" = { AppleShowAllFiles = true }
+"com.apple.spaces" = { 
+    "app-bindings" = {
+        "com.1password.1password" = "AllSpaces",
+        "info.filesmanager.files" = "AllSpaces",
+	}
+}
 "com.apple.AppleMultitouchTrackpad" = {
-
+    TrackpadCornerSecondaryClick = 0,
+    TrackpadFiveFingerPinchGesture = 2,
+    TrackpadFourFingerHorizSwipeGesture = 2,
+    TrackpadFourFingerPinchGesture = 2,
+    TrackpadFourFingerVertSwipeGesture = 2,
+    TrackpadThreeFingerDrag = true,
+    TrackpadThreeFingerHorizSwipeGesture = 0,
+    TrackpadThreeFingerTapGesture = 0,
+    TrackpadThreeFingerVertSwipeGesture = 0,
+    TrackpadTwoFingerDoubleTapGesture = 1,
+    TrackpadTwoFingerFromRightEdgeSwipeGesture = 0,
 }
