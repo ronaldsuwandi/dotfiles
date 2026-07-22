@@ -4,6 +4,26 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Toggle Caps Lock on 250ms hold",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 250 },
+                                "to_if_alone": [],
+                                "to_if_held_down": [
+                                    {
+                                        "hold_down_milliseconds": 250,
+                                        "key_code": "caps_lock"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Quit application by pressing command-q twice",
                         "enabled": false,
                         "manipulators": [
@@ -184,64 +204,6 @@
                                         "mandatory": ["right_command"],
                                         "optional": ["left_shift", "right_shift"]
                                     }
-                                },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Activate Caps Lock only on double press",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "caps_lock_pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "hold_down_milliseconds": 200,
-                                        "key_code": "caps_lock"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "caps_lock_pressed",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_delayed_action": {
-                                    "to_if_canceled": [
-                                        {
-                                            "set_variable": {
-                                                "name": "caps_lock_pressed",
-                                                "value": 0
-                                            }
-                                        }
-                                    ],
-                                    "to_if_invoked": [
-                                        {
-                                            "set_variable": {
-                                                "name": "caps_lock_pressed",
-                                                "value": 0
-                                            }
-                                        }
-                                    ]
                                 },
                                 "type": "basic"
                             }
