@@ -36,6 +36,7 @@ brew "yt-dlp"
 
 # Casks
 cask "1password"
+# adguard for system wide dns blocking
 cask "adguard"
 cask "msitarzewski/brew-browser/brew-browser"
 # Postman alternative
@@ -107,7 +108,6 @@ mas "Day One", id: 1055511498
 mas "Ethernet Menu", id: 1549412235
 mas "GeoTag", id: 1465180184
 mas "Micro Snitch", id: 972028355
-mas "MindNode", id: 1289197285
 mas "MoneyWiz", id: 1511185140
 mas "Overlap", id: 1516950324
 mas "QuickShade", id: 931571202
@@ -122,7 +122,7 @@ mas "Telegram", id: 747648890
 mas "WhatsApp", id: 310633997
 
 ## Safari extensions
-mas "AdGuard: Ad Blocker for Safari", id: 1440147259
 mas "1Password for Safari", id: 1569813296
 mas "JSONPeep", id: 1458969831
 mas "PiPifier", id: 1160374471
+mas "uBlock Origin Lite", id: 6745342698
