@@ -5,6 +5,8 @@ cmd + alt - down : paneru send-cmd window focus south && sketchybar --trigger pa
 cmd + alt - right : paneru send-cmd window focus east && sketchybar --trigger paneru_manage_change
 cmd + alt + ctrl - left : paneru send-cmd window focus first && sketchybar --trigger paneru_manage_change
 cmd + alt + ctrl - right : paneru send-cmd window focus last && sketchybar --trigger paneru_manage_change
+cmd + alt - u : paneru send-cmd window focus unmanaged && sketchybar --trigger paneru_manage_change
+cmd + alt + shift - u : paneru send-cmd window focus managed && sketchybar --trigger paneru_manage_change
 
 # move window
 cmd + alt + shift - left : paneru send-cmd window swap west && sketchybar --trigger paneru_manage_change
