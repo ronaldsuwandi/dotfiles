@@ -24,8 +24,7 @@ Window management via [paneru](https://github.com/karinushka/paneru), a sliding 
 | Toggle managed/floating | `Cmd+Alt+F` |
 | Center window | `Cmd+Alt+C` |
 | Equalize columns | `Cmd+Alt+Ctrl+=` |
-| Focus a floating window | `Cmd+Alt+U` |
-| Focus back to managed | `Cmd+Alt+Shift+U` |
+| Focus a floating/managed window (toggle) | `Cmd+Alt+U` |
 | Switch to space 1–10 (yabai) | `Ctrl+1–0` |
 | Move window to space 1–10 (yabai) | `Ctrl+Shift+1–0` |
 
