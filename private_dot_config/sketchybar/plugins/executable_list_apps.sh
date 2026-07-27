@@ -16,22 +16,10 @@ sleep 0.05
 
 source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 
-# tiled windows, in paneru's on-screen order, for the active workspace
-TILED=$(paneru query state | jq -c '.virtual_workspaces[] | select(.active == true) | .windows')
-
-# paneru doesn't track floating windows at all, and yabai's own is-floating flag isn't
-# reliable now that yabai no longer manages tiling. So: anything yabai sees on this space
-# that paneru doesn't already list must be floating. paneru's window_id and yabai's id
-# are the same underlying value, so this excludes exactly the tiled windows, not whole
-# apps — a second window of an already-tiled app still shows up here as floating.
-YABAI_WINDOWS=$(yabai -m query --windows --space)
-FLOATING=$(echo "$YABAI_WINDOWS" | jq -c --argjson tiled "$TILED" '
-  ([$tiled[].window_id]) as $tiled_ids
-  | map(select(.["is-visible"] == true and .subrole == "AXStandardWindow" and (.id as $i | $tiled_ids | index($i)) == null))')
-
-# desktop/floating focus: paneru keeps the last tiled window marked focused,
-# so trust yabai's has-focus instead; no match -> no center, all left
-FOCUSED_ID=$(echo "$YABAI_WINDOWS" | jq '[.[] | select(.["has-focus"] == true) | .id] | first // 0')
+# paneru now reports floating (unmanaged) windows inline via the `floating`
+# flag, and tracks focus correctly even onto floating windows — no more
+# cross-referencing yabai to tell tiled from floating.
+STATE=$(paneru query state)
 
 COLOR="$WHITE"
 app=(
@@ -46,14 +34,18 @@ app=(
 )
 
 # split tiled windows around the focused one (paneru's on-screen order), floating windows
-# (deduped by pid, ponytail: O(n^2) object-merge, fine for a handful of windows) get their own bucket;
+# (deduped by bundle id, ponytail: O(n^2) object-merge, fine for a handful of windows) get their own bucket;
 # ponytail: no focused tiled window (empty space / floating frontmost) -> no split point, everything goes left
-SPLIT=$(jq -n -c --argjson tiled "$TILED" --argjson floating "$FLOATING" --argjson fid "$FOCUSED_ID" '
-  ($tiled | map(.window_id == $fid) | index(true)) as $idx
+SPLIT=$(echo "$STATE" | jq -c '
+  (.active.focused_window_id // 0) as $fid
+  | (.virtual_workspaces[] | select(.active == true) | .windows) as $windows
+  | ($windows | map(select(.floating == false))) as $tiled
+  | ($windows | map(select(.floating == true))) as $floating
+  | ($tiled | map(.window_id == $fid) | index(true)) as $idx
   | ($tiled | if $idx == null then . else .[0:$idx] end) as $left
   | ($tiled | if $idx == null then null else .[$idx] end) as $center
   | ($tiled | if $idx == null then [] else .[($idx+1):] end) as $right_tiled
-  | ($floating | reduce .[] as $w ({}; . + {($w.pid|tostring): $w.app}) | [.[]]) as $floating_names
+  | ($floating | reduce .[] as $w ({}; . + {($w.bundle_id): $w.app_name}) | [.[]]) as $floating_names
   | { left: ($left | map(.app_name) | join("  ")),
       center: (if $center.app_name then "‹" + $center.app_name + "›" else "" end),
       right: ($right_tiled | map(.app_name) | join("  ")),

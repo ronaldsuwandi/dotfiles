@@ -162,3 +162,50 @@ floating = true
 title = ".*"
 bundle_id = "com.install4j.5556-0173-2910-4500.22"
 floating = true
+
+[windows.detectx_swift]
+title = ".*"
+bundle_id = "com.sqwarq.DetectX-Swift"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.knockknock]
+title = ".*"
+bundle_id = "com.objective-see.KnockKnock"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.pearcleaner]
+title = ".*"
+bundle_id = "com.alienator88.Pearcleaner"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.coconutbattery]
+title = ".*"
+bundle_id = "com.coconut-flavour.coconutBattery"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.overlap]
+title = ".*"
+bundle_id = "com.moleskine.overlap"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.stickies]
+title = ".*"
+bundle_id = "com.apple.Stickies"
+floating = true
+
+[windows.digital_color_meter]
+title = ".*"
+bundle_id = "com.apple.DigitalColorMeter"
+floating = true
+grid = "8:8:1:1:6:6"
+
+[windows.airport_utility]
+title = ".*"
+bundle_id = "com.apple.airport.airportutility"
+floating = true
+grid = "8:8:1:1:6:6"
