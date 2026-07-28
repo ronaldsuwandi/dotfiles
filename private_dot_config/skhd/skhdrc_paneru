@@ -24,10 +24,12 @@ cmd + alt + shift - space : paneru send-cmd window unstack
 cmd + alt - space : paneru send-cmd window stack
 cmd + alt - return : paneru send-cmd window fullwidth
 cmd + alt - f : paneru send-cmd window manage && sketchybar --trigger paneru_manage_change
-cmd + alt - c : paneru send-cmd window center
+cmd + alt - c : paneru send-cmd window centere
 
 # 0x18 => equal sign
-cmd + alt + ctrl - 0x18 : paneru send-cmd window equalize
+cmd + alt + ctrl - 0x18 : paneru send-cmd window balance
+# 0x1B => minus sign
+cmd + alt + ctrl - 0x1B : paneru send-cmd window equalize
 
 # yabai-only (Zoom windows are invisible to yabai/paneru, so yabai_grid.sh
 # detects Zoom and moves it via the Accessibility API instead, using its own
