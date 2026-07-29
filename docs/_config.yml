@@ -1,10 +1,6 @@
-remote_theme: jekyll/minima@4de3223
+remote_theme: pages-themes/minimal@v0.2.0
 plugins:
 - jekyll-remote-theme
-
-minima:
-  skin: classic
-  nav_pages: 
 
 title: dotfiles
 description: Rendered dotfiles for macOS. Source managed with chezmoi on the main branch.

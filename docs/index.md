@@ -1,7 +1,3 @@
----
-layout: home
----
-
 # dotfiles (macOS)
 
 My personal dotfiles for macOS. Managed using [chezmoi](https://www.chezmoi.io). Browse the [rendered files](https://github.com/ronaldsuwandi/dotfiles/tree/rendered).
