@@ -4,4 +4,17 @@ plugins:
 - jekyll-include-cache
 
 title: dotfiles
+subtitle: Rendered dotfiles for macOS. Source managed with chezmoi on the main branch.
 description: Rendered dotfiles for macOS. Source managed with chezmoi on the main branch.
+
+atom_feed:
+  hide: true
+
+footer:
+  links:
+    - label: GitHub
+      icon: fab fa-fw fa-github
+      url: https://github.com/ronaldsuwandi/dotfiles
+
+author:
+  name: Ronald Suwandi
