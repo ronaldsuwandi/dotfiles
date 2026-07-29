@@ -10,3 +10,6 @@ atom_feed:
   hide: true
 
 copyright: Ronald Suwandi
+
+titles_from_headings:
+  enabled:     false
