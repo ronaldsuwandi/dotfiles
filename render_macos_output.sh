@@ -62,6 +62,7 @@ git -C "$REPO_DIR" fetch origin "$RENDERED_BRANCH" && \
 git -C "$REPO_DIR" rm -rf --ignore-unmatch . >/dev/null
 git -C "$REPO_DIR" checkout HEAD -- README.md
 git -C "$REPO_DIR" checkout HEAD -- _config.yml
+git -C "$REPO_DIR" checkout main -- index.md
 
 rsync -a "$TEMP_DIR/" "$REPO_DIR/"
 

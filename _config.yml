@@ -1,3 +1,3 @@
 theme: jekyll-theme-minimal
 title: dotfiles
-description: My personal dotfiles for macOS. Managed using chezmoi
+description: Rendered dotfiles for macOS. Source managed with chezmoi on the main branch.

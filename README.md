@@ -12,6 +12,10 @@ To render manually:
 ./render_macos_output.sh
 ```
 
+The following 2 files are in `main` branch for simplicity purpose. It is meant to be used only in the `rendered` branch:
+- `_config.yml`
+- `index.md`
+
 ## Removing files
 
 chezmoi doesn't delete a file on the target machine just because it was removed from the source. Deletions have to be listed explicitly in [`.chezmoiremove`](.chezmoiremove), or the file just lingers on every machine that already applied it.
