@@ -4,9 +4,9 @@ layout: single
 author_profile: false
 ---
 
-My personal dotfiles primarily for macOS. Managed using [chezmoi](https://www.chezmoi.io). Browse the [rendered files](https://github.com/ronaldsuwandi/dotfiles/tree/rendered).
+## dotfiles
 
----
+My personal dotfiles primarily for macOS. Managed using [chezmoi](https://www.chezmoi.io). Browse the [rendered files](https://github.com/ronaldsuwandi/dotfiles/tree/rendered).
 
 ## paneru + skhd — current
 
