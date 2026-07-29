@@ -14,7 +14,7 @@ To render manually:
 
 The following 2 files are in `main` branch for simplicity purpose. It is meant to be used only in the `rendered` branch:
 - `_config.yml`
-- `index.md`
+- `docs/*`
 
 ## Removing files
 

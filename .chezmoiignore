@@ -5,7 +5,7 @@ Library/Application Support/Sublime Text/Packages/User/*.cache
 README.md
 _config.yml
 render_macos_output.sh
-index.md
+docs/
 
 {{- if eq .chezmoi.os "darwin" }}
 .glzr
