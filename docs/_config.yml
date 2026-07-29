@@ -3,10 +3,10 @@ plugins:
 - jekyll-remote-theme
 - jekyll-include-cache
 
-title: My personal dotfiles
+title: dotfiles
 description: Rendered dotfiles for macOS. Source managed with chezmoi on the main branch.
 
 atom_feed:
   hide: true
 
-name: Ronald Suwandi
+copyright: Ronald Suwandi
