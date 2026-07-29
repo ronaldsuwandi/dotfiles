@@ -61,8 +61,6 @@ git -C "$REPO_DIR" fetch origin "$RENDERED_BRANCH" && \
 # Clear all tracked files, then restore files that live only on this branch
 git -C "$REPO_DIR" rm -rf --ignore-unmatch . >/dev/null
 git -C "$REPO_DIR" checkout HEAD -- README.md
-git -C "$REPO_DIR" checkout HEAD -- _config.yml
-git -C "$REPO_DIR" checkout main -- docs
 
 rsync -a "$TEMP_DIR/" "$REPO_DIR/"
 

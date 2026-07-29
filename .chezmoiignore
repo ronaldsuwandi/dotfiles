@@ -3,9 +3,8 @@
 .zshrc_local
 Library/Application Support/Sublime Text/Packages/User/*.cache
 README.md
-_config.yml
 render_macos_output.sh
-docs/
+docs
 
 {{- if eq .chezmoi.os "darwin" }}
 .glzr
