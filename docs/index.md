@@ -2,6 +2,7 @@
 classes: wide
 layout: single
 author_profile: false
+title: 
 ---
 
 ## dotfiles
