@@ -1,3 +1,10 @@
+# karabiner: old unused complex modifications
+.config/karabiner/assets/complex_modifications/1532931084.json
+.config/karabiner/assets/complex_modifications/1656916624.json
+
+# gram: no longer needed
+.config/gram
+
 # sketchybar: old yabai-era plugins, replaced by focus_window.sh / list_apps.sh / space.sh
 .config/sketchybar/plugins/aerospace.sh
 .config/sketchybar/plugins/front_app.sh

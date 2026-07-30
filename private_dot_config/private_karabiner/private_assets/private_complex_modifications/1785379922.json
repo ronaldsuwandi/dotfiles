@@ -1,0 +1,32 @@
+{
+    "title": "Hold to toggle Caps Lock",
+    "maintainers": [
+        "ronaldsuwandi"
+    ],
+    "rules": [
+    {
+        "description": "Hold to toggle Caps Lock (250ms)",
+        "manipulators": [
+        {
+            "from":
+            {
+                "key_code": "caps_lock",
+                "modifiers":
+                {
+                    "optional": ["any"]
+                }
+            },
+            "parameters":
+            {
+                "basic.to_if_held_down_threshold_milliseconds": 250
+            },
+            "to_if_alone": [],
+            "to_if_held_down": [
+            {
+                "hold_down_milliseconds": 250,
+                "key_code": "caps_lock"
+            }],
+            "type": "basic"
+        }]
+    }]
+}
