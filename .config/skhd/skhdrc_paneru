@@ -24,7 +24,7 @@ cmd + alt + shift - space : paneru send-cmd window unstack
 cmd + alt - space : paneru send-cmd window stack
 cmd + alt - return : paneru send-cmd window fullwidth
 cmd + alt - f : paneru send-cmd window manage && sketchybar --trigger paneru_manage_change
-cmd + alt - c : paneru send-cmd window centere
+cmd + alt - c : paneru send-cmd window center
 
 # 0x18 => equal sign
 cmd + alt + ctrl - 0x18 : paneru send-cmd window balance
