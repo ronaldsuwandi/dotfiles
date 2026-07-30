@@ -8,6 +8,11 @@ author_profile: false
 
 My personal dotfiles primarily for macOS. Managed using [chezmoi](https://www.chezmoi.io). Browse the [rendered files](https://github.com/ronaldsuwandi/dotfiles/tree/rendered).
 
+<video controls width="100%">
+  <source src="setup.mp4" type="video/mp4">
+  Your browser does not support the video tag
+</video>
+
 ## paneru + skhd — current
 
 Window management via [paneru](https://github.com/karinushka/paneru), a sliding window manager for macOS — windows slide into column positions rather than classic BSP tiling. Shortcuts via skhd, routed through `paneru send-cmd`.
