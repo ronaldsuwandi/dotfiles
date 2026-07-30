@@ -13,7 +13,7 @@ My personal dotfiles primarily for macOS. Managed using [chezmoi](https://www.ch
     <source src="setup.mp4" type="video/mp4">
     Your browser does not support the video tag. <a href="setup.mp4">Download the video</a> instead.
   </video>
-  <figcaption>paneru + sketchybar + skhd + yabai in action</figcaption>
+  <figcaption style="margin-left: auto; margin-right: auto;">paneru + sketchybar + skhd + yabai in action</figcaption>
 </figure>
 
 ## paneru + skhd — current
