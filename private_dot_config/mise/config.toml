@@ -29,6 +29,7 @@ tap_to_click = true
 "com.apple.spaces" = { 
     "app-bindings" = {
         "com.1password.1password" = "AllSpaces",
+        "com.apple.activitymonitor" = "AllSpaces",
         "info.filesmanager.files" = "AllSpaces",
 	}
 }
