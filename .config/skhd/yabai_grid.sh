@@ -52,5 +52,5 @@ elif [ "$FRONT" = "zoom.us" ]; then
     osascript -e "tell application \"System Events\" to tell process \"zoom.us\" to set position of window 1 to {$X, $Y}"
     osascript -e "tell application \"System Events\" to tell process \"zoom.us\" to set size of window 1 to {$W, $H}"
 else
-    yabai -m window --resize abs:"$W":"$H" --move abs:"$X":"$Y"
+    yabai -m window --resize abs:"$W":"$H"; yabai -m window --move abs:"$X":"$Y"
 fi
