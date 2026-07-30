@@ -14,25 +14,25 @@ Window management via [paneru](https://github.com/karinushka/paneru), a sliding 
 
 ### skhd keybindings
 
-| Shortcut | Action |
-|---|---|
-| `Cmd+Alt+Arrow` | Focus window |
-| `Cmd+Alt+Ctrl+Left/Right` | Focus first/last window |
-| `Cmd+Alt+Shift+Arrow` | Swap window |
-| `Cmd+Ctrl+Shift+Left/Right` | Swap with first/last |
-| `Cmd+Alt+Ctrl+Down/Up` | Shrink/grow column |
-| `Cmd+Alt+Space` / `Cmd+Alt+Shift+Space` | Stack / unstack window |
-| `Cmd+Alt+Return` | Fullwidth window |
-| `Cmd+Alt+F` | Toggle managed/floating |
-| `Cmd+Alt+C` | Center window |
-| `Cmd+Alt+Ctrl+=` | Equalize columns widths |
-| `Cmd+Alt+Ctrl+-` | Equalize columns heights |
-| `Cmd+Alt+U` | Focus a floating/managed window (toggle) |
-| `Ctrl+1–0` | Switch to space 1–10 (yabai) |
-| `Ctrl+Shift+1–0` | Move window to space 1–10 (yabai) |
-| `Cmd+Ctrl+Alt+Shift+Left/Up/Right/Down` | Quarter corners (top-left/top-right/bottom-right/bottom-left) — yabai-only, via `yabai_grid.sh` |
-| `Cmd+Ctrl+Alt+Shift+-` | Center horizontally — yabai-only, via `yabai_grid.sh` |
-| `Cmd+Ctrl+Alt+Shift+\|` | Center vertically — yabai-only, via `yabai_grid.sh` |
+| Shortcut                                | Action                                               |
+|:----------------------------------------|:-----------------------------------------------------|
+| `Cmd+Alt+Arrow`                         | Focus window                                         |
+| `Cmd+Alt+Ctrl+Left/Right`               | Focus first/last window                              |
+| `Cmd+Alt+Shift+Arrow`                   | Swap window                                          |
+| `Cmd+Ctrl+Shift+Left/Right`             | Swap with first/last                                 |
+| `Cmd+Alt+Ctrl+Down/Up`                  | Shrink/grow column                                   |
+| `Cmd+Alt+Space` / `Cmd+Alt+Shift+Space` | Stack / unstack window                               |
+| `Cmd+Alt+Return`                        | Fullwidth window                                     |
+| `Cmd+Alt+F`                             | Toggle managed/floating                              |
+| `Cmd+Alt+C`                             | Center window                                        |
+| `Cmd+Alt+Ctrl+=`                        | Equalize columns widths                              |
+| `Cmd+Alt+Ctrl+-`                        | Equalize columns heights                             |
+| `Cmd+Alt+U`                             | Focus a floating/managed window (toggle)             |
+| `Ctrl+1–0`                              | Switch to space 1–10 (yabai)                         |
+| `Ctrl+Shift+1–0`                        | Move window to space 1–10 (yabai)                    |
+| `Cmd+Ctrl+Alt+Shift+Left/Up/Right/Down` | Quarter corners: yabai-only, via `yabai_grid.sh`     |
+| `Cmd+Ctrl+Alt+Shift+-`                  | Center horizontally: yabai-only, via `yabai_grid.sh` |
+| `Cmd+Ctrl+Alt+Shift+\|`                 | Center vertically: yabai-only, via `yabai_grid.sh`   |
 
 App launchers, print-dialog suppression, and the Total War blacklist are unchanged from the yabai setup above. The floating-window-focus bindings live in `paneru/paneru.toml`'s `[bindings]` table rather than skhd — `send-cmd` has no command for reaching a floating window.
 
@@ -62,17 +62,17 @@ Prefix is `Alt+Space` — picked specifically to not clash with vim.
 
 ### Shortcuts (no prefix needed)
 
-| Shortcut | Action |
-|---|---|
-| `Shift+Arrow` | Focus pane |
-| `Alt+M` | Mark pane |
-| `Alt+S` | Swap with marked |
-| `Alt+.` | Cycle panes |
-| `Alt+Enter` | Zoom pane |
-| `Alt+1–9` | Select window 1–9 |
-| `Alt+0` | Select last window |
-| `Ctrl+K` | Clear screen + history |
-| `Ctrl+Alt+R` | Reload config |
+| Shortcut      | Action                 |
+|:--------------|:-----------------------|
+| `Shift+Arrow` | Focus pane             |
+| `Alt+M`       | Mark pane              |
+| `Alt+S`       | Swap with marked       |
+| `Alt+.`       | Cycle panes            |
+| `Alt+Enter`   | Zoom pane              |
+| `Alt+1–9`     | Select window 1–9      |
+| `Alt+0`       | Select last window     |
+| `Ctrl+K`      | Clear screen + history |
+| `Ctrl+Alt+R`  | Reload config          |
 
 Splits (`|` horizontal, `-` vertical) and new windows inherit the current pane's working directory.
 
@@ -96,20 +96,20 @@ I used to run Aerospace but switched back — I didn't like losing native macOS 
 
 ### skhd keybindings
 
-| Shortcut | Action |
-|---|---|
-| `Cmd+Alt+Arrow` | Focus window |
-| `Cmd+Alt+Shift+Arrow` | Move (warp) window |
-| `Cmd+Ctrl+Shift+Arrow` | Swap window |
-| `Cmd+Alt+Ctrl+Arrow` | Resize window |
-| `Cmd+Alt+Space` | Toggle split direction |
-| `Cmd+Alt+Shift+Space` | Rotate layout 90° |
-| `Cmd+Alt+Return` | Toggle fullscreen zoom |
-| `Cmd+Alt+F` | Toggle float (centered) |
-| `Cmd+Alt+Ctrl+=` | Balance space |
-| `Cmd+Alt+T` | Toggle BSP/float layout |
-| `Ctrl+1–0` | Switch to space 1–10 |
-| `Ctrl+Shift+1–0` | Move window to space 1–10 |
+| Shortcut               | Action                    |
+|:-----------------------|:--------------------------|
+| `Cmd+Alt+Arrow`        | Focus window              |
+| `Cmd+Alt+Shift+Arrow`  | Move (warp) window        |
+| `Cmd+Ctrl+Shift+Arrow` | Swap window               |
+| `Cmd+Alt+Ctrl+Arrow`   | Resize window             |
+| `Cmd+Alt+Space`        | Toggle split direction    |
+| `Cmd+Alt+Shift+Space`  | Rotate layout 90°         |
+| `Cmd+Alt+Return`       | Toggle fullscreen zoom    |
+| `Cmd+Alt+F`            | Toggle float (centered)   |
+| `Cmd+Alt+Ctrl+=`       | Balance space             |
+| `Cmd+Alt+T`            | Toggle BSP/float layout   |
+| `Ctrl+1–0`             | Switch to space 1–10      |
+| `Ctrl+Shift+1–0`       | Move window to space 1–10 |
 
 **App launchers:** `Ctrl+Shift+F` Finder · `Ctrl+Shift+T` Kitty · `Ctrl+Shift+C` Chrome · `Ctrl+Shift+N` Nimble Commander
 
