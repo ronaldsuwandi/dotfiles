@@ -54,9 +54,7 @@ cask "font-dejavu"
 cask "font-hack-nerd-font"
 cask "font-sf-pro"
 # gram is hard fork of Zed (no AI, local only)
-cask "gram"
-# ice (bartender alternative)
-# cask "jordanbaird-ice"
+# cask "gram"
 cask "iina"
 # cask "iterm2"
 cask "jetbrains-toolbox"
@@ -69,7 +67,7 @@ cask "knockknock"
 cask "licecap"
 # lunar is for managing multiple displays
 # cask "lunar"
-cask "menumeters"
+# cask "menumeters"
 # Multitouch overlaps with Rectangle, paid and better version - redundant with yabai
 # cask "multitouch"
 cask "nimble-commander"

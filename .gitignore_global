@@ -644,3 +644,5 @@ gradle-app.setting
 *.hprof
 
 # End of https://www.toptal.com/developers/gitignore/api/go,java,node,maven,xcode,gradle,python,sublimetext,intellij+all,visualstudiocode,macos,windows,linux,kotlin
+
+**/.claude/settings.local.json
