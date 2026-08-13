@@ -1,3 +1,11 @@
+######
+# Local-related files (.env.local, claude.local.yml, mise.local.toml)
+
+*.local
+*.local.*
+
+######
+
 # Created by https://www.toptal.com/developers/gitignore/api/go,java,node,maven,xcode,gradle,python,sublimetext,intellij+all,visualstudiocode,macos,windows,linux,kotlin
 # Edit at https://www.toptal.com/developers/gitignore?templates=go,java,node,maven,xcode,gradle,python,sublimetext,intellij+all,visualstudiocode,macos,windows,linux,kotlin
 
@@ -173,7 +181,8 @@ replay_pid*
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
