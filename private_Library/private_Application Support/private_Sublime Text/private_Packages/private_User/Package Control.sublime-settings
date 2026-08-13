@@ -8,7 +8,6 @@
 		"Dockerfile Syntax Highlighting",
 		"Emmet",
 		"Focus File on Sidebar",
-		"Handlebars",
 		"HTML-CSS-JS Prettify",
 		"LSP",
 		"LSP-css",
@@ -25,16 +24,15 @@
 		"PGN Support",
 		"Protobuf Syntax Hightlighting",
 		"RainbowBrackets",
-		"Sass",
 		"SideBarEnhancements",
 		"SublimeLinter",
 		"SublimeLinter-annotations",
 		"Terraform",
 		"Theme - Rose Pine",
 		"TOML",
-		"Vue",
 	],
 	"in_process_packages":
 	[
 	],
+	"debug": true,
 }
