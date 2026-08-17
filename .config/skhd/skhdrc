@@ -2,16 +2,16 @@
 .load "./skhdrc_paneru"
 
 # switch space
-ctrl - 1 : sketchybar --set /space\../ background.drawing=off --set space.1 background.drawing=on && yabai -m space --focus 1
-ctrl - 2 : sketchybar --set /space\../ background.drawing=off --set space.2 background.drawing=on && yabai -m space --focus 2
-ctrl - 3 : sketchybar --set /space\../ background.drawing=off --set space.3 background.drawing=on && yabai -m space --focus 3
-ctrl - 4 : sketchybar --set /space\../ background.drawing=off --set space.4 background.drawing=on && yabai -m space --focus 4
-ctrl - 5 : sketchybar --set /space\../ background.drawing=off --set space.5 background.drawing=on && yabai -m space --focus 5
-ctrl - 6 : sketchybar --set /space\../ background.drawing=off --set space.6 background.drawing=on && yabai -m space --focus 6
-ctrl - 7 : sketchybar --set /space\../ background.drawing=off --set space.7 background.drawing=on && yabai -m space --focus 7
-ctrl - 8 : sketchybar --set /space\../ background.drawing=off --set space.8 background.drawing=on && yabai -m space --focus 8
-ctrl - 9 : sketchybar --set /space\../ background.drawing=off --set space.9 background.drawing=on && yabai -m space --focus 9
-ctrl - 0 : sketchybar --set /space\../ background.drawing=off --set space.10 background.drawing=on && yabai -m space --focus 10
+ctrl - 1 : ~/.config/sketchybar/plugins/focus_space.sh 1
+ctrl - 2 : ~/.config/sketchybar/plugins/focus_space.sh 2
+ctrl - 3 : ~/.config/sketchybar/plugins/focus_space.sh 3
+ctrl - 4 : ~/.config/sketchybar/plugins/focus_space.sh 4
+ctrl - 5 : ~/.config/sketchybar/plugins/focus_space.sh 5
+ctrl - 6 : ~/.config/sketchybar/plugins/focus_space.sh 6
+ctrl - 7 : ~/.config/sketchybar/plugins/focus_space.sh 7
+ctrl - 8 : ~/.config/sketchybar/plugins/focus_space.sh 8
+ctrl - 9 : ~/.config/sketchybar/plugins/focus_space.sh 9
+ctrl - 0 : ~/.config/sketchybar/plugins/focus_space.sh 10
 ctrl - left : yabai -m space --focus prev
 ctrl - right : yabai -m space --focus next
 
@@ -26,6 +26,9 @@ ctrl + shift - 7 : yabai -m window --space 7 && yabai -m space --focus 7
 ctrl + shift - 8 : yabai -m window --space 8 && yabai -m space --focus 8
 ctrl + shift - 9 : yabai -m window --space 9 && yabai -m space --focus 9
 ctrl + shift - 0 : yabai -m window --space 10 && yabai -m space --focus 10
+
+# menubar (move mouse to y=0)
+cmd + alt - m : cliclick m:+0,0
 
 # app shortcuts
 # Finder

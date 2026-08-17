@@ -21,16 +21,17 @@ source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 # cross-referencing yabai to tell tiled from floating.
 STATE=$(paneru query state)
 
-COLOR="$WHITE"
+COLOR="$BLACK"
 app=(
-  background.height=20
-  background.border_width=2
-  background.corner_radius=5
+  background.height=$APP_BG_HEIGHT
+  background.border_width=$APP_BORDER_WIDTH
+  background.corner_radius=$APP_CORNER_RADIUS
   label.padding_left=10
   label.padding_right=12
-  label.background.height=30
+  label.background.height=$HEIGHT
   label.color=$COLOR
   drawing=on
+  label.font="$SYS_FONT:Regular:$FONT_SIZE"
 )
 
 # split tiled windows around the focused one (paneru's on-screen order), floating windows
@@ -46,10 +47,10 @@ SPLIT=$(echo "$STATE" | jq -c '
   | ($tiled | if $idx == null then null else .[$idx] end) as $center
   | ($tiled | if $idx == null then [] else .[($idx+1):] end) as $right_tiled
   | ($floating | reduce .[] as $w ({}; . + {($w.bundle_id): $w.app_name}) | [.[]]) as $floating_names
-  | { left: ($left | map(.app_name) | join("  ")),
-      center: (if $center.app_name then "‹" + $center.app_name + "›" else "" end),
-      right: ($right_tiled | map(.app_name) | join("  ")),
-      float: ($floating_names | join(" | ")),
+  | { left: ($left | map(.app_name) | join("    ")),
+      center: (if $center.app_name then "" + $center.app_name + "" else "" end),
+      right: ($right_tiled | map(.app_name) | join("    ")),
+      float: ($floating_names | join("  |  ")),
       count: (($tiled | length) + ($floating | length)) }')
 
 
@@ -79,7 +80,7 @@ center_args_fn() {
   if [[ -z "$label" ]]; then
     args=(background.drawing=off label="" label.drawing=off)
   else
-    args=("${app[@]}" background.color=0x40ffffff label="$label" label.drawing=on background.drawing=on)
+    args=("${app[@]}" background.color=$OVERLAY label.color=$WHITE label="$label" label.drawing=on background.drawing=on)
   fi
 }
 
@@ -90,12 +91,12 @@ float_args_fn() {
   else
     args=(
       "${app[@]}"
-      background.border_color=0xffcdd6f4
-      background.color=0xff1a1b26
-      background.padding_left=7
-      background.padding_right=7
-      icon=󰅟
-      icon.color=$ORANGE
+      background.border_color=$OVERLAY_LIGHT
+      background.padding_left=10
+      background.padding_right=10
+      icon="$FLOAT_ICON"
+      icon.color=$BLACK
+      icon.font.size=$FLOAT_ICON_SIZE
       icon.padding_left=8
       icon.padding_right=4
       icon.drawing=on
@@ -103,6 +104,7 @@ float_args_fn() {
       label="$label"
       label.drawing=on
       background.drawing=on
+
     )
   fi
 }
@@ -117,7 +119,7 @@ sketchybar --set running_apps_left "${left_args[@]}" \
            --set running_apps_updater "${center_args[@]}" \
            --set running_apps_right "${right_args[@]}" \
            --set running_apps_float "${float_args[@]}" \
-           --set windows label="$window_count 󰖲"
+           --set windows label="$window_count $WINDOWS_ICON"
 done
 # ponytail: microsecond race between last pending-check and rmdir can drop one
 # event; self-heals on the next event, unlike the old 200ms drop window
