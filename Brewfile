@@ -7,6 +7,8 @@ tap "streetpea/streetpea", trusted: true
 tap "msitarzewski/brew-browser", trusted: true
 
 # Brew apps
+# cliclick to simulate keyboard/mouse from terminal/cli
+brew "cliclick"
 brew "felixkratz/formulae/borders"
 brew "felixkratz/formulae/sketchybar"
 brew "chezmoi"
