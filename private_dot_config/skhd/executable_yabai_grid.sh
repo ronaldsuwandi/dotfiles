@@ -23,7 +23,7 @@ if { [ "$POS" = centerh ] || [ "$POS" = centerv ]; } && [ "$FRONT" != "zoom.us" 
 fi
 
 # mirrors [padding] in paneru.toml (screen-edge padding, not the inter-window gap)
-PAD_TOP=4; PAD_BOTTOM=30; PAD_LEFT=4; PAD_RIGHT=4
+PAD_TOP=4; PAD_BOTTOM=4; PAD_LEFT=4; PAD_RIGHT=4
 
 read -r SX SY SW SH <<< "$(yabai -m query --displays --display | jq -r '.frame | "\(.x|floor) \(.y|floor) \(.w|floor) \(.h|floor)"')"
 UX=$(( SX + PAD_LEFT ))

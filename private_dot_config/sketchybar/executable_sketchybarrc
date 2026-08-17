@@ -4,11 +4,11 @@ source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 
 # General bar and defaults
 default=(
-    icon.font="$FONT:Bold:13.5"
+    icon.font="$ICON_FONT:Bold:$FONT_SIZE_BOLD"
 	icon.color="$ICON_COLOR"
 	icon.padding_left=0
 	icon.padding_right=0
-	label.font="$FONT:Bold:13.0"
+	label.font="$SYS_FONT:Regular:$FONT_SIZE"
 	label.color="$LABEL_COLOR"
 	label.padding_left=0
 	label.padding_right=0
@@ -21,15 +21,15 @@ default=(
 bar=(
     height=$HEIGHT
     color="$BAR_COLOR"
-	position=bottom
-	padding_right=10
-	padding_left=20
+	position=top
+	padding_right=$BAR_PADDING_RIGHT
+	padding_left=$BAR_PADDING_LEFT
 	y_offset=0
 	margin=0
-	blur_radius=20
-	notch_width=200
+	blur_radius=$BAR_BLUR_RADIUS
+	notch_width=$BAR_NOTCH_WIDTH
 	font_smoothing=on
-	topmost=true
+	topmost=false
 	sticky=true
 )
 

@@ -41,6 +41,7 @@ Window management via [paneru](https://github.com/karinushka/paneru), a sliding 
 | `Cmd+Ctrl+Alt+Shift+Left/Up/Right/Down` | Quarter corners: yabai-only, via `yabai_grid.sh`     |
 | `Cmd+Ctrl+Alt+Shift+-`                  | Center horizontally: yabai-only, via `yabai_grid.sh` |
 | `Cmd+Ctrl+Alt+Shift+\|`                 | Center vertically: yabai-only, via `yabai_grid.sh`   |
+| `Cmd+Alt+M`                             | Nudge mouse to top edge to reveal the native menu bar (via `cliclick`), since sketchybar now sits on top and covers it |
 
 App launchers, print-dialog suppression, and the Total War blacklist are unchanged from the yabai setup above. The floating-window-focus bindings live in `paneru/paneru.toml`'s `[bindings]` table rather than skhd — `send-cmd` has no command for reaching a floating window.
 
@@ -54,13 +55,15 @@ New windows are managed automatically (config: `paneru/paneru.toml`). Apps that 
 
 ## sketchybar
 
-[Sketchybar](https://github.com/FelixKratz/SketchyBar) at the bottom of the screen, frosted glass, [Catppuccin Mocha](https://github.com/catppuccin/catppuccin) colours.
+[Sketchybar](https://github.com/FelixKratz/SketchyBar) at the top of the screen. Colours are a light blue theme matching the current wallpaper/setup rather than a fixed palette. Labels use the native macOS system font (SF Pro); Hack Nerd Font Mono is used only for icon glyphs (space numbers, window/float indicators).
 
 - **Left:** window count · space indicators 1–10
 - **Center:** focused app name + icon · floating indicator when the focused window is floating
 - **Right:** apps in the current space — paneru's managed windows in order (focused one marked `‹ ›`), followed by any floating windows (detected via yabai) marked with a floating icon
 
 Since paneru has no per-action hooks of its own, sketchybar stays in sync via a custom `paneru_manage_change` event fired directly from the relevant skhd shortcuts (focus, swap, manage-toggle) — no polling, no background daemon.
+
+Space-focus click/keybind logic (highlight the focused space, set icon colors, `yabai -m space --focus`) is consolidated in `plugins/focus_space.sh`, called from both the sketchybar space items and skhd's `Ctrl+1–0`.
 
 ---
 

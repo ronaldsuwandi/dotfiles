@@ -20,10 +20,9 @@ vertical = false
 workspace_menu_status = false
 workspace_popup_status = false
 
-# yabai: padding 4 + external_bar bottom 26 (sketchybar is position=bottom)
 [padding]
 top = 4
-bottom = 30
+bottom = 4
 left = 4
 right = 4
 
