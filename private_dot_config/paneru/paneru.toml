@@ -208,3 +208,15 @@ title = ".*"
 bundle_id = "com.apple.airport.airportutility"
 floating = true
 grid = "8:8:1:1:6:6"
+
+[windows.steam]
+bundle_id = "com.valvesoftware.steam"
+title = ".*"
+manage = true
+floating = true
+
+[windows.steamhelper]
+bundle_id = "com.valvesoftware.steam.helper"
+title = ".*"
+manage = true
+floating = true
