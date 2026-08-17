@@ -26,12 +26,15 @@ preferred_view_style = "list"
 tap_to_click = true
 
 [bootstrap.macos.defaults]
-"com.apple.spaces" = { 
+"com.apple.spaces" = {
     "app-bindings" = {
         "com.1password.1password" = "AllSpaces",
         "com.apple.activitymonitor" = "AllSpaces",
         "info.filesmanager.files" = "AllSpaces",
 	}
+}
+"NSGlobalDomain" = {
+    _HIHideMenuBar = true,
 }
 "com.apple.AppleMultitouchTrackpad" = {
     TrackpadCornerSecondaryClick = 0,
