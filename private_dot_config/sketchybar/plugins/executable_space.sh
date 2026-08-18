@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 source "$HOME/.config/sketchybar/variables.sh"
 

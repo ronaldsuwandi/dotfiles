@@ -18,7 +18,6 @@ for i in "${!SPACE_ICONS[@]}"; do
     icon="${SPACE_ICONS[i]}"
     icon.width=$SPACE_ICON_WIDTH
     icon.align=center
-    icon.font="$SYS_FONT:Regular:$FONT_SIZE"
     background.color=$OVERLAY
     background.corner_radius=$SPACE_CORNER_RADIUS
     background.height=$SPACE_BG_HEIGHT
@@ -39,6 +38,9 @@ sketchybar --add item space_focus left \
 sketchybar --add item spacer_apps left \
   --set spacer_apps background.padding_left=$SPACER_PADDING
 
+# date/time
+sketchybar --add item clock right \
+  --set clock icon.drawing=off update_freq=20 script="$PLUGIN_DIR/clock.sh" padding_right="$SPACER_PADDING"
 
 # apps
 sketchybar --add item running_apps_left left
@@ -49,10 +51,22 @@ sketchybar --add item running_apps_updater left \
   --subscribe running_apps_updater paneru_manage_change \
   --subscribe running_apps_updater front_app_switched
 sketchybar --add item running_apps_right left
-sketchybar --add item running_apps_float_spacer left \
-  --set running_apps_float_spacer background.padding_left=$SPACER_PADDING
-sketchybar --add item running_apps_float left
 
-# right spacer
-sketchybar --add item right_spacer right \
-  --set right_spacer background.padding_right=$RIGHT_SPACER_PADDING
+# status spacer
+sketchybar --add item status_spacer right \
+  --set status_spacer background.padding_left=$SPACER_PADDING
+
+# battery
+sketchybar --add item battery right \
+  --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" padding_right="$SPACER_PADDING"   \
+  --subscribe battery system_woke power_source_change
+
+# volume
+sketchybar --add item volume right \
+  --set volume label.drawing=off script="$PLUGIN_DIR/volume.sh" icon.width=$SPACE_ICON_WIDTH \
+  --subscribe volume volume_change
+
+# floating apps (moved off the left so they don't get clipped by the notch)
+sketchybar --add item running_apps_float_spacer right \
+  --set running_apps_float_spacer background.padding_right=$SPACER_PADDING padding_right="$SPACER_PADDING"
+sketchybar --add item running_apps_float right

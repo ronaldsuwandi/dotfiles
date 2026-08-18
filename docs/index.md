@@ -59,7 +59,9 @@ New windows are managed automatically (config: `paneru/paneru.toml`). Apps that 
 
 - **Left:** window count · space indicators 1–10
 - **Center:** focused app name + icon · floating indicator when the focused window is floating
-- **Right:** apps in the current space — paneru's managed windows in order (focused one marked `‹ ›`), followed by any floating windows (detected via yabai) marked with a floating icon
+- **Right:** date/time · apps in the current space — paneru's managed windows in order (focused one marked `‹ ›`) · battery % · volume icon · any floating windows (detected via yabai) marked with a floating icon
+
+Clock, battery, and volume are glanceable-only — no click actions. Clock re-renders every 20s; battery every 120s (plus on wake/power-source change) and tints red under 20%; volume updates only on `volume_change`.
 
 Since paneru has no per-action hooks of its own, sketchybar stays in sync via a custom `paneru_manage_change` event fired directly from the relevant skhd shortcuts (focus, swap, manage-toggle) — no polling, no background daemon.
 

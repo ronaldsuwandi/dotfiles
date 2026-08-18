@@ -53,3 +53,5 @@
 # aerospace
 .aerospace.toml
 
+# old tmux
+.tmux.conf
