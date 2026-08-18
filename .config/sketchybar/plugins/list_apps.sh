@@ -31,7 +31,6 @@ app=(
   label.background.height=$HEIGHT
   label.color=$COLOR
   drawing=on
-  label.font="$SYS_FONT:Regular:$FONT_SIZE"
 )
 
 # split tiled windows around the focused one (paneru's on-screen order), floating windows
@@ -96,7 +95,6 @@ float_args_fn() {
       background.padding_right=10
       icon="$FLOAT_ICON"
       icon.color=$BLACK
-      icon.font.size=$FLOAT_ICON_SIZE
       icon.padding_left=8
       icon.padding_right=4
       icon.drawing=on

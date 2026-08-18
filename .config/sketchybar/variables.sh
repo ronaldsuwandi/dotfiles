@@ -1,9 +1,10 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Color Palette
 BLACK=0xff1e1e2e
 WHITE=0xffffffff
 BAR_COLOR=0xFFAAD7FF
+RED=0xffff3b30 # low-battery tint, mimics macOS
 
 OVERLAY_LIGHT=0x40000000   # space bg / float pill border
 OVERLAY=0xC15079A2   # focused-app pill bg
@@ -14,10 +15,9 @@ LABEL_COLOR=$BLACK # Color of all labels
 
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 
-ICON_FONT="Hack Nerd Font Mono"
-SYS_FONT="SF Pro"
-FONT_SIZE=13.0
-FONT_SIZE_BOLD=13.5
+FONT="SF Pro"
+FONT_WEIGHT="Regular"
+FONT_SIZE=13
 
 HEIGHT=30
 
@@ -36,13 +36,11 @@ SPACE_CORNER_RADIUS=200
 APP_BG_HEIGHT=24
 APP_BORDER_WIDTH=2
 APP_CORNER_RADIUS=100
-FLOAT_ICON_SIZE=20
 
 # Spacers
 SPACER_PADDING=10
-RIGHT_SPACER_PADDING=40
 WINDOWS_PADDING_RIGHT=20
 
 # Glyphs
-WINDOWS_ICON="󰖲"
-FLOAT_ICON="󰅣"
+WINDOWS_ICON="􀐅"
+FLOAT_ICON="􀇂"
