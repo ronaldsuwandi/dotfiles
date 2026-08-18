@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 source "$HOME/.config/sketchybar/variables.sh"
 
-PERCENTAGE="$(pmset -g batt | grep -Eo '[0-9]+%' | cut -d% -f1)"
-CHARGING="$(pmset -g batt | grep -c 'AC Power')"
+BATT="$(pmset -g batt)"
+PERCENTAGE="$(grep -Eo '[0-9]+%' <<< "$BATT" | cut -d% -f1)"
+CHARGING="$(grep -c 'AC Power' <<< "$BATT")"
 [ -z "$PERCENTAGE" ] && exit 0
 
 if [ "$PERCENTAGE" -ge 88 ]; then
@@ -24,4 +25,4 @@ elif [ "$PERCENTAGE" -le 20 ]; then
   COLOR="$RED"
 fi
 
-sketchybar --set "$NAME" icon="${PERCENTAGE}%" label.color="$COLOR" label=" $ICON" label.padding_right=8
+sketchybar --set "$NAME" icon="${PERCENTAGE}%" label.color="$COLOR" label=" $ICON" label.padding_right=6

@@ -57,9 +57,11 @@ New windows are managed automatically (config: `paneru/paneru.toml`). Apps that 
 
 [Sketchybar](https://github.com/FelixKratz/SketchyBar) at the top of the screen. Colours are a light blue theme matching the current wallpaper/setup rather than a fixed palette. Labels use the native macOS system font (SF Pro); Hack Nerd Font Mono is used only for icon glyphs (space numbers, window/float indicators).
 
-- **Left:** window count · space indicators 1–10
+- **Left:** space indicators 1–10
 - **Center:** focused app name + icon · floating indicator when the focused window is floating
-- **Right:** date/time · apps in the current space — paneru's managed windows in order (focused one marked `‹ ›`) · battery % · volume icon · any floating windows (detected via yabai) marked with a floating icon
+- **Right:** date/time · apps in the current space — paneru's managed windows in order (focused one marked `‹ ›`) · battery % · volume icon · window count · any floating windows (detected via yabai) marked with a floating icon
+
+Side app labels (left/right of the focused one) shrink to 9pt when the notch is active, 10.5pt otherwise (lid closed / external display only) — keeps them legible without running under the notch.
 
 Clock, battery, and volume are glanceable-only — no click actions. Clock re-renders every 20s; battery every 120s (plus on wake/power-source change) and tints red under 20%; volume updates only on `volume_change`.
 

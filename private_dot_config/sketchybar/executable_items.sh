@@ -2,13 +2,9 @@
 source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 
 windows=(
-    padding_right=$WINDOWS_PADDING_RIGHT
+    padding_right=$RIGHT_ITEM_GAP
     click_script="open -a 'Mission Control'"
 )
-
-# window count
-sketchybar --add item windows left \
-  --set windows label="0 $WINDOWS_ICON" "${windows[@]}"
 
 # Mission Control specifics using yabai
 SPACE_ICONS=({1..10})
@@ -38,10 +34,6 @@ sketchybar --add item space_focus left \
 sketchybar --add item spacer_apps left \
   --set spacer_apps background.padding_left=$SPACER_PADDING
 
-# date/time
-sketchybar --add item clock right \
-  --set clock icon.drawing=off update_freq=20 script="$PLUGIN_DIR/clock.sh" padding_right="$SPACER_PADDING"
-
 # apps
 sketchybar --add item running_apps_left left
 sketchybar --add item running_apps_updater left \
@@ -49,24 +41,31 @@ sketchybar --add item running_apps_updater left \
   --subscribe running_apps_updater space_change \
   --subscribe running_apps_updater space_windows_change \
   --subscribe running_apps_updater paneru_manage_change \
-  --subscribe running_apps_updater front_app_switched
+  --subscribe running_apps_updater front_app_switched \
+  --subscribe running_apps_updater system_woke
 sketchybar --add item running_apps_right left
 
-# status spacer
-sketchybar --add item status_spacer right \
-  --set status_spacer background.padding_left=$SPACER_PADDING
+
+# date/time
+sketchybar --add item clock right \
+  --set clock icon.drawing=off update_freq=20 script="$PLUGIN_DIR/clock.sh" padding_right="$SPACER_PADDING"
 
 # battery
 sketchybar --add item battery right \
-  --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" padding_right="$SPACER_PADDING"   \
+  --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" padding_right=$RIGHT_ITEM_GAP   \
   --subscribe battery system_woke power_source_change
 
 # volume
 sketchybar --add item volume right \
-  --set volume label.drawing=off script="$PLUGIN_DIR/volume.sh" icon.width=$SPACE_ICON_WIDTH \
+  --set volume label.drawing=off script="$PLUGIN_DIR/volume.sh" icon.width=22 padding_right=$RIGHT_ITEM_GAP \
   --subscribe volume volume_change
+
+# window count
+sketchybar --add item windows right \
+  --set windows label="0 $WINDOWS_ICON" "${windows[@]}"
+
 
 # floating apps (moved off the left so they don't get clipped by the notch)
 sketchybar --add item running_apps_float_spacer right \
-  --set running_apps_float_spacer background.padding_right=$SPACER_PADDING padding_right="$SPACER_PADDING"
+  --set running_apps_float_spacer background.padding_right=$SPACER_PADDING
 sketchybar --add item running_apps_float right
