@@ -55,7 +55,7 @@ New windows are managed automatically (config: `paneru/paneru.toml`). Apps that 
 
 ## sketchybar
 
-[Sketchybar](https://github.com/FelixKratz/SketchyBar) at the top of the screen. Colours are a light blue theme matching the current wallpaper/setup rather than a fixed palette. Labels use the native macOS system font (SF Pro); Hack Nerd Font Mono is used only for icon glyphs (space numbers, window/float indicators).
+[Sketchybar](https://github.com/FelixKratz/SketchyBar) at the top of the screen. Colours are a light blue theme matching the current wallpaper/setup rather than a fixed palette. Labels and icon glyphs (space numbers, window/float indicators) both use the native macOS system font (SF Pro), with symbols sourced via the SF Symbols app (`brew install sf-symbols`, in the Brewfile — must be installed first).
 
 - **Left:** space indicators 1–10
 - **Center:** focused app name + icon · floating indicator when the focused window is floating
