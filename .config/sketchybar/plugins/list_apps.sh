@@ -21,6 +21,11 @@ source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 # cross-referencing yabai to tell tiled from floating.
 STATE=$(paneru query state)
 
+# lid closed (clamshell, external-only) is the only case where the notch isn't in play
+NOTCH_ACTIVE=true
+ioreg -r -k AppleClamshellState -d 4 2>/dev/null | grep -q '"AppleClamshellState" = Yes' && NOTCH_ACTIVE=false
+[[ "$NOTCH_ACTIVE" = true ]] && SIDE_FONT_SIZE=9.0 || SIDE_FONT_SIZE=10.5
+
 COLOR="$BLACK"
 app=(
   background.height=$APP_BG_HEIGHT
@@ -36,7 +41,10 @@ app=(
 # split tiled windows around the focused one (paneru's on-screen order), floating windows
 # (deduped by bundle id, ponytail: O(n^2) object-merge, fine for a handful of windows) get their own bucket;
 # ponytail: no focused tiled window (empty space / floating frontmost) -> no split point, everything goes left
-SPLIT=$(echo "$STATE" | jq -c '
+fields=()
+while IFS= read -r line; do
+  fields+=("$line")
+done < <(echo "$STATE" | jq -r '
   (.active.focused_window_id // 0) as $fid
   | (.virtual_workspaces[] | select(.active == true) | .windows) as $windows
   | ($windows | map(select(.floating == false))) as $tiled
@@ -46,18 +54,12 @@ SPLIT=$(echo "$STATE" | jq -c '
   | ($tiled | if $idx == null then null else .[$idx] end) as $center
   | ($tiled | if $idx == null then [] else .[($idx+1):] end) as $right_tiled
   | ($floating | reduce .[] as $w ({}; . + {($w.bundle_id): $w.app_name}) | [.[]]) as $floating_names
-  | { left: ($left | map(.app_name) | join("    ")),
-      center: (if $center.app_name then "" + $center.app_name + "" else "" end),
-      right: ($right_tiled | map(.app_name) | join("    ")),
-      float: ($floating_names | join("  |  ")),
-      count: (($tiled | length) + ($floating | length)) }')
-
-
-# use 1 jq command and split into array
-fields=()
-while IFS= read -r line; do
-  fields+=("$line")
-done < <(echo "$SPLIT" | jq -r '.left, .center, .right, .float, .count')
+  | ($left | map(.app_name) | join("    ")),
+    (if $center.app_name then $center.app_name else "" end),
+    ($right_tiled | map(.app_name) | join("    ")),
+    ($floating_names | join("  |  ")),
+    (($tiled | length) + ($floating | length) | tostring)
+')
 
 apps_left="${fields[0]}"
 center_app="${fields[1]}"
@@ -70,7 +72,7 @@ plain_args() {
   if [[ -z "$label" ]]; then
     args=(background.drawing=off label="" label.drawing=off)
   else
-    args=("${app[@]}" background.drawing=on label.color=$COLOR label="$label" label.drawing=on)
+    args=("${app[@]}" background.drawing=on label.color=$COLOR label="$label" label.drawing=on label.font.size=$SIDE_FONT_SIZE)
   fi
 }
 
