@@ -53,7 +53,6 @@ cask "contexts"
 cask "detectx-swift"
 cask "devutils"
 cask "font-dejavu"
-cask "font-hack-nerd-font"
 cask "font-sf-pro"
 # gram is hard fork of Zed (no AI, local only)
 # cask "gram"
@@ -81,6 +80,7 @@ cask "pearcleaner"
 # cask "postman"
 # rectangle for window management. Free version of Multitouch
 # cask "rectangle"
+cask "sf-symbols"
 # sloth to show list of opened/locked files
 cask "sloth"
 cask "spotify"
