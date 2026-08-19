@@ -30,11 +30,18 @@ tap_to_click = true
     "app-bindings" = {
         "com.1password.1password" = "AllSpaces",
         "com.apple.activitymonitor" = "AllSpaces",
-        "info.filesmanager.files" = "AllSpaces",
+        "info.filesmanager.files" = "AllSpaces", # Nimble Commander
 	}
 }
 "NSGlobalDomain" = {
-    _HIHideMenuBar = true,
+    _HIHideMenuBar = true, # auto hide menubar
+    AppleKeyboardUIMode = 2, # keyboard navigation
+}
+"com.apple.TextInputMenu" = {
+    visible = true, # show input menu in menubar
+}
+"com.apple.WindowManager" = {
+    EnableStandardClickToShowDesktop = false, # disable click to show desktop
 }
 "com.apple.AppleMultitouchTrackpad" = {
     TrackpadCornerSecondaryClick = 0,
@@ -48,4 +55,17 @@ tap_to_click = true
     TrackpadThreeFingerVertSwipeGesture = 0,
     TrackpadTwoFingerDoubleTapGesture = 1,
     TrackpadTwoFingerFromRightEdgeSwipeGesture = 0,
+}
+"com.apple.finder" = {
+    FXICloudDriveDesktop = true,
+    FXICloudDriveDocuments = true,
+    FXICloudDriveEnabled = true,
+}
+
+# hot corners
+"com.apple.dock" = {
+    "wvous-tr-corner" = 2, # top-right: mission control
+    "wvous-tr-modifier" = 0,
+    "wvous-br-corner" = 4, # bottom-right: desktop
+    "wvous-br-modifier" = 0,
 }
