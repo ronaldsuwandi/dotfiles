@@ -26,13 +26,6 @@ preferred_view_style = "list"
 tap_to_click = true
 
 [bootstrap.macos.defaults]
-"com.apple.spaces" = {
-    "app-bindings" = {
-        "com.1password.1password" = "AllSpaces",
-        "com.apple.activitymonitor" = "AllSpaces",
-        "info.filesmanager.files" = "AllSpaces", # Nimble Commander
-	}
-}
 "NSGlobalDomain" = {
     _HIHideMenuBar = true, # auto hide menubar
     AppleKeyboardUIMode = 2, # keyboard navigation
@@ -69,3 +62,11 @@ tap_to_click = true
     "wvous-br-corner" = 4, # bottom-right: desktop
     "wvous-br-modifier" = 0,
 }
+
+[bootstrap.hooks]
+# assign 1password, activity monitor and nimble commander to all spaces
+post-defaults = [
+    "defaults write com.apple.spaces app-bindings -dict-add com.1password.1password AllSpaces",
+    "defaults write com.apple.spaces app-bindings -dict-add com.apple.activitymonitor AllSpaces",
+    "defaults write com.apple.spaces app-bindings -dict-add info.filesmanager.files AllSpaces",
+]
