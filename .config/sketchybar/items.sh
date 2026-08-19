@@ -56,21 +56,24 @@ sketchybar --add item battery right \
 # volume
 sketchybar --add item volume right \
   --set volume label.drawing=off script="$PLUGIN_DIR/volume.sh" icon.width=22 padding_right=$RIGHT_ITEM_GAP \
-              click_script="sketchybar --set volume popup.drawing=toggle popup.background.color=$BAR_COLOR popup.align=center popup.background.corner_radius=8" \
-  --subscribe volume volume_change
+              click_script="$PLUGIN_DIR/volume.sh" \
+  --subscribe volume volume_change mouse.clicked
 
+volume_slider=(
+    slider.highlight_color=$OVERLAY
+    slider.background.height=6
+    slider.background.corner_radius=3
+    slider.background.color=$OVERLAY
+    slider.knob="●"
+    slider.knob.drawing=on
+    background.color=$BAR_COLOR
+    background.padding_left=25
+    background.padding_right=25
+    background.height=50
+    script="$PLUGIN_DIR/volume_slider.sh"
+)
 sketchybar --add slider volume_slider popup.volume 130 \
-  --set volume_slider slider.highlight_color=$OVERLAY \
-                       slider.background.height=6 \
-                       slider.background.corner_radius=3 \
-                       slider.background.color=$OVERLAY \
-                       slider.knob="●" \
-                       slider.knob.drawing=on \
-                       background.color=$BAR_COLOR \
-                       background.padding_left=25 \
-                       background.padding_right=25 \
-                       background.height=50 \
-                       script="$PLUGIN_DIR/volume_slider.sh" \
+  --set volume_slider "${volume_slider[@]}" \
   --subscribe volume_slider mouse.clicked mouse.exited
 
 # window count
