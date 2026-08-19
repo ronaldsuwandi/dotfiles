@@ -6,6 +6,8 @@ preset_column_widths = [0.3333, 0.5, 0.6667, 1.00]
 sliver_width = 1
 #animation_speed = 0  # comment/delete animation_speed for instant look up
 
+[bindings]
+
 [swipe.gesture]
 fingers_count = 0
 vertical = false
