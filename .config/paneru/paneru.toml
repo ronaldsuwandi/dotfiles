@@ -10,29 +10,22 @@ sliver_width = 1
 fingers_count = 0
 vertical = false
 
-[bindings]
-# key bindings live in skhdrc via `paneru send-cmd` — single place to blacklist for games
-# only what send-cmd can't reach stays here:
-# window_focus_unmanaged = "cmd + alt - u"           # focus a floating window
-# window_focus_managed   = "cmd + alt + shift - u"   # focus back to tiled
-
 [decorations]
 workspace_menu_status = false
 workspace_popup_status = false
 
 [padding]
-top = 4
-bottom = 4
-left = 4
-right = 4
+top = 0
+bottom = 0
+left = 0
+right = 0
 
-# yabai window_gap 6
 [windows.all]
 title = ".*"
-horizontal_padding = 3
-vertical_padding = 0
+horizontal_padding = 4
+vertical_padding = 4
 
-# ---- float rules (from yabairc) ----
+# ---- float rules ----
 [windows.system_settings]
 title = ".*"
 bundle_id = "com.apple.systempreferences"
