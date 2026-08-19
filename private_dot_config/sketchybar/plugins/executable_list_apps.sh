@@ -114,12 +114,16 @@ center_args_fn "$center_app"; center_args=("${args[@]}")
 plain_args "$apps_right"; right_args=("${args[@]}")
 float_args_fn "$apps_float"; float_args=("${args[@]}")
 
+[[ "$window_count" -gt 0 ]] && nav_drawing=on || nav_drawing=off
+
 # single invocation -> one bar redraw instead of four, avoids the flicker
 sketchybar --set running_apps_left "${left_args[@]}" \
            --set running_apps_updater "${center_args[@]}" \
            --set running_apps_right "${right_args[@]}" \
            --set running_apps_float "${float_args[@]}" \
-           --set windows label="$window_count $WINDOWS_ICON"
+           --set windows label="$window_count $WINDOWS_ICON" \
+           --set focus_left drawing=$nav_drawing \
+           --set focus_right drawing=$nav_drawing
 done
 # ponytail: microsecond race between last pending-check and rmdir can drop one
 # event; self-heals on the next event, unlike the old 200ms drop window

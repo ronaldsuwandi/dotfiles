@@ -30,8 +30,18 @@ sketchybar --add item space_focus left \
   --set space_focus script="$PLUGIN_DIR/focus_window.sh" \
   --subscribe space_focus space_change
 
-sketchybar --add item spacer_apps left \
-  --set spacer_apps background.padding_left=$SPACER_PADDING
+sketchybar --add item spacer_focus left \
+  --set spacer_focus background.padding_left=$SPACER_PADDING
+
+sketchybar --add item focus_left left \
+  --set focus_left icon="􀁲" icon.color=$ICON_COLOR icon.font.size=18 padding_right=5 \
+              click_script="paneru send-cmd window focus west"
+sketchybar --add item focus_right left \
+  --set focus_right icon="􀁴" icon.color=$ICON_COLOR icon.font.size=18\
+              click_script="paneru send-cmd window focus east"
+
+sketchybar --add item focus_apps left \
+  --set focus_apps background.padding_right=$SPACER_PADDING
 
 # apps
 sketchybar --add item running_apps_left left
