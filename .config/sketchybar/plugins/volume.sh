@@ -10,5 +10,6 @@ if [ "$SENDER" = "volume_change" ]; then
   else
     ICON="􀊩"
   fi
-  sketchybar --set "$NAME" icon="$ICON"
+  sketchybar --set "$NAME" icon="$ICON" \
+             --set volume_slider slider.percentage="$VOLUME"
 fi
