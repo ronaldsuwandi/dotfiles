@@ -44,3 +44,7 @@ RIGHT_ITEM_GAP=15
 # Glyphs
 WINDOWS_ICON="􀐅"
 FLOAT_ICON="􀇂"
+
+# Simulated-click x coordinate (logical points) for the real, hidden app
+# menu title. Tune to your display if clicks miss.
+APP_MENU_CLICK_X=70

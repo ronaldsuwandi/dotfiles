@@ -25,7 +25,6 @@ for i in "${!SPACE_ICONS[@]}"; do
     --set space."${SPACE_ICONS[i]}" "${space[@]}"
 done
 
-
 # to focus on first window if no window is focused
 sketchybar --add item space_focus left \
   --set space_focus script="$PLUGIN_DIR/focus_window.sh" \
@@ -45,25 +44,38 @@ sketchybar --add item running_apps_updater left \
   --subscribe running_apps_updater system_woke
 sketchybar --add item running_apps_right left
 
-
 # date/time
 sketchybar --add item clock right \
   --set clock icon.drawing=off update_freq=20 script="$PLUGIN_DIR/clock.sh" padding_right="$SPACER_PADDING"
 
 # battery
 sketchybar --add item battery right \
-  --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" padding_right=$RIGHT_ITEM_GAP   \
+  --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" padding_right=$RIGHT_ITEM_GAP \
   --subscribe battery system_woke power_source_change
 
 # volume
 sketchybar --add item volume right \
   --set volume label.drawing=off script="$PLUGIN_DIR/volume.sh" icon.width=22 padding_right=$RIGHT_ITEM_GAP \
+              click_script="sketchybar --set volume popup.drawing=toggle popup.background.color=$BAR_COLOR popup.align=center popup.background.corner_radius=8" \
   --subscribe volume volume_change
+
+sketchybar --add slider volume_slider popup.volume 130 \
+  --set volume_slider slider.highlight_color=$OVERLAY \
+                       slider.background.height=6 \
+                       slider.background.corner_radius=3 \
+                       slider.background.color=$OVERLAY \
+                       slider.knob="●" \
+                       slider.knob.drawing=on \
+                       background.color=$BAR_COLOR \
+                       background.padding_left=25 \
+                       background.padding_right=25 \
+                       background.height=50 \
+                       script="$PLUGIN_DIR/volume_slider.sh" \
+  --subscribe volume_slider mouse.clicked mouse.exited
 
 # window count
 sketchybar --add item windows right \
   --set windows label="0 $WINDOWS_ICON" "${windows[@]}"
-
 
 # floating apps (moved off the left so they don't get clipped by the notch)
 sketchybar --add item running_apps_float_spacer right \
