@@ -13,8 +13,15 @@ trap 'rmdir "$LOCKFILE"' EXIT
 source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 
 # lid closed (clamshell, external-only) is the only case where the notch isn't in play
-IOREG_OUT=$(ioreg -r -k AppleClamshellState -d 4 2>/dev/null)
-[[ "$IOREG_OUT" == *'"AppleClamshellState" = Yes'* ]] && SIDE_FONT_SIZE=10.5 || SIDE_FONT_SIZE=9.0
+# ponytail: clamshell state rarely changes, only recheck on wake/first run instead of every event.
+# cache file holds the resolved SIDE_FONT_SIZE value itself (10.5 clamshell / 9.0 notch), not raw ioreg output
+SIDE_FONT_SIZE_CACHE="/tmp/sketchybar_side_font_size"
+if [[ "$SENDER" == "system_woke" || ! -s "$SIDE_FONT_SIZE_CACHE" ]]; then
+  IOREG_OUT=$(ioreg -r -k AppleClamshellState -d 4 2>/dev/null)
+  [[ "$IOREG_OUT" == *'"AppleClamshellState" = Yes'* ]] && echo 10.5 > "$SIDE_FONT_SIZE_CACHE" || echo 9.0 > "$SIDE_FONT_SIZE_CACHE"
+fi
+SIDE_FONT_SIZE=$(<"$SIDE_FONT_SIZE_CACHE")
+: "${SIDE_FONT_SIZE:=9.0}" # default to 9.0 (notch, non-clamshell) if the cache is somehow still missing/empty
 
 while [ -f "$PENDING" ]; do
 rm -f "$PENDING"
@@ -42,7 +49,7 @@ app=(
 fields=()
 while IFS= read -r line; do
   fields+=("$line")
-done < <(echo "$STATE" | jq -r '
+done < <(jq -r '
   (.active.focused_window_id // 0) as $fid
   | (.virtual_workspaces[] | select(.active == true) | .windows) as $windows
   | ($windows | map(select(.floating == false))) as $tiled
@@ -57,7 +64,7 @@ done < <(echo "$STATE" | jq -r '
     ($right_tiled | map(.app_name) | join("    ")),
     ($floating_names | join("  |  ")),
     ($windows | length | tostring)
-')
+' <<<"$STATE")
 
 apps_left="${fields[0]}"
 center_app="${fields[1]}"
