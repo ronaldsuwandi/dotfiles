@@ -7,11 +7,10 @@ windows=(
 )
 
 # Mission Control specifics using yabai
-SPACE_ICONS=({1..10})
-for i in "${!SPACE_ICONS[@]}"; do
+for i in {1..10}; do
   space=(
-    space="${SPACE_ICONS[i]}"
-    icon="${SPACE_ICONS[i]}"
+    space="$i"
+    icon="$i"
     icon.width=$SPACE_ICON_WIDTH
     icon.align=center
     background.color=$OVERLAY
@@ -19,10 +18,10 @@ for i in "${!SPACE_ICONS[@]}"; do
     background.height=$SPACE_BG_HEIGHT
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
-    click_script="$PLUGIN_DIR/focus_space.sh ${SPACE_ICONS[i]}"
+    click_script="$PLUGIN_DIR/focus_space.sh $i"
   )
-  sketchybar --add space space."${SPACE_ICONS[i]}" left \
-    --set space."${SPACE_ICONS[i]}" "${space[@]}"
+  sketchybar --add space space."$i" left \
+    --set space."$i" "${space[@]}"
 done
 
 # to focus on first window if no window is focused
@@ -66,7 +65,6 @@ sketchybar --add item battery right \
 # volume
 sketchybar --add item volume right \
   --set volume label.drawing=off script="$PLUGIN_DIR/volume.sh" icon.width=22 padding_right=$RIGHT_ITEM_GAP \
-              click_script="$PLUGIN_DIR/volume.sh" \
   --subscribe volume volume_change mouse.clicked
 
 volume_slider=(
