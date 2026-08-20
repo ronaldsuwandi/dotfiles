@@ -10,23 +10,21 @@ touch "$PENDING"
 mkdir "$LOCKFILE" 2>/dev/null || exit 0   # mkdir is atomic, unlike touch
 trap 'rmdir "$LOCKFILE"' EXIT
 
+source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
+
+# lid closed (clamshell, external-only) is the only case where the notch isn't in play
+IOREG_OUT=$(ioreg -r -k AppleClamshellState -d 4 2>/dev/null)
+[[ "$IOREG_OUT" == *'"AppleClamshellState" = Yes'* ]] && SIDE_FONT_SIZE=10.5 || SIDE_FONT_SIZE=9.0
+
 while [ -f "$PENDING" ]; do
 rm -f "$PENDING"
 sleep 0.05
-
-source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 
 # paneru now reports floating (unmanaged) windows inline via the `floating`
 # flag, and tracks focus correctly even onto floating windows — no more
 # cross-referencing yabai to tell tiled from floating.
 STATE=$(paneru query state)
 
-# lid closed (clamshell, external-only) is the only case where the notch isn't in play
-NOTCH_ACTIVE=true
-ioreg -r -k AppleClamshellState -d 4 2>/dev/null | grep -q '"AppleClamshellState" = Yes' && NOTCH_ACTIVE=false
-[[ "$NOTCH_ACTIVE" = true ]] && SIDE_FONT_SIZE=9.0 || SIDE_FONT_SIZE=10.5
-
-COLOR="$BLACK"
 app=(
   background.height=$APP_BG_HEIGHT
   background.border_width=$APP_BORDER_WIDTH
@@ -34,7 +32,7 @@ app=(
   label.padding_left=10
   label.padding_right=12
   label.background.height=$HEIGHT
-  label.color=$COLOR
+  label.color=$ICON_COLOR
   drawing=on
 )
 
@@ -58,7 +56,7 @@ done < <(echo "$STATE" | jq -r '
     (if $center.app_name then $center.app_name else "" end),
     ($right_tiled | map(.app_name) | join("    ")),
     ($floating_names | join("  |  ")),
-    (($tiled | length) + ($floating | length) | tostring)
+    ($windows | length | tostring)
 ')
 
 apps_left="${fields[0]}"
@@ -72,7 +70,7 @@ plain_args() {
   if [[ -z "$label" ]]; then
     args=(background.drawing=off label="" label.drawing=off)
   else
-    args=("${app[@]}" background.drawing=on label.color=$COLOR label="$label" label.drawing=on label.font.size=$SIDE_FONT_SIZE)
+    args=("${app[@]}" background.drawing=on label="$label" label.drawing=on label.font.size=$SIDE_FONT_SIZE)
   fi
 }
 
@@ -96,7 +94,7 @@ float_args_fn() {
       background.padding_left=10
       background.padding_right=10
       icon="$FLOAT_ICON"
-      icon.color=$BLACK
+      icon.color=$ICON_COLOR
       icon.padding_left=8
       icon.padding_right=4
       icon.drawing=on

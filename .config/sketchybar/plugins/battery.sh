@@ -2,8 +2,7 @@
 source "$HOME/.config/sketchybar/variables.sh"
 
 BATT="$(pmset -g batt)"
-PERCENTAGE="$(grep -Eo '[0-9]+%' <<< "$BATT" | cut -d% -f1)"
-CHARGING="$(grep -c 'AC Power' <<< "$BATT")"
+[[ "$BATT" =~ ([0-9]+)% ]] && PERCENTAGE="${BASH_REMATCH[1]}"
 [ -z "$PERCENTAGE" ] && exit 0
 
 if [ "$PERCENTAGE" -ge 88 ]; then
@@ -18,8 +17,8 @@ else
   ICON="􀛪"
 fi
 
-COLOR="$BLACK"
-if [ "$CHARGING" -gt 0 ]; then
+COLOR="$ICON_COLOR"
+if [[ "$BATT" == *"AC Power"* ]]; then
   ICON="􀢋"
 elif [ "$PERCENTAGE" -le 20 ]; then
   COLOR="$RED"
