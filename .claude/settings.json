@@ -26,5 +26,34 @@
     }
   },
   "effortLevel": "high",
-  "tui": "fullscreen"
+  "tui": "fullscreen",
+  "permissions": {
+    "allow": [
+      "Read(/tmp/**)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(git status:*)",
+      "Bash(git show:*)",
+      "Bash(git blame:*)",
+      "Bash(git reflog:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(git fetch:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(ps:*)",
+      "Bash(which:*)",
+      "Bash(type:*)"
+    ],
+    "ask": [
+      "Bash(env)",
+      "Bash(env:*)",
+      "Bash(printenv:*)"
+    ]
+  }
 }
