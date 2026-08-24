@@ -1,4 +1,7 @@
 {
+  "env": {
+    "EDITOR": "subl -w"
+  },
   "permissions": {
     "allow": [
       "Read(/tmp/**)",
