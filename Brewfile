@@ -5,6 +5,7 @@ tap "danielgatis/imgcat", trusted: true
 tap "asmvik/formulae", trusted: true
 tap "streetpea/streetpea", trusted: true
 tap "msitarzewski/brew-browser", trusted: true
+tap "yapstudios/tap/sfsym", trusted: true
 
 # Brew apps
 # cliclick to simulate keyboard/mouse from terminal/cli
@@ -35,7 +36,8 @@ brew "trivy"
 brew "asmvik/formulae/yabai"
 # yt-dlp to download youtube or videos (youtube-dl no longer maintained)
 brew "yt-dlp"
-
+# sfsym used to export from SF Symbol
+brew "yapstudios/tap/sfsym"
 
 # Casks
 cask "1password"
