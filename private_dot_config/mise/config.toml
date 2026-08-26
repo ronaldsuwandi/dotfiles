@@ -5,6 +5,7 @@ node = "latest"
 python = "latest"
 bun = "latest"
 rust = "latest"
+luajit = "latest"
 
 # bootstrap sections
 [bootstrap.macos.dock]
