@@ -24,6 +24,7 @@ brew "git-lfs"
 brew "danielgatis/imgcat/imgcat"
 brew "kcat"
 brew "mise"
+brew "pkgconf" # need it for building paneru from source
 # sliding window management
 brew "paneru"
 # shkd to launch app using shortcut keys
