@@ -147,6 +147,11 @@ title = ".*"
 bundle_id = "com.apple.ScreenContinuity"
 floating = true
 
+[windows.simulator]
+title = ".*"
+bundle_id = "com.apple.iphonesimulator"
+floating = true
+
 [windows.calculator]
 title = ".*"
 bundle_id = "com.apple.calculator"
