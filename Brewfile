@@ -52,6 +52,7 @@ cask "contexts"
 # detectx-swift to find and clean up malware: https://sqwarq.wordpress.com/detectx/
 cask "detectx-swift"
 cask "devutils"
+cask "font-fraunces"
 cask "font-dejavu"
 cask "font-sf-pro"
 # gram is hard fork of Zed (no AI, local only)
