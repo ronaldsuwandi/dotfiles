@@ -30,7 +30,7 @@
       "Bash(env:*)",
       "Bash(printenv:*)"
     ],
-    "defaultMode": "manual"
+    "defaultMode": "default"
   },
   "statusLine": {
     "type": "command",
@@ -42,7 +42,8 @@
     "gopls-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "ponytail@ponytail": true,
-    "duckdb-skills@duckdb-skills": true
+    "duckdb-skills@duckdb-skills": true,
+    "i-have-adhd@i-have-adhd": true
   },
   "extraKnownMarketplaces": {
     "ponytail": {
@@ -55,6 +56,12 @@
       "source": {
         "source": "github",
         "repo": "duckdb/duckdb-skills"
+      }
+    },
+    "i-have-adhd": {
+      "source": {
+        "source": "github",
+        "repo": "ayghri/i-have-adhd"
       }
     }
   },
