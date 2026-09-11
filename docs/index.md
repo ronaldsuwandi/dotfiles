@@ -26,6 +26,7 @@ Window management via [paneru](https://github.com/karinushka/paneru), a sliding 
 |:----------------------------------------|:-----------------------------------------------------|
 | `Cmd+Alt+Arrow`                         | Focus window                                         |
 | `Cmd+Alt+Ctrl+Left/Right`               | Focus first/last window                              |
+| `Cmd+Alt+1–9` / `Cmd+Alt+0`              | Focus nth window (0 = last)                          |
 | `Cmd+Alt+Shift+Arrow`                   | Swap window                                          |
 | `Cmd+Ctrl+Shift+Left/Right`             | Swap with first/last                                 |
 | `Cmd+Alt+Ctrl+Down/Up`                  | Shrink/grow column                                   |
