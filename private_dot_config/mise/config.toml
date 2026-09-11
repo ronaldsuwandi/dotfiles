@@ -6,6 +6,10 @@ python = "latest"
 bun = "latest"
 rust = "latest"
 luajit = "latest"
+"npm:typescript-language-server" = "latest"
+"npm:typescript" = "latest"
+"go:golang.org/x/tools/gopls" = "latest"
+rust-analyzer = "latest"
 
 # bootstrap sections
 [bootstrap.macos.dock]
