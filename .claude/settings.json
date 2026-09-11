@@ -4,7 +4,13 @@
   },
   "permissions": {
     "allow": [
-      "Read(/tmp/**)",
+      "Read(//tmp/**)",
+      "Read(//opt/homebrew/var/log/**)",
+      "Read(//Applications/**)",
+      "Read(~/.cargo/**)",
+      "Read(~/.npm/**)",
+      "Read(~/.m2/**)",
+      "Read(~/.config/**)",
       "Bash(find:*)",
       "Bash(grep:*)",
       "Bash(ls:*)",
@@ -23,7 +29,10 @@
       "Bash(git rev-parse:*)",
       "Bash(ps:*)",
       "Bash(which:*)",
-      "Bash(type:*)"
+      "Bash(type:*)",
+      "Bash(col:*)",
+      "Bash(paneru:*)",
+      "Bash(yabai:*)"
     ],
     "ask": [
       "Bash(env)",
