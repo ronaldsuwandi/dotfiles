@@ -7,6 +7,18 @@ cmd + alt + ctrl - left : paneru send-cmd window focus first && sketchybar --tri
 cmd + alt + ctrl - right : paneru send-cmd window focus last && sketchybar --trigger paneru_manage_change
 cmd + alt - u : ~/.config/skhd/paneru_toggle_focus.sh
 
+cmd + alt - 1 : paneru send-cmd window focus first && sketchybar --trigger paneru_manage_change
+cmd + alt - 2 : paneru send-cmd window focus 2 && sketchybar --trigger paneru_manage_change
+cmd + alt - 3 : paneru send-cmd window focus 3 && sketchybar --trigger paneru_manage_change
+cmd + alt - 4 : paneru send-cmd window focus 4 && sketchybar --trigger paneru_manage_change
+cmd + alt - 5 : paneru send-cmd window focus 5 && sketchybar --trigger paneru_manage_change
+cmd + alt - 6 : paneru send-cmd window focus 6 && sketchybar --trigger paneru_manage_change
+cmd + alt - 7 : paneru send-cmd window focus 7 && sketchybar --trigger paneru_manage_change
+cmd + alt - 8 : paneru send-cmd window focus 8 && sketchybar --trigger paneru_manage_change
+cmd + alt - 9 : paneru send-cmd window focus 9 && sketchybar --trigger paneru_manage_change
+cmd + alt - 0 : paneru send-cmd window focus last && sketchybar --trigger paneru_manage_change
+
+
 # move window
 cmd + alt + shift - left : paneru send-cmd window swap west && sketchybar --trigger paneru_manage_change
 cmd + alt + shift - up : paneru send-cmd window swap north && sketchybar --trigger paneru_manage_change
