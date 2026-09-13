@@ -6,14 +6,12 @@
     "allow": [
       "Read(//tmp/**)",
       "Write(//tmp/claude-*/**)",
-
       "Read(//opt/homebrew/var/log/**)",
       "Read(//Applications/**)",
       "Read(~/.cargo/**)",
       "Read(~/.npm/**)",
       "Read(~/.m2/**)",
       "Read(~/.config/**)",
-
       "Bash(find:*)",
       "Bash(grep:*)",
       "Bash(ls:*)",
@@ -25,7 +23,6 @@
       "Bash(which:*)",
       "Bash(type:*)",
       "Bash(col:*)",
-
       "Bash(git log:*)",
       "Bash(git diff:*)",
       "Bash(git status:*)",
@@ -35,7 +32,6 @@
       "Bash(git ls-tree:*)",
       "Bash(git fetch:*)",
       "Bash(git rev-parse:*)",
-
       "Bash(paneru:*)",
       "Bash(yabai:*)",
       "Bash(sketchybar:*)"
@@ -52,7 +48,6 @@
     "command": "sh $HOME/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
-    "jdtls-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
