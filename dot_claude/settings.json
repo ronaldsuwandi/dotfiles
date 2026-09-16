@@ -6,6 +6,7 @@
     "allow": [
       "Read(//tmp/**)",
       "Write(//tmp/claude-*/**)",
+      "Edit(//tmp/claude-*/**)",
       "Read(//opt/homebrew/var/log/**)",
       "Read(//Applications/**)",
       "Read(~/.cargo/**)",
