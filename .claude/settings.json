@@ -39,7 +39,9 @@
     "ask": [
       "Bash(env)",
       "Bash(env:*)",
-      "Bash(printenv:*)"
+      "Bash(printenv:*)",
+      "Read(.env)",
+      "Read(.env.*)"
     ],
     "defaultMode": "default"
   },
