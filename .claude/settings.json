@@ -5,6 +5,7 @@
   "permissions": {
     "allow": [
       "Read(//tmp/**)",
+      "Write(//tmp/claude-*/**)",
       "Edit(//tmp/claude-*/**)",
       "Read(//opt/homebrew/var/log/**)",
       "Read(//Applications/**)",
@@ -74,6 +75,12 @@
       "source": {
         "source": "github",
         "repo": "ayghri/i-have-adhd"
+      }
+    },
+    "obsidian-cli-skill": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/pablo-mano/Obsidian-CLI-skill.git"
       }
     }
   },
