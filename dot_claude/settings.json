@@ -76,6 +76,12 @@
         "source": "github",
         "repo": "ayghri/i-have-adhd"
       }
+    },
+    "obsidian-cli-skill": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/pablo-mano/Obsidian-CLI-skill.git"
+      }
     }
   },
   "effortLevel": "high",
