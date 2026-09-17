@@ -122,6 +122,21 @@ domain = "com.apple.finder"
 key = "FXICloudDriveEnabled"
 value = true
 
+[[bootstrap.macos.defaults_entries]]
+domain = "NSGlobalDomain"
+key = "AppleShowAllExtensions"
+value = true # show all filename extensions
+
+[[bootstrap.macos.defaults_entries]]
+domain = "com.apple.finder"
+key = "_FXSortFoldersFirst"
+value = true # keep folders on top when sorting by name
+
+[[bootstrap.macos.defaults_entries]]
+domain = "com.apple.finder"
+key = "FXDefaultSearchScope"
+value = "SCcf" # search the current folder by default
+
 # hot corners
 [[bootstrap.macos.defaults_entries]]
 domain = "com.apple.dock"
