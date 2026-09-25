@@ -22,6 +22,7 @@
 .config/skhd/space_layout_toggle.sh
 .config/skhd/skhdrc_yabai
 .config/skhd/yaba_center.sh
+.skhdrc
 
 # ghostty: config removed
 .config/ghostty/config
