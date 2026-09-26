@@ -55,7 +55,8 @@
     "rust-analyzer-lsp@claude-plugins-official": true,
     "ponytail@ponytail": true,
     "duckdb-skills@duckdb-skills": true,
-    "i-have-adhd@i-have-adhd": true
+    "i-have-adhd@i-have-adhd": true,
+    "swift-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "ponytail": {
@@ -86,5 +87,6 @@
   "effortLevel": "high",
   "tui": "fullscreen",
   "autoCompactEnabled": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "remoteControlAtStartup": true
 }
