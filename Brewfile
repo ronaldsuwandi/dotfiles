@@ -45,7 +45,7 @@ cask "msitarzewski/brew-browser/brew-browser"
 # Postman alternative
 cask "bruno"
 #cask "claude"
-cask "claude-code"
+cask "claude-code@latest"
 cask "coconutbattery"
 cask "commandq"
 cask "contexts"
@@ -91,8 +91,8 @@ cask "sublime-text"
 cask "tailscale-app"
 # thaw is bartender/ice alternative (fork of ice)
 cask "thaw"
-# transmission for torrent client
-cask "transmission"
+# transmission for torrent client (not allowed in Thoughtworks)
+# cask "transmission"
 cask "visual-studio-code"
 cask "visualvm"
 cask "wireshark-app"

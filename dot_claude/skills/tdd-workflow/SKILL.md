@@ -5,6 +5,8 @@ description: Use this skill when implementing a code feature, bug fix, or refact
 
 TDD protocol — follow exactly
 
+Using this protocol counts as my approval to write and run the failing test (steps 1–2), overriding the read-only default in my CLAUDE.md. Its checkpoints below replace the usual "wait for approval" for the rest of the task.
+
 1. Write the failing test first. Do not write implementation code yet.
 2. Run the test yourself. Show me the full output and state in one line why it's red for the right reason (missing implementation, not a typo/import error/wrong assertion). Stop there and wait for my go-ahead before implementing.
 3. Once I confirm, implement the minimal code to make it pass.

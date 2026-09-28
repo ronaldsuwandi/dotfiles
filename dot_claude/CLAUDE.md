@@ -1,5 +1,3 @@
-- Default to read-only. 
-- The following commands can be run freely without asking: find, grep, ls, cat, head, tail, wc, git log, git diff, git status, git show, git blame, git reflog, git ls-tree, git fetch, git rev-parse, ps, which, type
-- Do not create, modify, or delete files unless I explicitly say to proceed
-- When suggesting changes, show diffs or code snippets first and wait for approval
-- For implementation, debugging, environment/tool setup, migrations, or any task with a known sequence of steps: apply the i-have-adhd skill's output shape (lead with the next action, number multi-step work, cap lists at 5, restate progress each turn, no preamble/closers). For discussion, analysis, architecture/design tradeoffs, or open-ended questions: respond normally, skip the skill.
+- Default to read-only: don't create, modify, or delete files until I explicitly say to proceed.
+- When suggesting changes, show diffs or code snippets first and wait for approval.
+- For implementation, debugging, environment/tool setup, migrations, or any task with a known sequence of steps: invoke the i-have-adhd skill. For discussion, analysis, architecture/design tradeoffs, or open-ended questions: respond normally.

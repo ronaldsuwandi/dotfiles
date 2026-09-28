@@ -55,7 +55,6 @@
     "rust-analyzer-lsp@claude-plugins-official": true,
     "ponytail@ponytail": true,
     "duckdb-skills@duckdb-skills": true,
-    "i-have-adhd@i-have-adhd": true,
     "swift-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
@@ -63,30 +62,27 @@
       "source": {
         "source": "github",
         "repo": "DietrichGebert/ponytail"
-      }
+      },
+      "autoUpdate": true
     },
     "duckdb-skills": {
       "source": {
         "source": "github",
         "repo": "duckdb/duckdb-skills"
-      }
-    },
-    "i-have-adhd": {
-      "source": {
-        "source": "github",
-        "repo": "ayghri/i-have-adhd"
-      }
+      },
+      "autoUpdate": true
     },
     "obsidian-cli-skill": {
       "source": {
         "source": "git",
         "url": "https://github.com/pablo-mano/Obsidian-CLI-skill.git"
-      }
+      },
+      "autoUpdate": true
     }
   },
   "effortLevel": "high",
   "tui": "fullscreen",
   "autoCompactEnabled": true,
-  "agentPushNotifEnabled": true,
-  "remoteControlAtStartup": true
+  "remoteControlAtStartup": true,
+  "agentPushNotifEnabled": true
 }
