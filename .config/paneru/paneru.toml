@@ -27,6 +27,12 @@ title = ".*"
 horizontal_padding = 4
 vertical_padding = 4
 
+# ---- special app ----
+[windows.xcode]
+title = ".*"
+bundle_id = "com.apple.dt.Xcode"
+manage = true
+
 # ---- float rules ----
 [windows.system_settings]
 title = ".*"
