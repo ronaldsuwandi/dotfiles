@@ -156,6 +156,20 @@ export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 
 eval "$(mise activate zsh)"
 
+# weekly background check for brew/mise updates → macOS notification
+() {
+  local stamp=~/.cache/check-outdated.stamp
+  local recent=($stamp(N.mh-168))   # non-empty if stamp touched within 7 days
+  (( $#recent )) && return
+  touch $stamp                       # claim the run now so other new tabs skip it
+  {
+    brew update --quiet
+    local b=$(brew outdated --quiet | wc -l | tr -d ' ')
+    local m=$(cd ~ && mise outdated --json | jq length)
+    (( b + m )) && osascript -e "display notification \"brew: $b, mise: $m\" with title \"Updates available\""
+  } &>/dev/null &!
+}
+
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
