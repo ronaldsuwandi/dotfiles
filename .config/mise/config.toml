@@ -165,6 +165,19 @@ key = "AppleSymbolicHotKeys"
 path = ["8"]
 value = { enabled = true, value = { parameters = [65535, 99, 8650752], type = "standard" } }
 
+# disable input source shortcuts (frees ctrl+space, ctrl+option+space)
+[[bootstrap.macos.defaults_entries]]
+domain = "com.apple.symbolichotkeys"
+key = "AppleSymbolicHotKeys"
+path = ["60"]
+value = { enabled = false, value = { parameters = [32, 49, 262144], type = "standard" } } # ctrl+space: previous input source
+
+[[bootstrap.macos.defaults_entries]]
+domain = "com.apple.symbolichotkeys"
+key = "AppleSymbolicHotKeys"
+path = ["61"]
+value = { enabled = false, value = { parameters = [32, 49, 786432], type = "standard" } } # ctrl+option+space: next input source
+
 [bootstrap.hooks]
 # assign 1password, activity monitor and nimble commander to all spaces
 post-defaults = [
