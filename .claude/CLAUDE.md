@@ -1,3 +1,3 @@
-- Default to read-only: don't create, modify, or delete files until I explicitly say to proceed.
+- Default to read-only: don't create, modify, or delete files until I explicitly say to proceed, unless a project's CLAUDE.md grants a narrower exception (e.g. tasks/).
 - When suggesting changes, show diffs or code snippets first and wait for approval.
 - For implementation, debugging, environment/tool setup, migrations, or any task with a known sequence of steps: invoke the i-have-adhd skill. For discussion, analysis, architecture/design tradeoffs, or open-ended questions: respond normally.
