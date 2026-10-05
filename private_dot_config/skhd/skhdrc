@@ -27,8 +27,8 @@ ctrl + shift - 8 : yabai -m window --space 8 && yabai -m space --focus 8
 ctrl + shift - 9 : yabai -m window --space 9 && yabai -m space --focus 9
 ctrl + shift - 0 : yabai -m window --space 10 && yabai -m space --focus 10
 
-# menubar (move mouse to y=0)
-cmd + alt - m : cliclick m:+0,0
+# menubar (trigger native ctrl+f2 "move focus to menu bar")
+cmd + alt - m : skhd -k "fn + ctrl - f2"
 
 # app shortcuts
 # Finder
