@@ -29,6 +29,8 @@ brew "pkgconf" # need it for building paneru from source
 brew "paneru"
 # shkd to launch app using shortcut keys
 brew "asmvik/formulae/skhd"
+# switchaudio-osx to allow switching audio source by cli (input/output)
+brew "switchaudio-osx"
 brew "tmux"
 # trivy is for vulnerability scanner
 brew "trivy"
