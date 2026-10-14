@@ -5,6 +5,7 @@ tap "danielgatis/imgcat", trusted: true
 tap "asmvik/formulae", trusted: true
 tap "streetpea/streetpea", trusted: true
 tap "msitarzewski/brew-browser", trusted: true
+tap "jurplel/tap", trusted: true
 
 # Brew apps
 # cliclick to simulate keyboard/mouse from terminal/cli - not needed
@@ -60,6 +61,8 @@ cask "font-sf-pro"
 # gram is hard fork of Zed (no AI, local only)
 # cask "gram"
 cask "iina"
+# remove swipe animation
+cask "instant-space-switcher"
 # cask "iterm2"
 cask "jetbrains-toolbox"
 cask "karabiner-elements"
