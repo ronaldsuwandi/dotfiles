@@ -12,8 +12,8 @@ ctrl - 7 : ~/.config/sketchybar/plugins/focus_space.sh 7
 ctrl - 8 : ~/.config/sketchybar/plugins/focus_space.sh 8
 ctrl - 9 : ~/.config/sketchybar/plugins/focus_space.sh 9
 ctrl - 0 : ~/.config/sketchybar/plugins/focus_space.sh 10
-ctrl - left : yabai -m space --focus prev
-ctrl - right : yabai -m space --focus next
+ctrl - left : /Applications/InstantSpaceSwitcher.app/Contents/MacOS/ISSCli left
+ctrl - right : /Applications/InstantSpaceSwitcher.app/Contents/MacOS/ISSCli right
 
 # move windows to space
 ctrl + shift - 1 : yabai -m window --space 1 && yabai -m space --focus 1

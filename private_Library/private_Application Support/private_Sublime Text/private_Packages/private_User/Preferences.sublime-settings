@@ -67,4 +67,7 @@
 	"word_wrap": "auto",
 	"index_files": true,
 	"preview_on_click": true,
+	"file_icon_theme":
+	[
+	],
 }
