@@ -3,5 +3,6 @@
 source "$HOME/.config/sketchybar/variables.sh"
 
 n="$1"
+# yabai -m space --focus "$n"
 sketchybar --set /space\../ background.drawing=off icon.color="$ICON_COLOR" --set space."$n" background.drawing=on icon.color="$WHITE"
-yabai -m space --focus "$n"
+/Applications/InstantSpaceSwitcher.app/Contents/MacOS/ISSCli index $n
