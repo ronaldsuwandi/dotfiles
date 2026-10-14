@@ -15,7 +15,7 @@ LABEL_COLOR=$BLACK # Color of all labels
 
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 
-FONT="SF Pro"
+FONT="SF Pro Text"
 FONT_WEIGHT="Regular"
 FONT_SIZE=13
 
@@ -23,7 +23,7 @@ HEIGHT=30
 
 # Bar geometry
 BAR_PADDING_LEFT=15
-BAR_PADDING_RIGHT=10
+BAR_PADDING_RIGHT=11
 BAR_BLUR_RADIUS=20
 BAR_NOTCH_WIDTH=200
 
