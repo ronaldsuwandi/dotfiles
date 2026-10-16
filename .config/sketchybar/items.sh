@@ -54,12 +54,12 @@ sketchybar --add item running_apps_updater left \
 sketchybar --add item running_apps_right left
 
 # date/time
-sketchybar --add item clock right \
-  --set clock icon.drawing=off update_freq=20 script="$PLUGIN_DIR/clock.sh" padding_right="$SPACER_PADDING"
+# sketchybar --add item clock right \
+#   --set clock icon.drawing=off update_freq=20 script="$PLUGIN_DIR/clock.sh" padding_right="$SPACER_PADDING"
 
 # battery
 sketchybar --add item battery right \
-  --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" padding_right=25 \
+  --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" padding_right=160 \
   --subscribe battery system_woke power_source_change
 
 # volume
