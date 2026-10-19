@@ -19,7 +19,7 @@ FONT="SF Pro Text"
 FONT_WEIGHT="Regular"
 FONT_SIZE=13
 
-HEIGHT=30
+HEIGHT=32
 
 # Bar geometry
 BAR_PADDING_LEFT=15
