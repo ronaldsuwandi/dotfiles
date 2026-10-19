@@ -246,6 +246,34 @@ key = "AppleSymbolicHotKeys"
 path = ["61"]
 value = { enabled = false, value = { parameters = [32, 49, 786432], type = "standard" } } # ctrl+option+space: next input source
 
+# spotlight: every entry here is hidden from results (key name is misleading)
+[[bootstrap.macos.defaults_entries]]
+domain = "com.apple.Spotlight"
+key = "EnabledPreferenceRules"
+value = [
+    "FileProvider.com.google.drivefs.fpext/gdrive-112566717738726162821",
+    "com.apple.AppStore",
+    "com.apple.iBooksX",
+    "com.apple.iCal",
+    "com.apple.AddressBook",
+    "com.google.drivefs",
+    "com.apple.journal",
+    "com.apple.mail",
+    "com.apple.MobileSMS",
+    "com.moneywiz.personalfinance",
+    "com.apple.Music",
+    "com.apple.mobilephone",
+    "com.apple.podcasts",
+    "com.apple.Safari",
+    "com.apple.shortcuts",
+    "ru.keepcoder.Telegram",
+    "com.apple.tips",
+    "net.whatsapp.WhatsApp",
+    "System.files",
+    "System.folders",
+    "System.iphoneApps",
+]
+
 [bootstrap.hooks]
 # assign 1password, activity monitor and nimble commander to all spaces
 post-defaults = [
