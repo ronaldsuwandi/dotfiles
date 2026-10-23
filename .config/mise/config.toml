@@ -137,6 +137,7 @@ domain = "com.apple.finder"
 key = "FXDefaultSearchScope"
 value = "SCcf" # search the current folder by default
 
+# spotlight: every entry here is hidden from results (key name is misleading)
 # spotlight: apps allowed to show results (replaces the whole list).
 # account-specific google drive sources (FileProvider.com.google.drivefs.fpext/gdrive-<id>) left out on purpose: public repo
 [[bootstrap.macos.defaults_entries]]
@@ -277,6 +278,7 @@ domain = "com.apple.symbolichotkeys"
 key = "AppleSymbolicHotKeys"
 path = ["61"]
 value = { enabled = false, value = { parameters = [32, 49, 786432], type = "standard" } } # ctrl+option+space: next input source
+
 
 # photos.app menu shortcuts (\u001b = menu path separator)
 [[bootstrap.macos.defaults_entries]]
