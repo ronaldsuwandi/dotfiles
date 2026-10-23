@@ -1,6 +1,7 @@
 {
     "general": {
-        "theme": "Dark",
+        "theme": "Light",
+        "showTabs": true,
         "notifications": {}
     },
     "filePanel": {

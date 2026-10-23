@@ -37,14 +37,15 @@ Window management via [paneru](https://github.com/karinushka/paneru), a sliding 
 | `Cmd+Alt+Ctrl+=`                        | Equalize columns widths                              |
 | `Cmd+Alt+Ctrl+-`                        | Equalize columns heights                             |
 | `Cmd+Alt+U`                             | Focus a floating/managed window (toggle)             |
-| `Ctrl+1–0`                              | Switch to space 1–10 (yabai)                         |
+| `Ctrl+1–0`                              | Switch to space 1–10 (InstantSpaceSwitcher)          |
+| `Ctrl+Left/Right`                       | Previous/next space (InstantSpaceSwitcher)           |
 | `Ctrl+Shift+1–0`                        | Move window to space 1–10 (yabai)                    |
 | `Cmd+Ctrl+Alt+Shift+Left/Up/Right/Down` | Quarter corners: yabai-only, via `yabai_grid.sh`     |
 | `Cmd+Ctrl+Alt+Shift+-`                  | Center horizontally: yabai-only, via `yabai_grid.sh` |
 | `Cmd+Ctrl+Alt+Shift+\|`                 | Center vertically: yabai-only, via `yabai_grid.sh`   |
-| `Cmd+Alt+M`                             | Nudge mouse to top edge to reveal the native menu bar (via `cliclick`), since sketchybar now sits on top and covers it |
+| `Cmd+Alt+M`                             | Focus the native menu bar by sending macOS's built-in `Ctrl+F2`, since sketchybar sits on top and covers it |
 
-App launchers, print-dialog suppression, and the Total War blacklist are unchanged from the yabai setup above. The floating-window-focus bindings live in `paneru/paneru.toml`'s `[bindings]` table rather than skhd — `send-cmd` has no command for reaching a floating window.
+App launchers, print-dialog suppression, and the Total War blacklist are unchanged from the yabai setup below. The floating-window-focus bindings live in `paneru/paneru.toml`'s `[bindings]` table rather than skhd — `send-cmd` has no command for reaching a floating window.
 
 The quarter-corner/center bindings run through `yabai_grid.sh` instead of paneru: Zoom windows are invisible to yabai/paneru, so the script detects Zoom and repositions it via the Accessibility API with its own padding calc; every other app gets the same grid cell via plain `yabai --move`/`--resize`. Corners are 1/3 width × 1/2 height; center-h/center-v center a floating window on that axis.
 
@@ -60,15 +61,15 @@ New windows are managed automatically (config: `paneru/paneru.toml`). Apps that 
 
 - **Left:** space indicators 1–10
 - **Center:** focused app name + icon · floating indicator when the focused window is floating
-- **Right:** date/time · apps in the current space — paneru's managed windows in order (focused one marked `‹ ›`) · battery % · volume icon · window count · any floating windows (detected via yabai) marked with a floating icon
+- **Right:** apps in the current space — paneru's managed windows in order (focused one marked `‹ ›`) · battery % · volume icon · window count · any floating windows (detected via yabai) marked with a floating icon
 
 Side app labels (left/right of the focused one) shrink to 9pt when the notch is active, 10.5pt otherwise (lid closed / external display only) — keeps them legible without running under the notch.
 
-Clock, battery, and volume are glanceable-only — no click actions. Clock re-renders every 20s; battery every 120s (plus on wake/power-source change) and tints red under 20%; volume updates only on `volume_change`.
+No clock — it was removed so Corner Time can show the time instead. Battery re-renders every 120s (plus on wake/power-source change) and tints red under 20%; volume updates on `volume_change`, and clicking it opens a slider popup.
 
 Since paneru has no per-action hooks of its own, sketchybar stays in sync via a custom `paneru_manage_change` event fired directly from the relevant skhd shortcuts (focus, swap, manage-toggle) — no polling, no background daemon.
 
-Space-focus click/keybind logic (highlight the focused space, set icon colors, `yabai -m space --focus`) is consolidated in `plugins/focus_space.sh`, called from both the sketchybar space items and skhd's `Ctrl+1–0`.
+Space-focus click/keybind logic (highlight the focused space, set icon colors, switch via InstantSpaceSwitcher's `ISSCli index`) is consolidated in `plugins/focus_space.sh`, called from both the sketchybar space items and skhd's `Ctrl+1–0`.
 
 ---
 
@@ -96,6 +97,40 @@ Pane borders show the running command and path so you always know what's in each
 
 ---
 
+## macOS settings — `mise bootstrap`
+
+System settings live in `mise/config.toml` under `[bootstrap.macos]` and are applied by `mise bootstrap`. Each entry patches one key path, so sibling settings are left alone.
+
+- **Dock:** left side, 32px icons magnifying to 46px, no recents, spaces never auto-rearrange
+- **Finder:** path + status bar, list view, folders first, all extensions, search current folder, iCloud Desktop & Documents
+- **Menu bar:** auto-hidden (sketchybar sits there instead); input menu shown
+- **Trackpad:** tap to click, three-finger drag, three-finger swipes off, Notification Center edge swipe off
+- **Spotlight:** result sources limited to a fixed app list (App Store, Books, Calendar, Contacts, Google Drive, Mail, Messages, Excel, MoneyWiz, Photos, Podcasts, Safari, Telegram, Tips, WhatsApp, iPhone apps); per-account Google Drive sources are left out since they embed account IDs; clipboard history on, kept for 30 minutes
+- **Hot corners:** top-right Mission Control · bottom-right Desktop
+- **Misc:** full keyboard navigation; click-wallpaper-to-show-desktop off; 1Password and Activity Monitor pinned to all spaces (Nimble Commander was dropped — pinned everywhere, it fought window focus instead of following it)
+
+### Global shortcuts
+
+| Shortcut                        | Action                                                          |
+|:--------------------------------|:----------------------------------------------------------------|
+| `Ctrl+F2`                       | Focus menu bar (macOS default — what skhd's `Cmd+Alt+M` sends)  |
+| `Ctrl+F3`                       | Focus Dock                                                      |
+| `Ctrl+1–0`                      | Switch to desktop 1–10 (native fallback; skhd catches it first) |
+| `Ctrl+Space` / `Ctrl+Alt+Space` | Disabled — freed from input-source switching                    |
+
+### Photos.app
+
+| Shortcut      | Action                                                                   |
+|:--------------|:-------------------------------------------------------------------------|
+| `Cmd+T`       | Adjust Date and Time…                                                    |
+| `Cmd+Shift+C` | Copy Location (from the selected photo)                                  |
+| `Cmd+Shift+A` | Assign Location — pastes the location copied with `Cmd+Shift+C`          |
+| `Cmd+Shift+G` | Assign GPS Coordinates — from the clipboard, or typed in manually        |
+
+`Cmd+Shift+A` and `Cmd+Shift+G` trigger my own Apple Shortcuts (*Assign Location to Photos*, *Assign GPS Coordinates to Photos*), synced via iCloud with **Use as Quick Action → Services Menu** enabled — they need to exist on the machine for these keys to do anything.
+
+---
+
 ## Claude Code — `.claude/`
 
 `CLAUDE.md` defaults Claude to read-only — no file changes without explicit approval. Common read-only commands (`find`, `grep`, `git log`, etc.) are pre-approved so it doesn't ask for permission constantly.
@@ -104,7 +139,7 @@ Pane borders show the running command and path so you always know what's in each
 
 ## yabai + skhd — deprecated
 
-> Superseded by paneru (above) for window management. yabai's own tiling and float rules are disabled (commented out in `yabairc`), but yabai is still installed and running — it's what handles instant space switching (`Ctrl+1–0`) and floating-window detection for sketchybar, since paneru doesn't track floating/unmanaged windows at all. `skhd/skhdrc_yabai` still has the keybindings below live, so reverting is just a `.load` swap away.
+> Superseded by paneru (above) for window management. yabai's own tiling and float rules are disabled (commented out in `yabairc`), but yabai is still installed and running — it moves windows between spaces (`Ctrl+Shift+1–0`) and handles floating-window detection for sketchybar, since paneru doesn't track floating/unmanaged windows at all. Space switching itself moved to InstantSpaceSwitcher. `skhd/skhdrc_yabai` still has the keybindings below live, so reverting is just a `.load` swap away.
 
 BSP tiling via [yabai](https://github.com/koekeishiya/yabai), shortcuts via [skhd](https://github.com/koekeishiya/skhd). Works without disabling SIP.
 
@@ -127,7 +162,7 @@ I used to run Aerospace but switched back — I didn't like losing native macOS 
 | `Ctrl+1–0`             | Switch to space 1–10      |
 | `Ctrl+Shift+1–0`       | Move window to space 1–10 |
 
-**App launchers:** `Ctrl+Shift+F` Finder · `Ctrl+Shift+T` Kitty · `Ctrl+Shift+C` Chrome · `Ctrl+Shift+N` Nimble Commander
+**App launchers:** `Ctrl+Shift+F` Finder · `Ctrl+Shift+S` Safari · `Ctrl+Shift+T` Kitty · `Ctrl+Shift+C` Chrome · `Ctrl+Shift+N` Nimble Commander
 
 A few annoyance fixes too — `Cmd+P` and `Cmd+I` are suppressed in Finder and Safari respectively so I don't accidentally open a print dialog or Mail. Total War is blacklisted so skhd stays out of the way while gaming.
 

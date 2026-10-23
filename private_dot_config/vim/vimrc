@@ -1,0 +1,71 @@
+" Reference: https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+
+" Indent
+set autoindent
+set smartindent
+
+" Use smarttab
+set smarttab
+
+" Wild menu
+set wildmenu
+
+" Ignore case while searching
+set ignorecase
+
+" When searching, be smart about case
+set smartcase
+
+" Highlight searhc result
+set hlsearch
+
+" Incremental search
+set incsearch
+
+" Use magic for regex
+set magic
+
+" No annoying sounds
+set noerrorbells
+set novisualbell
+" Always show current position
+
+" Syntax
+syntax on
+
+" Use torte color scheme if available
+try
+    colorscheme torte
+catch
+endtry
+
+
+" Better status when using window
+" Reference: https://superuser.com/a/807010=
+highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray
+highlight StatusLine   cterm=bold ctermfg=white ctermbg=darkgray
+
+" Set encoding
+set encoding=utf8
+
+" Disable backup
+set nobackup
+set nowb
+set noswapfile
+
+" Status line
+" Only show the status line when there are splits
+set laststatus=1
+
+
+" Format the status line
+set statusline=%f\ %m%r%=%l/%L,%c
+
+" Set ruler
+set ruler
+set rulerformat=%50(%=%{pathshorten(expand('%:p:~'))}\ %m%r\ %l/%L,%c%)

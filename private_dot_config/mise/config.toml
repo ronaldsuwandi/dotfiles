@@ -137,6 +137,46 @@ domain = "com.apple.finder"
 key = "FXDefaultSearchScope"
 value = "SCcf" # search the current folder by default
 
+# spotlight: every entry here is hidden from results (key name is misleading)
+# spotlight: apps allowed to show results (replaces the whole list).
+# account-specific google drive sources (FileProvider.com.google.drivefs.fpext/gdrive-<id>) left out on purpose: public repo
+[[bootstrap.macos.defaults_entries]]
+domain = "com.apple.Spotlight"
+key = "EnabledPreferenceRules"
+value = [
+    "com.apple.AppStore",
+    "com.apple.iBooksX",
+    "com.apple.iCal",
+    "com.apple.AddressBook",
+    "com.google.drivefs",
+    "com.apple.mail",
+    "com.apple.MobileSMS",
+    "com.microsoft.Excel",
+    "com.moneywiz.personalfinance",
+    "com.apple.Photos",
+    "com.apple.podcasts",
+    "com.apple.Safari",
+    "ru.keepcoder.Telegram",
+    "com.apple.tips",
+    "net.whatsapp.WhatsApp",
+    "System.iphoneApps",
+]
+
+[[bootstrap.macos.defaults_entries]]
+domain = "com.apple.Spotlight"
+key = "DisabledUTTypes"
+value = [] # no file types excluded
+
+[[bootstrap.macos.defaults_entries]]
+domain = "com.apple.Spotlight"
+key = "PasteboardHistoryEnabled"
+value = true # spotlight clipboard history
+
+[[bootstrap.macos.defaults_entries]]
+domain = "com.apple.Spotlight"
+key = "PasteboardHistoryTimeout"
+value = 1800 # keep clipboard history for 30 min (seconds)
+
 # hot corners
 [[bootstrap.macos.defaults_entries]]
 domain = "com.apple.dock"
@@ -226,13 +266,6 @@ key = "AppleSymbolicHotKeys"
 path = ["127"]
 value = { enabled = true, value = { parameters = [65535, 29, 262144], type = "standard" } }
 
-# disable ctrl+space (select previous input source)
-[[bootstrap.macos.defaults_entries]]
-domain = "com.apple.symbolichotkeys"
-key = "AppleSymbolicHotKeys"
-path = ["60"]
-value = { enabled = false, value = { parameters = [32, 49, 262144], type = "standard" } }
-
 # disable input source shortcuts (frees ctrl+space, ctrl+option+space)
 [[bootstrap.macos.defaults_entries]]
 domain = "com.apple.symbolichotkeys"
@@ -246,38 +279,40 @@ key = "AppleSymbolicHotKeys"
 path = ["61"]
 value = { enabled = false, value = { parameters = [32, 49, 786432], type = "standard" } } # ctrl+option+space: next input source
 
-# spotlight: every entry here is hidden from results (key name is misleading)
+
+# photos.app menu shortcuts (\u001b = menu path separator)
 [[bootstrap.macos.defaults_entries]]
-domain = "com.apple.Spotlight"
-key = "EnabledPreferenceRules"
-value = [
-    "FileProvider.com.google.drivefs.fpext/gdrive-112566717738726162821",
-    "com.apple.AppStore",
-    "com.apple.iBooksX",
-    "com.apple.iCal",
-    "com.apple.AddressBook",
-    "com.google.drivefs",
-    "com.apple.journal",
-    "com.apple.mail",
-    "com.apple.MobileSMS",
-    "com.moneywiz.personalfinance",
-    "com.apple.Music",
-    "com.apple.mobilephone",
-    "com.apple.podcasts",
-    "com.apple.Safari",
-    "com.apple.shortcuts",
-    "ru.keepcoder.Telegram",
-    "com.apple.tips",
-    "net.whatsapp.WhatsApp",
-    "System.files",
-    "System.folders",
-    "System.iphoneApps",
-]
+domain = "com.apple.Photos"
+key = "NSUserKeyEquivalents"
+path = ["\u001bImage\u001bAdjust Date and Time..."]
+value = "@t" # cmd+t
+
+[[bootstrap.macos.defaults_entries]]
+domain = "com.apple.Photos"
+key = "NSUserKeyEquivalents"
+path = ["\u001bImage\u001bLocation\u001bCopy Location"]
+value = "@$c" # cmd+shift+c
+
+[[bootstrap.macos.defaults_entries]]
+domain = "com.apple.Photos"
+key = "NSUserKeyEquivalents"
+path = ["\u001bPhotos\u001bServices\u001bAssign GPS Coordinates to Photos"]
+value = "@$g" # cmd+shift+g
+
+[[bootstrap.macos.defaults_entries]]
+domain = "com.apple.Photos"
+key = "NSUserKeyEquivalents"
+path = ["\u001bPhotos\u001bServices\u001bAssign Location to Photos"]
+value = "@$a" # cmd+shift+a
 
 [bootstrap.hooks]
-# assign 1password, activity monitor and nimble commander to all spaces
 post-defaults = [
+    # assign 1password and activity monitor to all spaces
+    # (nimble commander dropped: pinned to all spaces it fought window focus instead of following it)
     "defaults write com.apple.spaces app-bindings -dict-add com.1password.1password AllSpaces",
     "defaults write com.apple.spaces app-bindings -dict-add com.apple.activitymonitor AllSpaces",
-    "defaults write com.apple.spaces app-bindings -dict-add info.filesmanager.files AllSpaces",
+    # list photos.app under System Settings > Keyboard Shortcuts > App Shortcuts so the
+    # NSUserKeyEquivalents entries above are visible/editable there (they work without it).
+    # custommenu.apps is an array, so it can't be a path patch; grep guard avoids duplicate -array-add on re-runs
+    "defaults read com.apple.universalaccess com.apple.custommenu.apps | grep -q com.apple.Photos || defaults write com.apple.universalaccess com.apple.custommenu.apps -array-add com.apple.Photos",
 ]
