@@ -34,6 +34,8 @@ cmd + alt - m : skhd -k "fn + ctrl - f2"
 ctrl + shift - j    : macism com.apple.inputmethod.Kotoeri.RomajiTyping.Japanese && sketchybar --trigger input_change
 ctrl + shift - k    : macism com.apple.inputmethod.Kotoeri.RomajiTyping.Japanese.Katakana && sketchybar --trigger input_change
 ctrl + shift - 0x29 : macism com.apple.keylayout.ABC && sketchybar --trigger input_change
+# native toggle (hotkey 60) still does the switching; passthrough, then refresh the bar
+ctrl + shift - l -> : sleep 0.3 && sketchybar --trigger input_change
 
 # app shortcuts
 # Finder

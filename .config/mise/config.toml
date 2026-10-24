@@ -274,12 +274,13 @@ key = "AppleSymbolicHotKeys"
 path = ["127"]
 value = { enabled = true, value = { parameters = [65535, 29, 262144], type = "standard" } }
 
-# disable input source shortcuts (frees ctrl+space, ctrl+option+space)
+# input source shortcuts: ctrl+space and ctrl+option+space freed (IDE autocomplete, paneru);
+# ctrl+shift+l is the one remaining toggle
 [[bootstrap.macos.defaults_entries]]
 domain = "com.apple.symbolichotkeys"
 key = "AppleSymbolicHotKeys"
 path = ["60"]
-value = { enabled = false, value = { parameters = [32, 49, 262144], type = "standard" } } # ctrl+space: previous input source
+value = { enabled = true, value = { parameters = [108, 37, 393216], type = "standard" } } # ctrl+shift+l: previous input source
 
 [[bootstrap.macos.defaults_entries]]
 domain = "com.apple.symbolichotkeys"
@@ -319,6 +320,9 @@ post-defaults = [
     # (nimble commander dropped: pinned to all spaces it fought window focus instead of following it)
     "defaults write com.apple.spaces app-bindings -dict-add com.1password.1password AllSpaces",
     "defaults write com.apple.spaces app-bindings -dict-add com.apple.activitymonitor AllSpaces",
+    # drop the Japanese IME's alphanumeric (Roman) mode so English is always plain ABC.
+    # array of dicts, so it can't be a path patch; idempotent (no-op once Roman is gone). may need a re-login to show
+    "defaults export com.apple.HIToolbox - | python3 -c \"import plistlib,sys; p=plistlib.loads(sys.stdin.buffer.read()); k='AppleEnabledInputSources'; p[k]=[s for s in p.get(k,[]) if s.get('Input Mode')!='com.apple.inputmethod.Roman']; sys.stdout.buffer.write(plistlib.dumps(p))\" | defaults import com.apple.HIToolbox - && killall cfprefsd",
     # list photos.app under System Settings > Keyboard Shortcuts > App Shortcuts so the
     # NSUserKeyEquivalents entries above are visible/editable there (they work without it).
     # custommenu.apps is an array, so it can't be a path patch; grep guard avoids duplicate -array-add on re-runs
