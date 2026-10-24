@@ -6,6 +6,7 @@ tap "asmvik/formulae", trusted: true
 tap "streetpea/streetpea", trusted: true
 tap "msitarzewski/brew-browser", trusted: true
 tap "jurplel/tap", trusted: true
+tap "laishulu/homebrew", trusted: true
 
 # Brew apps
 # cliclick to simulate keyboard/mouse from terminal/cli - not needed
@@ -25,6 +26,8 @@ brew "git-lfs"
 # imgcat
 brew "danielgatis/imgcat/imgcat"
 brew "kcat"
+# macism to allow switching input source from cli
+brew "laishulu/homebrew/macism"
 brew "mise"
 brew "pkgconf" # need it for building paneru from source
 # sliding window management

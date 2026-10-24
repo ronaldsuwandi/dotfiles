@@ -44,6 +44,8 @@ Window management via [paneru](https://github.com/karinushka/paneru), a sliding 
 | `Cmd+Ctrl+Alt+Shift+-`                  | Center horizontally: yabai-only, via `yabai_grid.sh` |
 | `Cmd+Ctrl+Alt+Shift+\|`                 | Center vertically: yabai-only, via `yabai_grid.sh`   |
 | `Cmd+Alt+M`                             | Focus the native menu bar by sending macOS's built-in `Ctrl+F2`, since sketchybar sits on top and covers it |
+| `Ctrl+Shift+J` / `Ctrl+Shift+K`         | Input source: hiragana / katakana (via `macism`)     |
+| `Ctrl+Shift+;`                          | Input source: ABC (English)                          |
 
 App launchers, print-dialog suppression, and the Total War blacklist are unchanged from the yabai setup below. The floating-window-focus bindings live in `paneru/paneru.toml`'s `[bindings]` table rather than skhd — `send-cmd` has no command for reaching a floating window.
 
@@ -61,13 +63,15 @@ New windows are managed automatically (config: `paneru/paneru.toml`). Apps that 
 
 - **Left:** space indicators 1–10
 - **Center:** focused app name + icon · floating indicator when the focused window is floating
-- **Right:** apps in the current space — paneru's managed windows in order (focused one marked `‹ ›`) · battery % · volume icon · window count · any floating windows (detected via yabai) marked with a floating icon
+- **Right:** apps in the current space — paneru's managed windows in order (focused one marked `‹ ›`) · battery % · volume icon · input source · window count · any floating windows (detected via yabai) marked with a floating icon
 
 Side app labels (left/right of the focused one) shrink to 9pt when the notch is active, 10.5pt otherwise (lid closed / external display only) — keeps them legible without running under the notch.
 
 No clock — it was removed so Corner Time can show the time instead. Battery re-renders every 120s (plus on wake/power-source change) and tints red under 20%; volume updates on `volume_change`, and clicking it opens a slider popup.
 
 Since paneru has no per-action hooks of its own, sketchybar stays in sync via a custom `paneru_manage_change` event fired directly from the relevant skhd shortcuts (focus, swap, manage-toggle) — no polling, no background daemon.
+
+The input-source indicator shows `A` (ABC), `あ` (hiragana) or `カ` (katakana) in a rounded box, and clicking it toggles ABC ⇄ hiragana. The skhd input-source bindings (`Ctrl+Shift+J/K/;`) fire a custom `input_change` event for an instant update. The native `Ctrl+Shift+L` shortcut can't fire events, so the item also polls every 3s as a fallback. Mode switching uses [`macism`](https://github.com/laishulu/macism) (in the Brewfile). The Japanese IME's alphanumeric mode is removed on purpose, so English is always plain ABC and backslash never turns into ¥.
 
 Space-focus click/keybind logic (highlight the focused space, set icon colors, switch via InstantSpaceSwitcher's `ISSCli index`) is consolidated in `plugins/focus_space.sh`, called from both the sketchybar space items and skhd's `Ctrl+1–0`.
 
@@ -117,6 +121,7 @@ System settings live in `mise/config.toml` under `[bootstrap.macos]` and are app
 | `Ctrl+F3`                       | Focus Dock                                                      |
 | `Ctrl+1–0`                      | Switch to desktop 1–10 (native fallback; skhd catches it first) |
 | `Ctrl+Space` / `Ctrl+Alt+Space` | Disabled — freed from input-source switching                    |
+| `Ctrl+Shift+L`                  | Previous input source (ABC ⇄ last Japanese mode) — native, kept for secure-input fields where skhd can't see keys |
 
 ### Photos.app
 
