@@ -84,6 +84,15 @@ sketchybar --add slider volume_slider popup.volume 130 \
   --set volume_slider "${volume_slider[@]}" \
   --subscribe volume_slider mouse.clicked mouse.exited
 
+# input source: skhd fires input_change; slow poll catches the native ctrl+shift+l
+sketchybar --add event input_change
+sketchybar --add item input right \
+  --set input icon.drawing=off update_freq=3 updates=on script="$PLUGIN_DIR/input.sh" \
+              label.width=26 label.align=center padding_right=$RIGHT_ITEM_GAP \
+              background.drawing=on background.color=0x00000000 background.height=20 \
+              background.border_width=1 background.border_color=$ICON_COLOR background.corner_radius=5 \
+  --subscribe input mouse.clicked input_change
+
 # window count
 sketchybar --add item windows right \
   --set windows label="0 $WINDOWS_ICON" "${windows[@]}"

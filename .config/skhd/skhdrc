@@ -30,6 +30,11 @@ ctrl + shift - 0 : yabai -m window --space 10 && yabai -m space --focus 10
 # menubar (trigger native ctrl+f2 "move focus to menu bar")
 cmd + alt - m : skhd -k "fn + ctrl - f2"
 
+# input source (direct jumps; 0x29 = semicolon)
+ctrl + shift - j    : macism com.apple.inputmethod.Kotoeri.RomajiTyping.Japanese && sketchybar --trigger input_change
+ctrl + shift - k    : macism com.apple.inputmethod.Kotoeri.RomajiTyping.Japanese.Katakana && sketchybar --trigger input_change
+ctrl + shift - 0x29 : macism com.apple.keylayout.ABC && sketchybar --trigger input_change
+
 # app shortcuts
 # Finder
 ctrl + shift - f : open ~
