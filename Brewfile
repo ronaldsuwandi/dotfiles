@@ -18,6 +18,7 @@ brew "colima"
 brew "docker"
 brew "docker-compose"
 brew "docker-credential-helper"
+brew "exiftool"
 brew "figlet"
 brew "git"
 brew "git-lfs"
@@ -37,8 +38,8 @@ brew "tmux"
 brew "trivy"
 # yabai only used to help listing window within space
 brew "asmvik/formulae/yabai"
-# yt-dlp to download youtube or videos (youtube-dl no longer maintained)
-brew "yt-dlp"
+# yt-dlp to download youtube or videos (youtube-dl no longer maintained) - use mise for this
+# brew "yt-dlp"
 
 # Casks
 cask "1password"

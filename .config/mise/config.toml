@@ -1,4 +1,5 @@
 [tools]
+# sdk
 go = "latest"
 java = "temurin"
 node = "latest"
@@ -6,10 +7,17 @@ python = "latest"
 bun = "latest"
 rust = "latest"
 luajit = "latest"
+
+# tooling
 "npm:typescript-language-server" = "latest"
 "npm:typescript" = "latest"
 "go:golang.org/x/tools/gopls" = "latest"
+uv = "latest"
 rust-analyzer = "latest"
+
+# apps
+"pypi:osxphotos" = "latest"
+"github:yt-dlp/yt-dlp" = "latest"
 
 # bootstrap sections
 [bootstrap.macos.dock]
