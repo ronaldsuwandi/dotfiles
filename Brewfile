@@ -48,6 +48,7 @@ brew "asmvik/formulae/yabai"
 cask "1password"
 # adguard for system wide dns blocking
 cask "adguard"
+cask "anki"
 cask "msitarzewski/brew-browser/brew-browser"
 # Postman alternative
 cask "bruno"
