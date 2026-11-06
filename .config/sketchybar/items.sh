@@ -65,7 +65,7 @@ sketchybar --add item battery right \
 # volume
 sketchybar --add item volume right \
   --set volume label.drawing=off script="$PLUGIN_DIR/volume.sh" icon.width=22 padding_right=$RIGHT_ITEM_GAP \
-  --subscribe volume volume_change mouse.clicked
+  --subscribe volume volume_change mouse.clicked front_app_switched mouse.exited.global
 
 volume_slider=(
     slider.highlight_color=$OVERLAY
@@ -82,7 +82,7 @@ volume_slider=(
 )
 sketchybar --add slider volume_slider popup.volume 130 \
   --set volume_slider "${volume_slider[@]}" \
-  --subscribe volume_slider mouse.clicked mouse.exited
+  --subscribe volume_slider mouse.clicked
 
 # input source: skhd fires input_change; slow poll catches the native ctrl+shift+l
 sketchybar --add event input_change
