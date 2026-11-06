@@ -12,6 +12,11 @@ if [ "$SENDER" = "mouse.clicked" ]; then
   exit
 fi
 
+if [ "$SENDER" = "front_app_switched" ] || [ "$SENDER" = "mouse.exited.global" ]; then
+  sketchybar --set volume popup.drawing=off
+  exit
+fi
+
 if [ "$SENDER" = "volume_change" ]; then
   VOLUME="$INFO"
   if [ "$VOLUME" -eq 0 ]; then
