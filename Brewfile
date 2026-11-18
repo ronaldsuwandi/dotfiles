@@ -7,12 +7,15 @@ tap "streetpea/streetpea", trusted: true
 tap "msitarzewski/brew-browser", trusted: true
 tap "jurplel/tap", trusted: true
 tap "laishulu/homebrew", trusted: true
+tap "malik1942/calmmouse", trusted: true
 
 # Brew apps
 # cliclick to simulate keyboard/mouse from terminal/cli - not needed
 # brew "cliclick" 
 brew "felixkratz/formulae/borders"
 brew "felixkratz/formulae/sketchybar"
+# calmmouse to reduce the oversensitive scrolling on magic mouse
+brew "malik1942/calmmouse/calmmouse"
 brew "chezmoi"
 # colima is the underlying vm for docker (alternative to rancher or docker desktop)
 brew "colima"
