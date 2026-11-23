@@ -14,8 +14,6 @@ tap "malik1942/calmmouse", trusted: true
 # brew "cliclick" 
 brew "felixkratz/formulae/borders"
 brew "felixkratz/formulae/sketchybar"
-# calmmouse to reduce the oversensitive scrolling on magic mouse
-brew "malik1942/calmmouse/calmmouse"
 brew "chezmoi"
 # colima is the underlying vm for docker (alternative to rancher or docker desktop)
 brew "colima"
@@ -55,6 +53,8 @@ cask "anki"
 cask "msitarzewski/brew-browser/brew-browser"
 # Postman alternative
 cask "bruno"
+# calmmouse to reduce the oversensitive scrolling on magic mouse
+cask "malik1942/calmmouse/calmmouse"
 #cask "claude"
 cask "claude-code@latest"
 cask "coconutbattery"
