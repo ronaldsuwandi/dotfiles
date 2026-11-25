@@ -314,6 +314,27 @@ key = "NSUserKeyEquivalents"
 path = ["\u001bPhotos\u001bServices\u001bAssign Location to Photos"]
 value = "@$a" # cmd+shift+a
 
+# CalmMouse
+[[bootstrap.macos.defaults_entries]]
+domain = "com.calmmouse.app"
+key = "blockScrollWhileClicked"
+value = true # don't scroll while clicking
+
+[[bootstrap.macos.defaults_entries]]
+domain = "com.calmmouse.app"
+key = "momentumEnabled"
+value = true # keep gliding after swipe
+
+[[bootstrap.macos.defaults_entries]]
+domain = "com.calmmouse.app"
+key = "releaseGraceMs"
+value = 200 # hold still until let go: 0.2s
+
+[[bootstrap.macos.defaults_entries]]
+domain = "com.calmmouse.app"
+key = "deadZone"
+value = 10.0 # ignore small finger nudges: 10pt (float)
+
 [bootstrap.hooks]
 post-defaults = [
     # assign 1password and activity monitor to all spaces
