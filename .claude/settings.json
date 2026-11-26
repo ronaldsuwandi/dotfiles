@@ -54,7 +54,8 @@
     "gopls-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "ponytail@ponytail": true,
-    "swift-lsp@claude-plugins-official": true
+    "swift-lsp@claude-plugins-official": true,
+    "obsidian@obsidian-skills": false
   },
   "extraKnownMarketplaces": {
     "ponytail": {
@@ -64,12 +65,11 @@
       },
       "autoUpdate": true
     },
-    "obsidian-cli-skill": {
+    "obsidian-skills": {
       "source": {
-        "source": "git",
-        "url": "https://github.com/pablo-mano/Obsidian-CLI-skill.git"
-      },
-      "autoUpdate": true
+        "source": "github",
+        "repo": "obsidianmd/obsidian-skills"
+      }
     }
   },
   "effortLevel": "high",
